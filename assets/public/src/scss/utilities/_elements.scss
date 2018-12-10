@@ -1,0 +1,11 @@
+.btn-primary-alt {
+    background-color: $primary-shade-2;
+    border-color: $primary-blue;
+    color: $white-color;
+
+    &:hover {
+        background-color: $primary-shade-3;
+        border-color: $primary-blue;
+        color: $white-color;
+    }
+}

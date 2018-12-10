@@ -1,0 +1,13 @@
+.card-login {
+    max-width: 30rem;
+    box-shadow: 1px 0 4px 1px #eaeaea;
+
+    .card-footer {
+        background-color: transparent!important;
+        border-top:none;
+
+        a {
+            color: $primary-shade-2;
+        }
+    }
+}
