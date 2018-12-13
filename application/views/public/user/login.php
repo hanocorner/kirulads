@@ -1,16 +1,56 @@
 <style>
-html,body {
+	html,body {
 	height: 100%;
-  background-color: #ececec80;
+  	background-color: #ececec80;
 }
 </style>
+
 <div class="container">
-	<div class="card card-login mx-auto align-middle">
+	<div class="notify-box">
+		<noscript>Sorry, your browser does not support JavaScript!</noscript>
+		<div id="notify"></div>
+		<div class="error d-flex align-items-center">
+			<img src="<?php echo base_url('assets/public/dist/images/error.png'); ?>" alt="" class="img-fluid">
+			<p>Sorry, your browser does not support JavaScript!</p>
+		</div>
+	</div>
+
+	<div class="notify-box">
+		<noscript>Sorry, your browser does not support JavaScript!</noscript>
+		<div id="notify"></div>
+		<div class="success d-flex align-items-center">
+			<img src="<?php echo base_url('assets/public/dist/images/success.png'); ?>" alt="" class="img-fluid">
+			<p>Sorry, your browser does not support JavaScript!</p>
+		</div>
+	</div>
+
+	<div class="notify-box">
+		<noscript>Sorry, your browser does not support JavaScript!</noscript>
+		<div id="notify"></div>
+		<div class="warning d-flex align-items-center">
+			<img src="<?php echo base_url('assets/public/dist/images/warning.png'); ?>" alt="" class="img-fluid">
+			<p>Sorry, your browser does not support JavaScript!</p>
+		</div>
+	</div>
+
+	<div class="notify-box">
+		<noscript>Sorry, your browser does not support JavaScript!</noscript>
+		<div id="notify"></div>
+		<div class="info d-flex align-items-center">
+			<img src="<?php echo base_url('assets/public/dist/images/info.png'); ?>" alt="" class="img-fluid">
+			<p>Sorry, your browser does not support JavaScript!</p>
+		</div>
+	</div>
+	<!-- Response message -->
+
+	<!-- /. Alert box -->
+</div>
+
+<div class="container">
+	<div class="card card-login mx-auto">
 		<div class="card-body">
 			<h3>Please login to post your ad</h3>
-			<!-- Alert box -->
-			<div id="messageBox"></div>
-			<!-- /. Alert box -->
+
 
 			<?php echo form_open();?>
 			<div class="form-group mt-4">
