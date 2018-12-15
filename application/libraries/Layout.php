@@ -127,7 +127,7 @@ class Layout
       {
         foreach ($this->js_header as $file)
         {
-          echo '<script type="text/javascript" src="' . base_url($file) . '"></script>' . "\n";
+          echo '<script type="text/javascript" src="' . $file . '"></script>' . "\n";
         }
       }
     }
@@ -136,7 +136,7 @@ class Layout
       {
         foreach ($this->js_footer as $file)
         {
-          echo '<script type="text/javascript" src="' . base_url($file) . '"></script>' . "\n";
+          echo '<script type="text/javascript" src="' . $file . '"></script>' . "\n";
         }
       }
     }
