@@ -1,0 +1,5 @@
+{ 
+    "key": "ctrl+u",  
+    "command": "workbench.action.tasks.runTask", 
+    "args": "gulp"
+}

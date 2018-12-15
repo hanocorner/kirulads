@@ -16,7 +16,7 @@
             <p><a href="#">Post Your Ad Now</a></p>
         </div>
 
-        <div class="col-md-4 social-media">
+        <div class="col-md-4">
             <h3 class="pt-4">Stay safe with kirulads.lk</h3>
             <p><a href="#">Privacy Policy</a></p>
             <p><a href="#">Terms and Conditions</a></p>
