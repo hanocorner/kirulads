@@ -1,0 +1,190 @@
+INFO - 2018-12-19 23:33:38 --> Config Class Initialized
+INFO - 2018-12-19 23:33:38 --> Hooks Class Initialized
+DEBUG - 2018-12-19 23:33:38 --> UTF-8 Support Enabled
+INFO - 2018-12-19 23:33:38 --> Utf8 Class Initialized
+INFO - 2018-12-19 23:33:38 --> URI Class Initialized
+INFO - 2018-12-19 23:33:38 --> Router Class Initialized
+INFO - 2018-12-19 23:33:39 --> Output Class Initialized
+INFO - 2018-12-19 23:33:39 --> Security Class Initialized
+DEBUG - 2018-12-19 23:33:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-12-19 23:33:39 --> Input Class Initialized
+INFO - 2018-12-19 23:33:39 --> Language Class Initialized
+INFO - 2018-12-19 23:33:39 --> Loader Class Initialized
+INFO - 2018-12-19 23:33:39 --> Helper loaded: url_helper
+INFO - 2018-12-19 23:33:39 --> Helper loaded: form_helper
+INFO - 2018-12-19 23:33:39 --> Database Driver Class Initialized
+INFO - 2018-12-19 23:33:39 --> Form Validation Class Initialized
+INFO - 2018-12-19 23:33:39 --> Unit Testing Class Initialized
+INFO - 2018-12-19 23:33:39 --> Session: Class initialized using 'database' driver.
+INFO - 2018-12-19 23:33:39 --> Controller Class Initialized
+INFO - 2018-12-19 23:33:39 --> Helper loaded: date_helper
+DEBUG - 2018-12-19 23:33:39 --> Config file loaded: C:\wamp64\www\kirulads\application\config/settings.php
+INFO - 2018-12-19 23:33:39 --> Config Class Initialized
+INFO - 2018-12-19 23:33:39 --> Hooks Class Initialized
+DEBUG - 2018-12-19 23:33:39 --> UTF-8 Support Enabled
+INFO - 2018-12-19 23:33:39 --> Utf8 Class Initialized
+INFO - 2018-12-19 23:33:39 --> URI Class Initialized
+INFO - 2018-12-19 23:33:39 --> Router Class Initialized
+INFO - 2018-12-19 23:33:40 --> Output Class Initialized
+INFO - 2018-12-19 23:33:40 --> Security Class Initialized
+DEBUG - 2018-12-19 23:33:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-12-19 23:33:40 --> Input Class Initialized
+INFO - 2018-12-19 23:33:40 --> Language Class Initialized
+INFO - 2018-12-19 23:33:40 --> Loader Class Initialized
+INFO - 2018-12-19 23:33:40 --> Helper loaded: url_helper
+INFO - 2018-12-19 23:33:40 --> Helper loaded: form_helper
+INFO - 2018-12-19 23:33:40 --> Database Driver Class Initialized
+INFO - 2018-12-19 23:33:40 --> Form Validation Class Initialized
+INFO - 2018-12-19 23:33:40 --> Unit Testing Class Initialized
+INFO - 2018-12-19 23:33:40 --> Session: Class initialized using 'database' driver.
+INFO - 2018-12-19 23:33:40 --> Controller Class Initialized
+INFO - 2018-12-19 23:33:40 --> Helper loaded: date_helper
+DEBUG - 2018-12-19 23:33:40 --> Config file loaded: C:\wamp64\www\kirulads\application\config/settings.php
+INFO - 2018-12-19 23:33:40 --> Language file loaded: language/english/message_lang.php
+INFO - 2018-12-19 23:33:40 --> File loaded: C:\wamp64\www\kirulads\application\views\public/user/login.php
+INFO - 2018-12-19 23:33:40 --> File loaded: C:\wamp64\www\kirulads\application\views\public/layouts/header.php
+INFO - 2018-12-19 23:33:40 --> File loaded: C:\wamp64\www\kirulads\application\views\public/layouts/footer.php
+INFO - 2018-12-19 23:33:40 --> File loaded: C:\wamp64\www\kirulads\application\views\layouts/index.php
+INFO - 2018-12-19 23:33:40 --> Final output sent to browser
+DEBUG - 2018-12-19 23:33:40 --> Total execution time: 0.5250
+INFO - 2018-12-19 23:33:58 --> Config Class Initialized
+INFO - 2018-12-19 23:33:58 --> Hooks Class Initialized
+DEBUG - 2018-12-19 23:33:58 --> UTF-8 Support Enabled
+INFO - 2018-12-19 23:33:58 --> Utf8 Class Initialized
+INFO - 2018-12-19 23:33:58 --> URI Class Initialized
+INFO - 2018-12-19 23:33:58 --> Router Class Initialized
+INFO - 2018-12-19 23:33:59 --> Output Class Initialized
+INFO - 2018-12-19 23:33:59 --> Security Class Initialized
+DEBUG - 2018-12-19 23:33:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-12-19 23:33:59 --> Input Class Initialized
+INFO - 2018-12-19 23:33:59 --> Language Class Initialized
+INFO - 2018-12-19 23:33:59 --> Loader Class Initialized
+INFO - 2018-12-19 23:33:59 --> Helper loaded: url_helper
+INFO - 2018-12-19 23:33:59 --> Helper loaded: form_helper
+INFO - 2018-12-19 23:33:59 --> Database Driver Class Initialized
+INFO - 2018-12-19 23:33:59 --> Form Validation Class Initialized
+INFO - 2018-12-19 23:33:59 --> Unit Testing Class Initialized
+INFO - 2018-12-19 23:33:59 --> Session: Class initialized using 'database' driver.
+INFO - 2018-12-19 23:33:59 --> Controller Class Initialized
+INFO - 2018-12-19 23:33:59 --> Helper loaded: date_helper
+DEBUG - 2018-12-19 23:33:59 --> Config file loaded: C:\wamp64\www\kirulads\application\config/settings.php
+INFO - 2018-12-19 23:33:59 --> Language file loaded: language/english/message_lang.php
+INFO - 2018-12-19 23:33:59 --> Model "Login_model" initialized
+DEBUG - 2018-12-19 23:33:59 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2018-12-19 23:33:59 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2018-12-19 23:33:59 --> Encryption Class Initialized
+INFO - 2018-12-19 23:33:59 --> User Agent Class Initialized
+INFO - 2018-12-19 23:33:59 --> Encryption: MCrypt cipher RIJNDAEL-128 initialized in CBC mode.
+INFO - 2018-12-19 23:33:59 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2018-12-19 23:33:59 --> Final output sent to browser
+DEBUG - 2018-12-19 23:33:59 --> Total execution time: 0.5390
+ERROR - 2018-12-19 23:33:59 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `kirulads_sessions` SET `timestamp` = 1545242639, `data` = '__ci_last_regenerate|i:1545242619;userid|s:3:\"115\";logged_in|b:1;'
+WHERE `id` = 'f90iprsket7eguqo5cm0n5sicgqebg52'
+INFO - 2018-12-19 23:33:59 --> Language file loaded: language/english/db_lang.php
+ERROR - 2018-12-19 23:33:59 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('254c9e731be5ebeb5bc8490923b3a228') AS ci_session_lock
+ERROR - 2018-12-19 23:33:59 --> Severity: Warning --> Cannot modify header information - headers already sent C:\wamp64\www\kirulads\system\core\Common.php 570
+INFO - 2018-12-19 23:37:39 --> Config Class Initialized
+INFO - 2018-12-19 23:37:39 --> Hooks Class Initialized
+DEBUG - 2018-12-19 23:37:39 --> UTF-8 Support Enabled
+INFO - 2018-12-19 23:37:39 --> Utf8 Class Initialized
+INFO - 2018-12-19 23:37:40 --> URI Class Initialized
+INFO - 2018-12-19 23:37:40 --> Router Class Initialized
+INFO - 2018-12-19 23:37:40 --> Output Class Initialized
+INFO - 2018-12-19 23:37:40 --> Security Class Initialized
+DEBUG - 2018-12-19 23:37:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-12-19 23:37:40 --> Input Class Initialized
+INFO - 2018-12-19 23:37:40 --> Language Class Initialized
+INFO - 2018-12-19 23:37:40 --> Loader Class Initialized
+INFO - 2018-12-19 23:37:40 --> Helper loaded: url_helper
+INFO - 2018-12-19 23:37:40 --> Helper loaded: form_helper
+INFO - 2018-12-19 23:37:40 --> Database Driver Class Initialized
+INFO - 2018-12-19 23:37:40 --> Form Validation Class Initialized
+INFO - 2018-12-19 23:37:40 --> Unit Testing Class Initialized
+INFO - 2018-12-19 23:37:40 --> Session: Class initialized using 'database' driver.
+INFO - 2018-12-19 23:37:40 --> Controller Class Initialized
+INFO - 2018-12-19 23:37:40 --> Helper loaded: date_helper
+DEBUG - 2018-12-19 23:37:40 --> Config file loaded: C:\wamp64\www\kirulads\application\config/settings.php
+INFO - 2018-12-19 23:37:40 --> Language file loaded: language/english/message_lang.php
+INFO - 2018-12-19 23:37:40 --> File loaded: C:\wamp64\www\kirulads\application\views\public/user/login.php
+INFO - 2018-12-19 23:37:40 --> File loaded: C:\wamp64\www\kirulads\application\views\public/layouts/header.php
+INFO - 2018-12-19 23:37:40 --> File loaded: C:\wamp64\www\kirulads\application\views\public/layouts/footer.php
+INFO - 2018-12-19 23:37:40 --> File loaded: C:\wamp64\www\kirulads\application\views\layouts/index.php
+INFO - 2018-12-19 23:37:40 --> Final output sent to browser
+DEBUG - 2018-12-19 23:37:40 --> Total execution time: 0.5387
+INFO - 2018-12-19 23:37:47 --> Config Class Initialized
+INFO - 2018-12-19 23:37:47 --> Hooks Class Initialized
+DEBUG - 2018-12-19 23:37:47 --> UTF-8 Support Enabled
+INFO - 2018-12-19 23:37:47 --> Utf8 Class Initialized
+INFO - 2018-12-19 23:37:47 --> URI Class Initialized
+INFO - 2018-12-19 23:37:47 --> Router Class Initialized
+INFO - 2018-12-19 23:37:47 --> Output Class Initialized
+INFO - 2018-12-19 23:37:47 --> Security Class Initialized
+DEBUG - 2018-12-19 23:37:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-12-19 23:37:47 --> Input Class Initialized
+INFO - 2018-12-19 23:37:47 --> Language Class Initialized
+INFO - 2018-12-19 23:37:47 --> Loader Class Initialized
+INFO - 2018-12-19 23:37:47 --> Helper loaded: url_helper
+INFO - 2018-12-19 23:37:47 --> Helper loaded: form_helper
+INFO - 2018-12-19 23:37:47 --> Database Driver Class Initialized
+INFO - 2018-12-19 23:37:47 --> Form Validation Class Initialized
+INFO - 2018-12-19 23:37:47 --> Unit Testing Class Initialized
+INFO - 2018-12-19 23:37:47 --> Session: Class initialized using 'database' driver.
+INFO - 2018-12-19 23:37:47 --> Controller Class Initialized
+INFO - 2018-12-19 23:37:47 --> Helper loaded: date_helper
+DEBUG - 2018-12-19 23:37:47 --> Config file loaded: C:\wamp64\www\kirulads\application\config/settings.php
+INFO - 2018-12-19 23:37:47 --> Language file loaded: language/english/message_lang.php
+INFO - 2018-12-19 23:37:47 --> File loaded: C:\wamp64\www\kirulads\application\views\public/user/login.php
+INFO - 2018-12-19 23:37:47 --> File loaded: C:\wamp64\www\kirulads\application\views\public/layouts/header.php
+INFO - 2018-12-19 23:37:47 --> File loaded: C:\wamp64\www\kirulads\application\views\public/layouts/footer.php
+INFO - 2018-12-19 23:37:47 --> File loaded: C:\wamp64\www\kirulads\application\views\layouts/index.php
+INFO - 2018-12-19 23:37:47 --> Final output sent to browser
+DEBUG - 2018-12-19 23:37:47 --> Total execution time: 0.6359
+INFO - 2018-12-19 23:39:32 --> Config Class Initialized
+INFO - 2018-12-19 23:39:32 --> Hooks Class Initialized
+DEBUG - 2018-12-19 23:39:32 --> UTF-8 Support Enabled
+INFO - 2018-12-19 23:39:32 --> Utf8 Class Initialized
+INFO - 2018-12-19 23:39:33 --> URI Class Initialized
+INFO - 2018-12-19 23:39:33 --> Router Class Initialized
+INFO - 2018-12-19 23:39:33 --> Output Class Initialized
+INFO - 2018-12-19 23:39:33 --> Security Class Initialized
+DEBUG - 2018-12-19 23:39:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-12-19 23:39:33 --> Input Class Initialized
+INFO - 2018-12-19 23:39:33 --> Language Class Initialized
+INFO - 2018-12-19 23:39:33 --> Loader Class Initialized
+INFO - 2018-12-19 23:39:33 --> Helper loaded: url_helper
+INFO - 2018-12-19 23:39:33 --> Helper loaded: form_helper
+INFO - 2018-12-19 23:39:33 --> Database Driver Class Initialized
+INFO - 2018-12-19 23:39:33 --> Form Validation Class Initialized
+INFO - 2018-12-19 23:39:33 --> Unit Testing Class Initialized
+INFO - 2018-12-19 23:39:33 --> Session: Class initialized using 'database' driver.
+INFO - 2018-12-19 23:39:33 --> Controller Class Initialized
+INFO - 2018-12-19 23:39:33 --> Helper loaded: date_helper
+DEBUG - 2018-12-19 23:39:33 --> Config file loaded: C:\wamp64\www\kirulads\application\config/settings.php
+INFO - 2018-12-19 23:39:33 --> Config Class Initialized
+INFO - 2018-12-19 23:39:33 --> Hooks Class Initialized
+DEBUG - 2018-12-19 23:39:33 --> UTF-8 Support Enabled
+INFO - 2018-12-19 23:39:33 --> Utf8 Class Initialized
+INFO - 2018-12-19 23:39:33 --> URI Class Initialized
+INFO - 2018-12-19 23:39:33 --> Router Class Initialized
+INFO - 2018-12-19 23:39:33 --> Output Class Initialized
+INFO - 2018-12-19 23:39:33 --> Security Class Initialized
+DEBUG - 2018-12-19 23:39:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2018-12-19 23:39:34 --> Input Class Initialized
+INFO - 2018-12-19 23:39:34 --> Language Class Initialized
+INFO - 2018-12-19 23:39:34 --> Loader Class Initialized
+INFO - 2018-12-19 23:39:34 --> Helper loaded: url_helper
+INFO - 2018-12-19 23:39:34 --> Helper loaded: form_helper
+INFO - 2018-12-19 23:39:34 --> Database Driver Class Initialized
+INFO - 2018-12-19 23:39:34 --> Form Validation Class Initialized
+INFO - 2018-12-19 23:39:34 --> Unit Testing Class Initialized
+INFO - 2018-12-19 23:39:34 --> Session: Class initialized using 'database' driver.
+INFO - 2018-12-19 23:39:34 --> Controller Class Initialized
+INFO - 2018-12-19 23:39:34 --> Helper loaded: date_helper
+DEBUG - 2018-12-19 23:39:34 --> Config file loaded: C:\wamp64\www\kirulads\application\config/settings.php
+INFO - 2018-12-19 23:39:34 --> Language file loaded: language/english/message_lang.php
+INFO - 2018-12-19 23:39:34 --> File loaded: C:\wamp64\www\kirulads\application\views\public/user/login.php
+INFO - 2018-12-19 23:39:34 --> File loaded: C:\wamp64\www\kirulads\application\views\public/layouts/header.php
+INFO - 2018-12-19 23:39:34 --> File loaded: C:\wamp64\www\kirulads\application\views\public/layouts/footer.php
+INFO - 2018-12-19 23:39:34 --> File loaded: C:\wamp64\www\kirulads\application\views\layouts/index.php
+INFO - 2018-12-19 23:39:34 --> Final output sent to browser
+DEBUG - 2018-12-19 23:39:34 --> Total execution time: 0.6264

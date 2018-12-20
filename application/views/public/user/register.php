@@ -11,24 +11,25 @@ body {
 			<div id="messageBox"></div>
 			<!-- /. Alert box -->
 
-			<?php echo form_open();?>
+			<?php $attr = array('id'=>'formRegister', 'method'=>'post'); ?>
+			<?php echo form_open('public/user/handler/create-user', $attr);?>
 			<div class="form-group mt-4">
 				<input class="form-control" id="fullName" type="text" name="fullname" autocomplete="off" placeholder="Full Name">
 
             </div>
             <div class="form-group mt-4">
-				<input class="form-control" id="email" type="mail" name="email" autocomplete="off" placeholder="Email address">
+				<input class="form-control" type="email" name="mail" autocomplete="off" placeholder="Email address">
 
             </div>
             <div class="form-group mt-4">
-				<input class="form-control" id="number" type="text" name="number" autocomplete="off" placeholder="Number">
+				<input class="form-control" type="text" name="number" autocomplete="off" placeholder="Number">
 
 			</div>
 			<div class="form-group mt-4">
-				<input class="form-control" id="password" type="password" name="password" autocomplete="off" placeholder="Password">
+				<input class="form-control" type="password" name="password" autocomplete="off" placeholder="Password">
 			</div>
 			
-			<button type="submit" class="btn btn-primary-alt mt-3" id='login'>Register</button>
+			<button type="submit" class="btn btn-primary-alt mt-3" id='register'>Register</button>
 			
 			<?php echo form_close();?>
 		</div>
