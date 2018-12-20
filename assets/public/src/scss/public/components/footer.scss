@@ -29,7 +29,16 @@
     
     .container {
         p {
-            color: $white-color;            
+            color: $white-color;  
+            font-size: 0.8rem;    
+            margin-bottom: 0;       
+        }
+    }
+}
+@media(min-width:768px) {
+    .footer-bottom .container {
+        p {
+            font-size: 1rem;      
         }
     }
 }

@@ -51,6 +51,16 @@ class Guard extends Public_Controller
     }
 
     /*** */
+    public function check_email()
+    {
+        $mail = $this->input->post('mail');
+
+        $result = $this->login->mail_availability($mail);
+
+        //if($result[0]-> 
+    }
+
+    /*** */
     public function password_sequence($password)
     {
         $uppercase = preg_match('@[A-Z]@', $password);
@@ -61,5 +71,6 @@ class Guard extends Public_Controller
         
         return true;
     }
+    
 } 
 ?>

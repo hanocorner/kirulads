@@ -1,5 +1,5 @@
-<footer class="mt-5">
-  <section class="footer-top">
+<footer class="mt-5 py-4">
+  <section class="footer-top py-4">
     <div class="container">
       <div class="row">
         <div class="col-md-4 about-brief">
@@ -26,11 +26,9 @@
       </div>
     </div>
   </section>
-  <section class="footer-bottom">
+  <section class="footer-bottom d-flex align-items-center">
     <div class="container">
-    <div class="pt-3">
-    <p>All Copyrights Reserved 2018 - Design By Smartsoftware.lk</p>
-    </div>
+      <p>All Copyrights Reserved 2018 - Design By Smartsoftware.lk</p>
     </div>
   </section>
 </footer>
