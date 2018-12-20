@@ -26,7 +26,20 @@ class Account extends Public_Controller
      */
     public function logout()
     {
-        //$this->layout->view('public/user/my_account');
+        $session_data = $this->session->all_userdata();
+        foreach ($session_data as $key => $value) 
+        {
+            if($key == 'session_id' || $key == 'logged_in' || $key == 'userid') 
+            {
+                $this->session->unset_userdata($key);
+            }
+        }
+        $this->session->sess_destroy();
+        
+        $this->load->helper('cookie');
+        delete_cookie("k_ads");
+
+        redirect('base');
     }
 
      /**

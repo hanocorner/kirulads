@@ -35,6 +35,17 @@ class Login_model extends CI_Model
         return $query;
     }
 
+    /*** */
+    public function mail_availability($mail)
+    {
+        $this->db->select('email');
+        $this->db->from('tbl_users');
+        $this->db->where('email', $mail);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
 
 }
 ?>
