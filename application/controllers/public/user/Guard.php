@@ -17,46 +17,49 @@ class Guard extends Public_Controller
 
     }
 
+    /*** */
     public function authenticate()
     {
-        $this->_data['email'] = $this->input->post('email');
-        $this->_data['password'] = ($this->input->post('password'));
-        
-
-        $date = mdate($datestring, $time);
+        $this->_data['email'] = $this->input->post('mail');
+        $this->_data['password'] = $this->input->post('password');
 
         if($this->form_validation->run('user_auth') == FALSE) return $this->json_output(false, validation_errors());
 
         // DB stored data 
         $credentials = $this->login->validate_credentials($this->_data);
 
-        if($credentials['user_exists'] == 0)
+        //var_dump($credentials);
+
+        if($credentials[0]->user_exists == 0)
         {
             return $this->json_output(false, $this->lang->line('error_invalid_email'));
         }
 
-        if ($credentials['password'] == $this->encryption->decrypt($this->_data['password'])) 
+        if ($this->_data['password'] == $this->encryption->decrypt($credentials[0]->u_pass)) 
         {
-            $this->_data['date'] = $this->_datetime;
-            $this->_data['ipAddress'] = $this->input->ip_address();
-            $this->_data['os'] = $this->agent->platform();
-            $this->_data['user_agent'] = $this->agent->browser();
-
-            $logged = $this->login->log($this->_data, $credentials['userid']);
-
-            if(!$logged) log_message('error', 'Problem when updating user log data');
-
-            $session_data = array('userid' => $credentials['userid'], 'logged_in' => TRUE);
+            $session_data = array('userid' => $credentials[0]->users_id, 'logged_in' => TRUE);
 
             $this->session->set_userdata($session_data);
 
-            return $this->json_output(true, $this->lang->line('success_auth'), 'public/myaccount');
+            return $this->json_output(true, $this->lang->line('success_auth'), 'user/myAccount');
             
         }
         else 
         {
             return $this->json_output(false, $this->lang->line('error_invalid_pass'));
         }
+    }
+
+    /*** */
+    public function password_sequence($password)
+    {
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number    = preg_match('@[0-9]@', $password);
+
+        if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) return false;
+        
+        return true;
     }
 } 
 ?>

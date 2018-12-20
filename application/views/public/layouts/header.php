@@ -15,13 +15,33 @@
 						<a class="nav-link" href="<?php echo base_url(); ?>">All Ads</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url(); ?>blog">Top Categories</a>
+						<a class="nav-link" href="<?php echo base_url(); ?>">Top Categories</a>
 					</li>
+	
+					<?php
+					if ($this->session->has_userdata('logged_in') || $this->session->logged_in == TRUE):
+					?>
 					<li class="nav-item">
-						<a class="navbtn navbtn-secondry" href="#">
+						<div class="dropdown">
+							<a class="navbtn navbtn-secondry dropdown-toggle" href="<?php echo base_url('user/login'); ?>" data-toggle="dropdown"
+							 aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-user fa-fw" aria-hidden="true"></i>My Account
+							</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="<?php echo base_url('user/account/myAds'); ?>"><i class="fa fa-bullhorn fa-fw"></i>&nbsp; My Ads</a>
+								<a class="dropdown-item" href="<?php echo base_url('user/account/settings'); ?>"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
+								<a class="dropdown-item" href="<?php echo base_url('user/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a>
+								
+							</div>
+						</div>
+					</li>
+					<?php else: ?>
+					<li class="nav-item">
+						<a class="navbtn navbtn-secondry" href="<?php echo base_url('user/login'); ?>">
 							<i class="fa fa-user fa-fw" aria-hidden="true"></i>Login
 						</a>
 					</li>
+					<?php endif; ?>
 					<li class="nav-item active">
 						<a class="navbtn navbtn-primary" href="<?php echo base_url(); ?>">Post your ad</a>
 					</li>

@@ -12,7 +12,7 @@ body {
 			<!-- /. Alert box -->
 
 			<?php $attr = array('id'=>'formRegister', 'method'=>'post'); ?>
-			<?php echo form_open('public/user/create-user', $attr);?>
+			<?php echo form_open('public/user/handler/create-user', $attr);?>
 			<div class="form-group mt-4">
 				<input class="form-control" id="fullName" type="text" name="fullname" autocomplete="off" placeholder="Full Name">
 

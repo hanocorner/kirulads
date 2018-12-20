@@ -21,6 +21,45 @@ class Public_Controller extends AP_Controller
     $this->layout->assets(base_url('assets/public/dist/js/app.js'), 'footer');
   }
 
+  /*** */
+  public function check_login_status()
+  {
+    if ($this->session->has_userdata('logged_in') || $this->session->logged_in == TRUE) 
+    {
+      $this->load->library('user_agent');
+      $this->load->model('public/Login_model', 'login');
+      
+      $this->_data['last_login'] = $this->_datetime;
+      $this->_data['ip_address'] = $this->input->ip_address();
+      $this->_data['platform'] = $this->agent->platform();
+      $this->_data['user_agent'] = $this->agent->browser();
+
+      $logged = $this->login->log($this->_data, $this->session->userid);
+
+      if(!$logged) log_message('error', 'Problem when updating user log data');
+    }
+    else {
+      redirect('user/login');
+    }
+  }
+
+  /**
+   * This check the dropdown list default value
+   *
+   * @param string $post_string value from dropdown
+   * @return bool
+   */
+  public function special_chars($post_string)
+  {
+    if($post_string != null || $post_string != '')
+    {
+      if(!preg_match('/^[a-z0-9 .\-]+$/i', $post_string)) return false;
+      return true;
+    }
+
+    return;
+  }
+  
   /**
    * Regenerate CSRF token
    *

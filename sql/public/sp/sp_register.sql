@@ -3,7 +3,7 @@ CREATE PROCEDURE register_user(
   IN uname varchar(20),
   IN uemail varchar(20),
   IN unumber varchar(20),
-  IN upass varchar(20),
+  IN upass varchar(300),
   IN regDate date,
   IN lastlogin varchar(20),
   IN ipAddress varchar(20),

@@ -11,17 +11,25 @@ class Login_model extends CI_Model
     /** */
     public function validate_credentials($data)
     {
-        $query = $this->db->query('CALL auth_user(
-            "'.$data['email'].'"
-            )');
-      
-        return $query->result_array();
+        $query = $this->db->query('CALL authenticate_user(
+            "'.$data['email'].'",
+            @user_exists,
+            @users_id,
+            @u_pass)'
+        );
+        
+        $result = $query->result();
+
+        $query->next_result(); 
+        $query->free_result();  
+
+        return $result;
     }
 
     /*** */
     public function log($data, $userid)
     {
-        $this->db->where('user_id', $userid);
+        $this->db->where('users_id', $userid);
         $query = $this->db->update('tbl_users_log', $data);
 
         return $query;

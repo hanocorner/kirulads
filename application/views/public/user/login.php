@@ -12,9 +12,10 @@ html,body {
 			<div id="messageBox"></div>
 			<!-- /. Alert box -->
 
-			<?php echo form_open();?>
+			<?php $attr = array('id'=>'formLogin', 'method'=>'post'); ?>
+			<?php echo form_open('public/user/guard/authenticate', $attr);?>
 			<div class="form-group mt-4">
-				<input class="form-control" id="email" type="mail" name="username" autocomplete="off" placeholder="Email address">
+				<input class="form-control" id="email" type="mail" name="mail" autocomplete="off" placeholder="Email address">
 
 			</div>
 			<div class="form-group mt-4">

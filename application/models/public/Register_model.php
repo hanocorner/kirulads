@@ -25,7 +25,7 @@ class Register_model extends CI_Model
             @user_created )'
         );
 
-        return $query->result_array();
+        return $query->result();
 
     }
 

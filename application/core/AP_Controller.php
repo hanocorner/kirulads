@@ -10,13 +10,10 @@ class AP_Controller extends CI_Controller
   protected $_data = array();
 
   /**
-   * Layout setting
-   *
-   * @var array
+   * Application datetime 
+   * 
+   * @var date
    */
-  protected $_layout = null;
-
-  /*** */
   public $_datetime = null;
 
   /**

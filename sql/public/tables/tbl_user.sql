@@ -38,3 +38,17 @@ CREATE TABLE IF NOT EXISTS `tbl_users_log` (
   REFERENCES `tbl_users`(`userid`)
   ON DELETE CASCADE
 )Engine InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table `kirulads sessions`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_sessions` (
+  `id` varchar(128) NOT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+  `data` blob NOT NULL,
+  KEY `kads_sessions_timestamp` (`timestamp`)
+);
+
+ALTER TABLE tbl_sessions ADD PRIMARY KEY (id);
