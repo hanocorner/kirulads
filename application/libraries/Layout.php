@@ -78,7 +78,7 @@ class Layout
   {
     if($position == 'header') $this->scr_header[] = $custom_script;
     
-    if($position == 'footer') $this->scr_header[] = $custom_script;
+    if($position == 'footer') $this->scr_footer[] = $custom_script;
   }
 
   /**

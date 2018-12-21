@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // User Authentication
 $lang['error_invalid_email'] = "Email is incorrect, Please try again";
 $lang['error_invalid_pass'] = "Password is incorrect, Please try again";
+$lang['error_email_exists'] = 'Email already exists, Please try a new one';
 
 /**
  * Application success messages

@@ -19,7 +19,7 @@ body {
             </div>
             <div class="form-group mt-4">
 				<input class="form-control" type="email" name="mail" autocomplete="off" placeholder="Email address">
-
+				<small id="emailExist" class="form-text text-danger"></small>
             </div>
             <div class="form-group mt-4">
 				<input class="form-control" type="text" name="number" autocomplete="off" placeholder="Number">

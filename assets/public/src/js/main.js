@@ -5,6 +5,7 @@ $(function () {
 	var messageBox = $('#messageBox');
 	var formLogin = $('#formLogin');
 	var formReg = $('#formRegister');
+	var maiExist = $('input[name=mail]');
 	/* Functions */
 
 	// Function to create new user
@@ -61,11 +62,49 @@ $(function () {
 		});
 	}
 
+	// Email 
+	var email_availability = function (input) {
+
+		var msg = $('#emailExist');
+		var submitBtn = $('#emailExist');
+		$.ajax({
+			url: baseurl + 'public/user/guard/check-email',
+			type: formReg.attr("method"),
+			dataType: 'JSON',
+			data: {
+				mail:input
+			},
+			success: function (response) {
+				if(response.auth) {
+					maiExist.css('border-color', '#ced4da');
+					msg.html('');
+					submitBtn.prop("disabled", false).css('cursor', 'pointer');
+					return true;
+				}
+				else {
+					maiExist.css('border-color', 'red');
+					msg.html(response.message);
+					submitBtn.prop("disabled",true).css('cursor', 'not-allowed');
+				}				
+			},
+			fail: function () {
+				console.log('Error');
+			}
+		});
+	}
 
 	/* Binding */
 
-    // Create
-    
+	// Create
+	
+	maiExist.on('keyup', function (){
+		var mail = maiExist.val();
+		if(mail.length > 12 ) {
+			email_availability(mail);
+		}
+		
+	});
+
 	formReg.on("submit", function (event) {
 		event.preventDefault();
 		create_user(this);

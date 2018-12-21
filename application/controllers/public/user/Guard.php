@@ -28,8 +28,6 @@ class Guard extends Public_Controller
         // DB stored data 
         $credentials = $this->login->validate_credentials($this->_data);
 
-        //var_dump($credentials);
-
         if($credentials[0]->user_exists == 0)
         {
             return $this->json_output(false, $this->lang->line('error_invalid_email'));
@@ -57,7 +55,12 @@ class Guard extends Public_Controller
 
         $result = $this->login->mail_availability($mail);
 
-        //if($result[0]-> 
+        if($result > 0 )
+        {
+            return $this->json_output(false, $this->lang->line('error_email_exists'));
+        }
+
+        return $this->json_output(true);
     }
 
     /*** */

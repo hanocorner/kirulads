@@ -41,9 +41,9 @@ class Login_model extends CI_Model
         $this->db->select('email');
         $this->db->from('tbl_users');
         $this->db->where('email', $mail);
-        $query = $this->db->get();
+        $this->db->get();
 
-        return $query->result();
+        return $this->db->affected_rows();
     }
 
 

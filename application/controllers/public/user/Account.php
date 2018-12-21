@@ -35,9 +35,6 @@ class Account extends Public_Controller
             }
         }
         $this->session->sess_destroy();
-        
-        $this->load->helper('cookie');
-        delete_cookie("k_ads");
 
         redirect('base');
     }
