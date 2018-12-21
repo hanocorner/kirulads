@@ -6,7 +6,36 @@ $(function () {
 	var formLogin = $('#formLogin');
 	var formReg = $('#formRegister');
 	var maiExist = $('input[name=mail]');
+
+
 	/* Functions */
+	
+	//
+	var message = function (msg, type)
+	{
+		var box;
+		switch (type) {
+			case 'error':
+				return box = '<div class="notify-box">'+
+					'<noscript>Sorry, your browser does not support JavaScript!</noscript>'+
+					'<div class="error d-flex align-items-center">'+
+					'<img src="'+baseurl+'assets/public/dist/images/error.png" alt="Error-Image" class="img-fluid">'+
+					'<div>'+msg+'<div>'+
+					'</div>'+
+					'</div>';
+			case 'success':
+				return box = '<div class="notify-box">'+
+					'<noscript>Sorry, your browser does not support JavaScript!</noscript>'+
+					'<div class="success d-flex align-items-center">'+
+					'<img src="'+baseurl+'assets/public/dist/images/success.png" alt="Success-Image" class="img-fluid">'+
+					'<p>'+msg+'</p>'+
+					'</div>'+
+					'</div>';
+		
+			default:
+				return 'Unable to display Message';
+		}
+	}
 
 	// Function to create new user
 	var create_user = function (fm) {
@@ -26,7 +55,7 @@ $(function () {
 				}
 				else {
 					$('input[name=csrf_test_name]').val(response.csrf);
-					messageBox.html(response.message);
+					messageBox.html(message(response.message, 'error'));
 				}	
 			},
 			fail: function () {

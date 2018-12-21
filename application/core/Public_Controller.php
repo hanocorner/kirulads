@@ -21,6 +21,7 @@ class Public_Controller extends AP_Controller
     $custom_script = 'var baseurl = "'.base_url().'";';
     $this->layout->script($custom_script, 'header');
     $this->layout->assets(base_url('assets/public/dist/js/app.js'), 'footer');
+    
   }
 
   /*** */

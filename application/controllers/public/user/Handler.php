@@ -2,6 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Handler extends Public_Controller 
 {
+    /*** */
+    protected $_mail = array();
+
     /** */
 	public function  __construct()
 	{
@@ -9,7 +12,7 @@ class Handler extends Public_Controller
         
         $this->lang->load('message_lang', 'english');
 
-        if ($this->session->has_userdata('logged_in') || $this->session->logged_in == TRUE)  
+        if ($this->session->has_userdata('logged_in') && $this->session->logged_in == TRUE)  
         {
             redirect('user/myAccount');
         }
@@ -55,7 +58,7 @@ class Handler extends Public_Controller
 
         $this->encryption->initialize(array('driver' => 'mcrypt'));
 
-        if($this->form_validation->run('user_register') == FALSE) return $this->json_output(false, validation_errors());
+        if($this->form_validation->run('user_register') == FALSE) return $this->json_output(false, validation_errors('<li>','</li>'));
 
         $password = $this->input->post('password');
 
@@ -71,8 +74,34 @@ class Handler extends Public_Controller
 
         $user = $this->register->create($this->_data);
 
+        $this->registration_mail($this->_data['email']);
+
         if($user[0]->user_created == 1) return $this->json_output(true, $this->lang->line('success_register'), 'user/myAccount');
 
+    }
+
+    /**
+     *  Registration mail
+     * 
+     */
+    public function registration_mail($address)
+    {   
+        $this->load->library('email');
+
+        $this->email->from('ownwork101@gmail.com', 'no-reply');
+        $this->email->to($address);
+
+        $this->email->subject('Test Mail');
+        $this->email->message('Testing the email class.');
+
+        $this->email->set_newline("\r\n");
+
+        if ( ! $this->email->send())    
+        {
+          return $this->json_output(false, $this->email->print_debugger());
+        }
+
+        //$this->email->print_debugger();
     }
 
     /** */

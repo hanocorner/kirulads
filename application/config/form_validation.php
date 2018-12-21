@@ -1,4 +1,7 @@
 <?php
+$config['error_prefix'] = '<ul>';
+$config['error_suffix'] = '</ul>';
+
 $config = array(
         'user_auth' => array(
             array(
@@ -9,8 +12,8 @@ $config = array(
             array(
                 'field'=> 'password',
                 'label' => 'Password',
-                'rules' => 'trim|required|callback_password_sequence',
-                'errors' => array('password_sequence' => 'Password did not match'),
+                'rules' => 'trim|required'
+                //'errors' => array('password_sequence' => 'Password did not match'),
             )
         ),
         'user_register'=> array(
@@ -33,8 +36,8 @@ $config = array(
             array(
                 'field'=> 'password',
                 'label' => 'Password',
-                'rules' => 'trim|required|callback_password_sequence',
-                'errors' => array('password_sequence' => 'Password did not match'),
+                'rules' => 'trim|required'
+                //'errors' => array('password_sequence' => 'Password did not match'),
             )
         )
 );
