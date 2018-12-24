@@ -2,6 +2,7 @@
 	body {
         background-color: #ececec80;
     }
+
 </style>
 <div class="container">
 	<div class="d-flex flex-row flex-wrap justify-content-center">

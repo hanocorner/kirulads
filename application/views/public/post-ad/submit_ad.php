@@ -1,5 +1,7 @@
 <style>
+	html,
 	body {
+		min-height:100%;
 		background-color: #ececec80;
 	}
 

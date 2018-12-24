@@ -1,11 +1,16 @@
 <style>
 	html,body {
-	height: 100%;
-  	background-color: #ececec80;
-}
+		display:flex;
+		flex-direction: column;
+		height: 100%;
+  		background-color: #ececec80;
+	}
+	.flex-length {
+		flex:1;
+	}
 </style>
 
-<div class="container">
+<div class="container flex-length">
 	<div class="card card-login mx-auto">
 		<div class="card-body">
 			<h3>Please login to post your ad</h3>
