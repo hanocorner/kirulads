@@ -10,7 +10,7 @@
 CREATE TABLE IF NOT EXISTS `tbl_users` (
   `userid` int(11) NOT NULL AUTO_INCREMENT,
   `fullname` varchar(80) DEFAULT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(80) NOT NULL,
   `phone_number` int(10) NOT NULL,
   `u_password` varchar(300) NOT NULL, 
   `registered_date` date NOT NULL,

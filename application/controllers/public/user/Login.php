@@ -1,12 +1,17 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Guard extends Public_Controller 
+class Login extends Public_Controller 
 {
     /** */
 	public function  __construct()
 	{
         parent::__construct();
 
+        if ($this->session->has_userdata('logged_in') && $this->session->logged_in == TRUE) 
+        {
+            redirect('user/myAccount');
+        }
+        
         $this->lang->load('message_lang', 'english');
 
         $this->load->model('public/Login_model', 'login');
@@ -14,7 +19,14 @@ class Guard extends Public_Controller
         $this->load->library(array('encryption', 'user_agent'));
 
         $this->encryption->initialize(array('driver' => 'mcrypt'));
+        
+    }
 
+    /** */
+	public function index()
+	{	
+        $this->layout->title = 'Account log in - kirulads.lk';  
+        $this->layout->view('public/user/login');
     }
 
     /*** */
@@ -48,32 +60,5 @@ class Guard extends Public_Controller
         }
     }
 
-    /*** */
-    public function check_email()
-    {
-        $mail = $this->input->post('mail');
-
-        $result = $this->login->mail_availability($mail);
-
-        if($result > 0 )
-        {
-            return $this->json_output(false, $this->lang->line('error_email_exists'));
-        }
-
-        return $this->json_output(true);
-    }
-
-    /*** */
-    public function password_sequence($password)
-    {
-        $uppercase = preg_match('@[A-Z]@', $password);
-        $lowercase = preg_match('@[a-z]@', $password);
-        $number    = preg_match('@[0-9]@', $password);
-
-        if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) return false;
-        
-        return true;
-    }
-    
-} 
+}
 ?>

@@ -17,6 +17,6 @@ $lang['error_email_exists'] = 'Email already exists, Please try a new one';
 $lang['success_auth'] = "Login successful, Redirecting...";
 
 // User Registration
-$lang['success_register'] = "Registeration successful, Redirecting to your account..";
+$lang['success_register'] = "Registeration successful, Redirecting...";
 
 ?>

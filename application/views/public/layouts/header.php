@@ -30,7 +30,7 @@
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="<?php echo base_url('user/account/myAds'); ?>"><i class="fa fa-bullhorn fa-fw"></i>&nbsp; My Ads</a>
 								<a class="dropdown-item" href="<?php echo base_url('user/account/settings'); ?>"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
-								<a class="dropdown-item" href="<?php echo base_url('user/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a>
+								<a class="dropdown-item" href="<?php echo base_url('public/user/account/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a>
 								
 							</div>
 						</div>

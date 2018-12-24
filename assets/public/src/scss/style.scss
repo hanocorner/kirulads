@@ -28,6 +28,7 @@
 // Default scss
 @import "utilities/_variables.scss";
 @import "utilities/_elements.scss";
+@import "utilities/_mixins.scss";
 
 // Header scss
 @import "public/components/header.scss";
@@ -35,5 +36,7 @@
 @import "public/components/notify.scss";
 
 // Custom scss
-@import "public/login.scss";
-@import "public/profile.scss";
+@import "public/themes/login.scss";
+@import "public/themes/profile.scss";
+@import "public/themes/category.scss";
+@import "public/themes/category.scss";

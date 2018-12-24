@@ -24,15 +24,6 @@ class Base extends Public_Controller {
 	}
 	public function index()
 	{	
-		
-		$this->benchmark->mark('code_start');
-
-		$this->layout->view('welcome_message', $data = array());
-		$this->benchmark->mark('code_end');
-
-		//echo $this->benchmark->elapsed_time('code_start', 'code_end');
-
-		//echo $this->benchmark->memory_usage();
-		//$this->output->enable_profiler(TRUE);
+		$this->layout->view('public/user/login');
 	}
 }

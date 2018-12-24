@@ -27,7 +27,7 @@ class AP_Controller extends CI_Controller
 
     $this->load->helper('date');
     $this->config->load('settings');
-    $this->_datetime = mdate($this->config->item('date_format'), $this->config->item('time'));
+    $this->_datetime = mdate($this->config->item('date_format'), time());
   }
 
   /**

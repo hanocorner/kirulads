@@ -1,15 +1,16 @@
 DELIMITER //
 CREATE PROCEDURE register_user(
-  IN uname varchar(20),
-  IN uemail varchar(20),
-  IN unumber varchar(20),
+  IN uname varchar(80),
+  IN uemail varchar(80),
+  IN unumber varchar(11),
   IN upass varchar(300),
   IN regDate date,
   IN lastlogin varchar(20),
   IN ipAddress varchar(20),
   IN os varchar(20),
   IN useragent varchar(20),
-  OUT user_created INT
+  OUT user_created INT,
+  OUT users_id INT
   )
 
   BEGIN
@@ -17,6 +18,7 @@ CREATE PROCEDURE register_user(
     INSERT INTO tbl_users(fullname, email, phone_number, u_password, registered_date) VALUES(uname, uemail, unumber, upass, regDate);
 
     SET rowcount = ROW_COUNT();
+    SET users_id = LAST_INSERT_ID();
 
     IF 
         (rowcount = 1)
@@ -27,7 +29,7 @@ CREATE PROCEDURE register_user(
         SET user_created = 0;
     END IF;
 
-    SELECT user_created;
+    SELECT user_created, users_id;
 
 	END //
 DELIMITER ;

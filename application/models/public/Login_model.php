@@ -46,6 +46,5 @@ class Login_model extends CI_Model
         return $this->db->affected_rows();
     }
 
-
 }
 ?>

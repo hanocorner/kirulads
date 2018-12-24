@@ -1,7 +1,4 @@
 <?php
-$config['error_prefix'] = '<ul>';
-$config['error_suffix'] = '</ul>';
-
 $config = array(
         'user_auth' => array(
             array(
@@ -24,7 +21,7 @@ $config = array(
                 'errors' => array('special_chars' => 'Invalid chars'),
             ),
             array(
-                'field'=> 'mail',
+                'field'=> 'usermail',
                 'label' => 'Email',
                 'rules' => 'trim|required|valid_email'
             ),

@@ -14,3 +14,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['config'] = TRUE;
 $config['queries'] = TRUE;
+$config['controller_info'] = TRUE;
+$config['http_headers'] = TRUE;
+$config['memory_usage'] = TRUE;
+$config['post'] = TRUE;
+$config['session_data'] = TRUE;

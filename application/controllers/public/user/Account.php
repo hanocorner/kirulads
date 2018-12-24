@@ -8,9 +8,6 @@ class Account extends Public_Controller
         parent::__construct();
 
         $this->check_login_status();
-
-        //$this->lang->load('message_lang', 'english');
-
     }
 
     /**

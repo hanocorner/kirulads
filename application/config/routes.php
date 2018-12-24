@@ -51,19 +51,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Base';
 
-// Public Routes 
-$route['user/login'] = 'public/user/handler/login';
-$route['user/register'] = 'public/user/handler/register';
-$route['user/myAccount'] = 'public/user/account';
-$route['user/logout'] = 'public/user/account/logout';
+/**
+ * Public Routes 
+ * 
+ */
+$route['user/login'] = 'public/user/login/index';
+$route['user/register'] = 'public/user/register/index';
+$route['user/myAccount'] = 'public/user/account/index';
+
 $route['user/account/settings'] = 'public/user/account/settings';
 $route['user/forgotPassword'] = 'public/user/handler/forgot_password';
 $route['user/resetPassword'] = 'public/user/handler/reset_password';
 $route['user/reset'] = 'public/user/handler/reset';
 $route['user/accountSettings'] = 'public/user/handler/account_settings';
 
+// Post Ad Routes
+//$route['post-ad'] = 'public/post-ad/ad_handler/index';
+$route['post-ad/category'] = 'public/post-ad/ad_handler/category';
+$route['post-ad/advert'] = 'public/post-ad/ad_handler/advert';
+
 // 404 Page 
-$route['404_override'] = '';
+$route['404_override'] = 'error';
 
 // URL dashes
 $route['translate_uri_dashes'] = TRUE;

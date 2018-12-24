@@ -1,4 +1,4 @@
-<footer class="mt-5 py-4">
+<footer class="mt-5 pt-4 d-footer">
   <section class="footer-top py-4">
     <div class="container">
       <div class="row">

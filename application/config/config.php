@@ -231,7 +231,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 4;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -387,7 +387,7 @@ $config['encryption_key'] = 'abcdefghijklmnopqrs12345678';
 */
 $config['sess_driver'] = 'database';
 $config['sess_cookie_name'] = 'k_ads';
-$config['sess_expiration'] = 7200;
+$config['sess_expiration'] = 0;
 $config['sess_save_path'] = 'tbl_sessions';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
