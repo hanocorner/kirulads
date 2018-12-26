@@ -32,5 +32,11 @@ class AD_Handler extends Public_Controller
         $this->layout->title = 'Posting an ad';
         $this->layout->view('public/post-ad/submit_ad');
     }
+
+    public function ad_complete()
+    {
+        $this->layout->title = 'Posting an ad';
+        $this->layout->view('public/post-ad/ad_complete');
+    }
 }
 ?>

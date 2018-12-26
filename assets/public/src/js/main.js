@@ -135,6 +135,60 @@ $(function () {
 		});
 	}
 
+	var imageReader = function(input) {
+		var file = input.files[0];
+		// Message array
+		var message = new Array();
+		message['allowedTypes'] = "Not a valid image format, Please upload following file type jpg|jpeg|png|gif ";
+		message['height'] = "Height is too large, Please upload an image less than 1024px";
+		message['width'] = "Width is too large, Please upload an image less than 1024px";
+		message['fileSize'] = "File size is too large, Please upload an image less than 2MB";
+	
+		// Regular Expression to validate image allowed types
+		var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.png|.gif)$");
+		if (!regex.test(input.value.toLowerCase())) {
+		  alert(message['allowedTypes']);
+		  return false;
+		}
+		// File size MAX 2MB
+		if (file.size > 2000000) {
+		  alert(message['fileSize']);
+		  return false;
+		}
+		if (input.files && input.files[0]) {
+		  var reader = new FileReader();
+	
+		  reader.onload = function(e) {
+			//Initiate the JavaScript Image object.
+			var image = new Image();
+	
+			//Set the Base64 string return from FileReader as source.
+			image.src = e.target.result;
+	
+			//Validate the File Height and Width.
+			image.onload = function() {
+			  var height = this.height;
+			  var width = this.width;
+			  if (width > 1024) {
+				alert(message['width']);
+				return false;
+			  }
+			  else if (height > 1024) {
+				alert(message['height']);
+				return false;
+			  }
+			  $('#imageAd').attr('src', e.target.result);
+			  return true;
+			};
+		  }
+		  reader.readAsDataURL(input.files[0]);
+		}
+		$('#removeImg').on('click', function() {
+		  $('#imageAd').attr('src', baseurl+'assets/public/dist/images/no-image.png');
+		  $("#myAdImg").val('');
+		});
+	  };
+
 	/* Binding */
 
 	// Create
@@ -157,4 +211,7 @@ $(function () {
 		login(this);
 	});
 
+	$("#myAdImg").change(function(){
+		imageReader(this);
+	});
 }); // End of document ready

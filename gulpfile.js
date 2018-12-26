@@ -38,7 +38,7 @@ gulp.task('connect-sync', function() {
     });
   });
  
-  gulp.watch('application/views/public/user/*.php').on('change', function () {
+  gulp.watch('application/views/public/**/*.php').on('change', function () {
     browserSync.reload();
   });
 });

@@ -1,3 +1,15 @@
+html, 
+body {
+    display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: $body-gray;
+}
+
+.flex-length {
+    flex: 1;
+}
+
 .btn-primary-alt {
     background-color: $primary-shade-2;
     border-color: $primary-blue;

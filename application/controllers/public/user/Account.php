@@ -44,6 +44,14 @@ class Account extends Public_Controller
         $this->layout->view('public/user/account_settings');
     }
 
+    /**
+     * 
+     */
+    public function my_ads()
+    {
+        $this->layout->view('public/user/my_ads');
+    }
+
 
 }
 ?>
