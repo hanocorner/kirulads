@@ -2,6 +2,7 @@ $(function () {
 
 	/* Varibales */
 	var formData = null;
+	var message = new Array();
 	var messageBox = $('#messageBox');
 	var formLogin = $('#formLogin');
 	var formReg = $('#formRegister');
@@ -138,7 +139,6 @@ $(function () {
 	var imageReader = function(input) {
 		var file = input.files[0];
 		// Message array
-		var message = new Array();
 		message['allowedTypes'] = "Not a valid image format, Please upload following file type jpg|jpeg|png|gif ";
 		message['height'] = "Height is too large, Please upload an image less than 1024px";
 		message['width'] = "Width is too large, Please upload an image less than 1024px";

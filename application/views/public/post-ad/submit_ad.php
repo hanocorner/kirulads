@@ -12,6 +12,13 @@
 						<option>Select a location</option>
 					</select>
 				</div>
+
+				<div class="form-group col">
+					<select class="form-control form-control-sm">
+						<option>Select a location</option>
+					</select>
+				</div>
+				
 			</div>
 
 			<h5>Ad Information</h5>
@@ -66,7 +73,7 @@
 					</div>
 					<div class="img-controls">
 						<div class="add-image">
-							<input type="file" class="inputfile" id="myAdImg">
+							<input type="file" class="inputfile" id="myAdImg" name="myadImg[]">
 							<label for="add-image">Add Image</label>
 						</div>
 						<button type="button" class="btn btn-del-img btn-outline-danger" id="removeImg">Remove</button>
@@ -76,55 +83,30 @@
 
 				<div class="my-ads-image">
 					<div class="image">
-						<img src="<?php echo base_url('assets/public/dist/images/no-image.png') ?>" class="img-fluid" alt="">
+						<img src="<?php echo base_url('assets/public/dist/images/no-image.png') ?>" class="img-fluid" alt="" id="imageAd1" width="200px" heigh="150px">
 					</div>
 					<div class="img-controls">
 						<div class="add-image">
-							<input type="file" class="inputfile">
+							<input type="file" class="inputfile" id="myAdImg1" name="myadImg[]">
 							<label for="add-image">Add Image</label>
 						</div>
-						<button type="button" class="btn btn-del-img btn-outline-danger">Remove</button>
+						<button type="button" class="btn btn-del-img btn-outline-danger" id="removeImg1">Remove</button>
 					</div>
 				</div>
 
 				<div class="my-ads-image">
 					<div class="image">
-						<img src="<?php echo base_url('assets/public/dist/images/no-image.png') ?>" class="img-fluid" alt="">
+						<img src="<?php echo base_url('assets/public/dist/images/no-image.png') ?>" class="img-fluid" alt="" id="imageAd2" width="200px" heigh="150px">
 					</div>
 					<div class="img-controls">
 						<div class="add-image">
-							<input type="file" class="inputfile">
+							<input type="file" class="inputfile" id="myAdImg2" name="myadImg[]">
 							<label for="add-image">Add Image</label>
 						</div>
-						<button type="button" class="btn btn-del-img btn-outline-danger">Remove</button>
+						<button type="button" class="btn btn-del-img btn-outline-danger" id="removeImg2">Remove</button>
 					</div>
 				</div>
 
-				<div class="my-ads-image">
-					<div class="image">
-						<img src="<?php echo base_url('assets/public/dist/images/no-image.png') ?>" class="img-fluid" alt="">
-					</div>
-					<div class="img-controls">
-						<div class="add-image">
-							<input type="file" class="inputfile">
-							<label for="add-image">Add Image</label>
-						</div>
-						<button type="button" class="btn btn-del-img btn-outline-danger">Remove</button>
-					</div>
-				</div>
-
-				<div class="my-ads-image">
-					<div class="image">
-						<img src="<?php echo base_url('assets/public/dist/images/no-image.png') ?>" class="img-fluid" alt="">
-					</div>
-					<div class="img-controls">
-						<div class="add-image">
-							<input type="file" class="inputfile">
-							<label for="add-image">Add Image</label>
-						</div>
-						<button type="button" class="btn btn-del-img btn-outline-danger">Remove</button>
-					</div>
-				</div>
 			</div>
 
 
