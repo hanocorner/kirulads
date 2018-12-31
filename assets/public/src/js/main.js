@@ -8,6 +8,7 @@ $(function () {
 	var formReg = $('#formRegister');
 	var formSubmitAd = $('#formSubmitAd');
 	var maiExist = $('input[name=usermail]');
+	var spinner = $('#spinner');
 
 
 	/* Functions */
@@ -137,6 +138,7 @@ $(function () {
 		});
 	}
 
+	// Submit Ad Image 
 	var imageReader = function (input) {
 		var file = input.files[0];
 		// Message array
@@ -219,6 +221,25 @@ $(function () {
 		});
 	}
 
+	// 
+	var renderAllCategories = function () {
+
+		$.ajax({
+			url: baseurl + 'public/post-ad/ad_handler/prepare-categories',
+			type: 'GET',
+			dataType: 'HTML',
+			beforeSend: function () {
+				spinner.show();
+			},
+			success: function (data) {
+				spinner.hide();
+				$('#loadCategories').html(data);
+			},
+			fail: function () {
+				console.log('Error');
+			}
+		});
+	}
 	/* Binding */
 
 	// Create
@@ -250,5 +271,7 @@ $(function () {
 	$("#myAdImg").change(function () {
 		imageReader(this);
 	});
+
+	renderAllCategories();
 
 }); // End of document ready

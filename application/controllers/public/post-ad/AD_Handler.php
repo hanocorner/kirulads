@@ -23,8 +23,30 @@ class AD_Handler extends Public_Controller
      */
     public function category()
     {
+        
+
         $this->layout->title = 'Choose category - Posting an ad';
         $this->layout->view('public/post-ad/category');
+    }
+
+    /*** */
+    public function prepare_categories()
+    {
+        $html = '';
+        $this->load->model('public/post_ad/category_model');
+        $results = $this->category_model->fetch_all_categories();
+
+        $html .= '<div class="d-flex flex-row flex-wrap justify-content-center">';
+        foreach ($results as $result) 
+        {
+            $html .= '<div class="card category-card" data-toggle="modal" data-target="#exampleModal" data-id="'.$result['id'].'">';
+            $html .= '<img src="'.base_url('assets/public/dist/images/category/'.$result['image'].' ').'" class="img-fluid" alt="'.$result['name'].'">';
+            $html .= '<p class="text-center mt-3 mb-0">'.$result['name'].'</p>';
+            $html .= '</div>';
+        }
+        $html .= '</div>';
+
+        echo $html; 
     }
 
     /**
