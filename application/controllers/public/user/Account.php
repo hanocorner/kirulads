@@ -8,6 +8,8 @@ class Account extends Public_Controller
         parent::__construct();
 
         $this->check_login_status();
+
+        $this->load->model('public/account_model', 'acc');
     }
 
     /**
@@ -15,7 +17,8 @@ class Account extends Public_Controller
      */
     public function index()
     {
-        $this->layout->view('public/user/my_account');
+        $this->_data['results'] = $this->acc->fetch_myads($this->session->userid);
+        $this->layout->view('public/user/my_account', $this->_data);
     }
 
      /**
@@ -49,7 +52,8 @@ class Account extends Public_Controller
      */
     public function my_ads()
     {
-        $this->layout->view('public/user/my_ads');
+        $this->_data['results'] = $this->acc->fetch_myads($this->session->userid);
+        $this->layout->view('public/user/my_ads', $this->_data);
     }
 
 

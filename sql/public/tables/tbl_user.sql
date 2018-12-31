@@ -17,10 +17,14 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
 -- Let reportid starts with 100
 --
 ALTER TABLE tbl_users AUTO_INCREMENT = 100;
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `Users_log`
@@ -39,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `tbl_users_log` (
   ON DELETE CASCADE
 )Engine InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 --
 -- Table structure for table `kirulads sessions`
 --

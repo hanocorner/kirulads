@@ -1,6 +1,4 @@
 // Submit ad
-
-
 .my-ads-image {
 	display: flex;
     flex-direction: row;
@@ -51,6 +49,29 @@
         }
 	}
 
+}
+.post-ad-card .card-body {
+	.section-select {
+		border: 1px solid $gray-shade-1;
+		border-radius: 5px;
+		padding: 10px;
+		max-width: 100%;
+
+		@include mq(768px) {
+			max-width: 50%;
+		}
+
+		p {
+			color:#858585;
+			margin-bottom: 1px;
+		}
+	}
+	.contact-data {
+		h6 {
+			color: $primary-shade-1;
+			font-weight: 500;
+		}
+	}
 }
 
 // When user have successfully completed ad posting

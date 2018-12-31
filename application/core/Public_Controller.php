@@ -40,7 +40,8 @@ class Public_Controller extends AP_Controller
       $this->_data['user_agent'] = $this->agent->browser();
 
       $logged = $this->login->log($this->_data, $this->session->userid);
-
+      $this->_data = array();
+      
       if(!$logged) log_message('error', 'Problem when updating user log data');
     }
     else {

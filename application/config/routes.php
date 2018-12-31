@@ -60,16 +60,15 @@ $route['user/register'] = 'public/user/register/index';
 $route['user/myAccount'] = 'public/user/account/index';
 
 $route['user/account/settings'] = 'public/user/account/settings';
-$route['user/myAds'] = 'public/user/account/my_ads';
 $route['user/forgotPassword'] = 'public/user/handler/forgot_password';
 $route['user/resetPassword'] = 'public/user/handler/reset_password';
 $route['user/reset'] = 'public/user/handler/reset';
 $route['user/accountSettings'] = 'public/user/handler/account_settings';
 
 // Post Ad Routes
-//$route['post-ad'] = 'public/post-ad/ad_handler/index';
 $route['post-ad/category'] = 'public/post-ad/ad_handler/category';
-$route['post-ad/advert'] = 'public/post-ad/ad_handler/advert';
+$route['post-ad/category/(:num)/location'] = 'public/post-ad/ad_handler/location';
+$route['post-ad/details/category/(:num)/location/(:num)'] = 'public/post-ad/ad_handler/details';
 $route['post-ad/complete'] = 'public/post-ad/ad_handler/ad_complete';
 
 // 404 Page 

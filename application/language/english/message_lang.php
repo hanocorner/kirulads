@@ -19,4 +19,8 @@ $lang['success_auth'] = "Login successful, Redirecting...";
 // User Registration
 $lang['success_register'] = "Registeration successful, Redirecting...";
 
+
+// Submit Ad
+$lang['error_db_submit'] = "Problem when inserting data to DB" ;
+$lang['success_submit_ad'] = "Problem when inserting data to DB" ;
 ?>

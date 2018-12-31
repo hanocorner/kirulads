@@ -1,9 +1,3 @@
-<style>
-	body {
-        background-color: #ececec80;
-    }
-
-</style>
 <div class="container">
 	<div class="d-flex flex-row flex-wrap justify-content-center">
         <div class="card category-card" data-toggle="modal" data-target="#exampleModal">
@@ -11,7 +5,7 @@
             <p class="text-center mt-3 mb-0">Electronics</p>
         </div>
 
-        <div class="card category-card">
+        <div class="card category-card" data-toggle="modal" data-target="#exampleModal">
             <img src="<?php echo base_url('assets/public/dist/images/category/vehicles.png'); ?>" class="img-fluid" alt="" >
             <p class="text-center mt-3 mb-0">Vehicles</p>
         </div>
@@ -61,7 +55,7 @@
       <div class="modal-body">
         <div class="d-flex flex-row flex-wrap">
 
-            <a href="<?php echo base_url('post-ad/advert?category=elc&sub=mob'); ?>">Mobile Phone Accessories</a>
+            <a href="<?php echo base_url('post-ad/category/5/location'); ?>">Mobile Phone Accessories</a>
             <a href="#">Mobile Phone Accessories</a>
             <a href="#">Mobile Phone Accessories</a>
             <a href="#">Mobile Phone Accessories</a>

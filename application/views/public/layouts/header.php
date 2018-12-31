@@ -28,7 +28,7 @@
 								<i class="fa fa-user fa-fw" aria-hidden="true"></i>My Account
 							</a>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="<?php echo base_url('user/account/myAds'); ?>"><i class="fa fa-bullhorn fa-fw"></i>&nbsp; My Ads</a>
+								<a class="dropdown-item" href="<?php echo base_url('user/myAccount'); ?>"><i class="fa fa-bullhorn fa-fw"></i>&nbsp; My Ads</a>
 								<a class="dropdown-item" href="<?php echo base_url('user/account/settings'); ?>"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
 								<a class="dropdown-item" href="<?php echo base_url('public/user/account/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a>
 								
@@ -43,7 +43,7 @@
 					</li>
 					<?php endif; ?>
 					<li class="nav-item active">
-						<a class="navbtn navbtn-primary" href="<?php echo base_url(); ?>">Post your ad</a>
+						<a class="navbtn navbtn-primary" href="<?php echo base_url('post-ad/category'); ?>">Post your ad</a>
 					</li>
 				</ul>
 			</div>
