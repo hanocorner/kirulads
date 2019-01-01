@@ -8,7 +8,8 @@ $(function () {
 	var formReg = $('#formRegister');
 	var formSubmitAd = $('#formSubmitAd');
 	var maiExist = $('input[name=usermail]');
-	var spinner = $('#spinner');
+	var spinnerSelector = $('#spinner');
+	var spinner = '<i class="fa fa-spinner fa-spin fa-lg fa-fw d-block mx-auto text-primary mt-3"></i><span class="sr-only">Loading...</span>';
 
 
 	/* Functions */
@@ -47,6 +48,7 @@ $(function () {
 				return 'Unable to display Message';
 		}
 	}
+
 
 	// Function to create new user
 	var create_user = function (fm) {
@@ -221,7 +223,7 @@ $(function () {
 		});
 	}
 
-	// 
+	// Render Main Categories
 	var renderAllCategories = function () {
 
 		$.ajax({
@@ -229,17 +231,89 @@ $(function () {
 			type: 'GET',
 			dataType: 'HTML',
 			beforeSend: function () {
-				spinner.show();
+				spinnerSelector.html(spinner);
 			},
 			success: function (data) {
-				spinner.hide();
+				spinnerSelector.html('');
 				$('#loadCategories').html(data);
 			},
 			fail: function () {
 				console.log('Error');
 			}
 		});
-	}
+	};
+
+	var renderSubCategories = function (id) {
+
+		$('#categoryModal').modal('toggle');
+
+		$.ajax({
+			url: baseurl + 'public/post-ad/ad_handler/fetch_modal',
+			type: 'GET',
+			dataType: 'HTML',
+			data: { categoryid: id },
+			beforeSend: function () {
+				$('#modalSpinner').html(spinner);
+			},
+			success: function (data) {
+				$('#modalSpinner').html('');
+				$('#loadSubCategories').html(data);
+			},
+			fail: function () {
+				console.log('Error');
+			}
+		});
+
+		$('#categoryModal').on('hidden.bs.modal', function () {
+			$('#loadSubCategories').html('');
+		});
+	};
+
+	//
+	var renderAllLocations = function () {
+
+		$.ajax({
+			url: baseurl + 'public/post-ad/ad_handler/prepare-locations',
+			type: 'GET',
+			dataType: 'HTML',
+			beforeSend: function () {
+				$('#modalSpinner').html(spinner);
+			},
+			success: function (data) {
+				$('#modalSpinner').html('');
+				$('#loadLocations').html(data);
+			},
+			fail: function () {
+				console.log('Error');
+			}
+		});
+	};
+
+	var renderSubLocations = function (id) {
+
+		$('#locationModal').modal('toggle');
+
+		$.ajax({
+			url: baseurl + 'public/post-ad/ad_handler/fetch_sub_location',
+			type: 'GET',
+			dataType: 'HTML',
+			data: { 
+				locationid: id,
+				categoryid: $('#categoryid').val()
+			},
+			beforeSend: function () {
+				$('#modalSpinner').html(spinner);
+			},
+			success: function (data) {
+				$('#modalSpinner').html('');
+				$('#loadSubLocations').html(data);
+			},
+			fail: function () {
+				console.log('Error');
+			}
+		});
+	};
+
 	/* Binding */
 
 	// Create
@@ -273,5 +347,25 @@ $(function () {
 	});
 
 	renderAllCategories();
+
+	var btnActions = {
+		category: function () {
+		  renderSubCategories($(this).data('id'));
+		},
+		location: function () {
+			renderSubLocations($(this).data('id'));
+		}
+	  };
+	
+	  $(document).on("click", 'div[data-action]', function (event) {
+		var link = $(this);
+		var action = link.data("action");
+	
+		if( typeof btnActions[action] === "function" ) {
+		  btnActions[action].call(this, event);
+		}
+	  });
+	
+	  renderAllLocations();
 
 }); // End of document ready

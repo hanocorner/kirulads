@@ -1,14 +1,11 @@
 <div class="container">
-	<div class="d-flex flex-row flex-wrap justify-content-center">
-        <div class="card location-card" data-toggle="modal" data-target="#location-modal">
-            <img src="<?php echo base_url('assets/public/dist/images/location/colombo.png'); ?>"  alt="">
-            <p class="text-center mt-3 mb-0">Colombo</p>
-        </div>
-    </div>
+  <div id="spinner"></div>
+  <input type="hidden" value="<?php echo $categoryid; ?>" id="categoryid">
+    <div id="loadLocations"></div>
 </div>
 
 <!-- Sub Category Modal -->
-<div class="modal location-modal fade" id="location-modal" tabindex="-1" role="dialog" aria-labelledby="location-modalLabel" aria-hidden="true">
+<div class="modal location-modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="location-modalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -24,13 +21,9 @@
           <img src="<?php echo base_url('assets/public/dist/images/error.png'); ?>" alt="">
         </a>
       </div>
+      <div id="modalSpinner"></div>
       <div class="modal-body">
-        <div class="d-flex flex-row flex-wrap">
-
-            <a href="<?php echo base_url('post-ad/details/category/5/location/4'); ?>">Nuegagoda</a>
-            <a href="<?php echo base_url('post-ad/advert/category/450'); ?>">Kotte</a>
-            
-        </div>
+        <div id="loadSubLocations"></div>
       </div>
       
     </div>

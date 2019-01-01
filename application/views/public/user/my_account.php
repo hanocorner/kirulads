@@ -22,7 +22,7 @@
 			<?php foreach ($results as $result): ?>
 			<div class="my-ad">
 				<div class="my-ad-image">
-                    <img src="<?php echo base_url('assets/public/dist/images/property.jpg'); ?>" alt="My ad Main image" class="img-fluid" width="200px">
+                    <img src="<?php echo base_url('assets/public/dist/images/ads/'.$result['adid'].'/'.$result['img_1'].''); ?>" alt="My ad Main image" class="img-fluid" width="200px" height="200px">
                 </div>
 				<div class="my-ad-info">
 					<h3><?php echo $result['title']; ?></h3>
@@ -34,8 +34,14 @@
 					</div>
 					
                     <div class="d-flex align-items-center mr-4 mt-3">
-						<?php if( (int) $result['status'] == 1): ?>
+						<?php if( (int) $result['status'] == 0): ?>
 						<p class="text-muted mb-0">Status:</p>&nbsp; <span class="badge badge-pill badge-warning">Pending</span>
+						<?php endif; ?>
+						<?php if( (int) $result['status'] == 1): ?>
+						<p class="text-muted mb-0">Status:</p>&nbsp; <span class="badge badge-pill badge-success">Active</span>
+						<?php endif; ?>
+						<?php if( (int) $result['status'] == 2): ?>
+						<p class="text-muted mb-0">Status:</p>&nbsp; <span class="badge badge-pill badge-danger">Misleading</span>
 						<?php endif; ?>
 					</div>
 				</div>

@@ -2,6 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class AD_Handler extends Public_Controller 
 {
+    /*** */
+    private $_html = '';
+
     /** */
 	public function  __construct()
 	{
@@ -23,8 +26,6 @@ class AD_Handler extends Public_Controller
      */
     public function category()
     {
-        
-
         $this->layout->title = 'Choose category - Posting an ad';
         $this->layout->view('public/post-ad/category');
     }
@@ -32,21 +33,71 @@ class AD_Handler extends Public_Controller
     /*** */
     public function prepare_categories()
     {
-        $html = '';
         $this->load->model('public/post_ad/category_model');
         $results = $this->category_model->fetch_all_categories();
 
-        $html .= '<div class="d-flex flex-row flex-wrap justify-content-center">';
+        $this->_html .= '<div class="d-flex flex-row flex-wrap justify-content-center">';
         foreach ($results as $result) 
         {
-            $html .= '<div class="card category-card" data-toggle="modal" data-target="#exampleModal" data-id="'.$result['id'].'">';
-            $html .= '<img src="'.base_url('assets/public/dist/images/category/'.$result['image'].' ').'" class="img-fluid" alt="'.$result['name'].'">';
-            $html .= '<p class="text-center mt-3 mb-0">'.$result['name'].'</p>';
-            $html .= '</div>';
+            $this->_html .= '<div class="category-card" data-action="category" data-id="'.$result['id'].'">';
+            $this->_html .= '<img src="'.base_url('assets/public/dist/images/category/'.$result['image'].' ').'" class="img-fluid" alt="'.$result['name'].'">';
+            $this->_html .= '<p class="text-center mt-3 mb-0">'.$result['name'].'</p>';
+            $this->_html .= '</div>';
         }
-        $html .= '</div>';
+        $this->_html .= '</div>';
 
-        echo $html; 
+        echo $this->_html; 
+    }
+
+    /*** */
+    public function prepare_locations()
+    {
+        $this->load->model('public/post_ad/location_model');
+        $results = $this->location_model->fetch_all_locations();
+
+        $this->_html .= '<div class="d-flex flex-row flex-wrap justify-content-center">';
+        foreach ($results as $result) 
+        {
+            $this->_html .= '<div class="category-card"  data-action="location" data-id="'.$result['id'].'">';
+            //$this->_html .= '<img src="'.base_url('assets/public/dist/images/location/'.$result['image'].' ').'" class="img-fluid" alt="'.$result['name'].'">';
+            $this->_html .= '<p class="text-center mt-3 mb-0">'.$result['name'].'</p>';
+            $this->_html .= '</div>';
+        }
+        $this->_html .= '</div>';
+
+        echo $this->_html; 
+    }
+
+    /*** */
+    public function fetch_modal()
+    {
+        $this->load->model('public/post_ad/category_model');
+        $results = $this->category_model->fetch_sub_categories($this->input->get('categoryid'));
+        
+        $this->_html .= '<div class="d-flex flex-column">';
+        foreach ($results as $result) 
+        {
+           $this->_html .= '<a class="my-0 py-1" href="'.base_url('post-ad/category/'.$result['id'].'/location').'">'.$result['name'].'</a>';
+        }
+        $this->_html .= '</div>';
+        
+        echo $this->_html; 
+    }
+
+    /*** */
+    public function fetch_sub_location()
+    {
+        $this->load->model('public/post_ad/location_model');
+        $results = $this->location_model->get_sub_location($this->input->get('locationid'));
+        
+        $this->_html .= '<div class="d-flex flex-column">';
+        foreach ($results as $result) 
+        {
+           $this->_html .= '<a class="my-0 py-1" href="'.base_url('post-ad/details/category/'.$this->input->get('categoryid').'/location'.'/'.$result['id'].'').'">'.$result['name'].'</a>';
+        }
+        $this->_html .= '</div>';
+        
+        echo $this->_html; 
     }
 
     /**
@@ -55,7 +106,8 @@ class AD_Handler extends Public_Controller
     public function location()
     {
         $this->layout->title = 'Choose Location - Posting an ad';
-        $this->layout->view('public/post-ad/location');
+        $this->_data['categoryid'] = $this->uri->segment(3);
+        $this->layout->view('public/post-ad/location', $this->_data);
     }
 
     public function details()

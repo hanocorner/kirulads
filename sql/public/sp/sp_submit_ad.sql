@@ -27,7 +27,7 @@ CREATE PROCEDURE submit_ad(
     THEN
         SET ad_created = 1;
         INSERT INTO tbl_adimage(img_1, ad_id, timestamp) 
-        VALUES(image_1, last_insert_id(), CURRENT_TIMESTAMP());
+        VALUES(image_1, LAST_INSERT_ID(), CURRENT_TIMESTAMP());
     ELSE 
         SET ad_created = 0;
     END IF;
