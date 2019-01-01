@@ -63,7 +63,7 @@
             <div class="col-sm-6 col-md-3">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/public/dist/images/category/vehicles.png') ?>" alt="">
+						<img src="<?php echo base_url('assets/public/dist/images/category/property.png') ?>" alt="">
 					</div>
 					<div class="category-text">
 						<h5>Property</h5>
@@ -74,7 +74,7 @@
             <div class="col-sm-6 col-md-3">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/public/dist/images/category/vehicles.png') ?>" alt="">
+						<img src="<?php echo base_url('assets/public/dist/images/category/fashion-health-beauty.png') ?>" alt="">
 					</div>
 					<div class="category-text">
 						<h5>Fashion, Health & Beauty</h5>
@@ -88,7 +88,7 @@
 			<div class="col-md-3">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/public/dist/images/category/electronics.png') ?>" alt="">
+						<img src="<?php echo base_url('assets/public/dist/images/category/home-garden.png') ?>" alt="">
 					</div>
 					<div class="category-text">
 						<h5>Home & Garden</h5>
@@ -99,7 +99,7 @@
             <div class="col-md-3">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/public/dist/images/category/vehicles.png') ?>" alt="">
+						<img src="<?php echo base_url('assets/public/dist/images/category/business-industry.png') ?>" alt="">
 					</div>
 					<div class="category-text">
 						<h5>Business & Industry</h5>
@@ -110,10 +110,10 @@
             <div class="col-md-3">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/public/dist/images/category/vehicles.png') ?>" alt="">
+						<img src="<?php echo base_url('assets/public/dist/images/category/animals.png') ?>" alt="">
 					</div>
 					<div class="category-text">
-						<h5>Animal</h5>
+						<h5>Animals</h5>
 						<p>5 Ads</p>
 					</div>
 				</div>
@@ -121,7 +121,7 @@
             <div class="col-md-3">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/public/dist/images/category/vehicles.png') ?>" alt="">
+						<img src="<?php echo base_url('assets/public/dist/images/category/services.png') ?>" alt="">
 					</div>
 					<div class="category-text">
 						<h5>Top Deals</h5>

@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light navbar-color">
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo base_url(); ?>">
-				<img class="main_logo" src="<?php echo base_url()?>assets/public/src/images/" />
+				<img class="main_logo" src="<?php echo base_url('assets/public/dist/images/kirulads-logo.png')?>" />
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
