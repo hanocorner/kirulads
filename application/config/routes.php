@@ -71,6 +71,8 @@ $route['post-ad/category/(:num)/location'] = 'public/post-ad/ad_handler/location
 $route['post-ad/details/category/(:num)/location/(:num)'] = 'public/post-ad/ad_handler/details';
 $route['post-ad/complete'] = 'public/post-ad/ad_handler/ad_complete';
 
+$route['ad/(:any)'] = 'base/ad';
+
 // 404 Page 
 $route['404_override'] = 'error';
 

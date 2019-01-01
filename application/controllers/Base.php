@@ -24,6 +24,11 @@ class Base extends Public_Controller {
 	}
 	public function index()
 	{	
-		$this->layout->view('public/user/login');
+		$this->layout->view('public/home/index');
+	}
+
+	public function ad()
+	{
+		$this->layout->view('public/home/detail_ad');
 	}
 }

@@ -15,7 +15,7 @@
 						<a class="nav-link" href="<?php echo base_url(); ?>">All Ads</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url(); ?>">Top Categories</a>
+						<a class="nav-link" href="<?php echo base_url(); ?>">Categories</a>
 					</li>
 	
 					<?php
@@ -38,7 +38,7 @@
 					<?php else: ?>
 					<li class="nav-item">
 						<a class="navbtn navbtn-secondry" href="<?php echo base_url('user/login'); ?>">
-							<i class="fa fa-user fa-fw" aria-hidden="true"></i>Login
+						<i class="fa fa-lock fa-fw"></i> Login
 						</a>
 					</li>
 					<?php endif; ?>

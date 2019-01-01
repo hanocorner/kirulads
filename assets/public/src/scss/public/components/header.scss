@@ -14,11 +14,11 @@
 
             .nav-link {
                 font-size: 18px;
-                font-weight: 600;
+                font-weight: 400;
                 color: $black-color;
 
                 &:hover {
-                    color: $primary-blue;
+                    color: $primary-shade-1;
                 }
             }
 
@@ -55,7 +55,6 @@
 
                 &:hover {
                     text-decoration: none;
-                    background-color: $primary-shade;
                     border-color:  $primary-blue;
                     color:  $primary-blue;
                 }
