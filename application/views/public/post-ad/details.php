@@ -32,7 +32,7 @@
 			</div>
 
 			<?php $attr = array('id'=>'formSubmitAd', 'class'=>'mt-4', 'method'=>'post'); ?>
-			<?php echo form_open_multipart('public/post-ad/ad-handler/submit-ad', $attr);?>
+			<?php echo form_open_multipart('public/post-ad/handler/submit-ad', $attr);?>
 			<input type="hidden" name="category" id="catID" value="<?php echo $categoryid; ?>">
 			<input type="hidden" name="location" id="locID" value="<?php echo $locationid; ?>">
 

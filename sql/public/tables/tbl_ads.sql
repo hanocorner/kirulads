@@ -1,7 +1,7 @@
 --
 -- Database: `kirulads_db`
 --
-USE kirulads_db;
+
 -- --------------------------------------------------------
 
 --
@@ -10,10 +10,10 @@ USE kirulads_db;
 CREATE TABLE IF NOT EXISTS `tbl_adverts` (
   `adid` varchar(12) NOT NULL,
   `title` varchar(100) DEFAULT NULL,
-  `condition` tinyint(1) NOT NULL,
+  `itemcondition` tinyint(1) NOT NULL,
   `description` varchar(1000) NOT NULL, 
   `price` decimal(10, 2) NOT NULL,
-  `negotiable` tinyint(1) NOT NULL,
+  `negotiable` varchar(5) NOT NULL,
   `created_date` datetime NOT NULL,
   `status` tinyint(1) NOT NULL,
   `flag` tinyint(1) NOT NULL,
@@ -70,6 +70,3 @@ CREATE TABLE IF NOT EXISTS `tbl_adimage` (
   PRIMARY KEY (`imgid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-SELECT t1.title, t1.category_id, t1.created_date FROM tbl_adverts AS t1 LEFT JOIN tbl_category AS t2 ON t1.category_id = t2.catid LEFT JOIN tbl_category AS t3 ON t2.parent = t3.catid WHERE t3.name = 'Property';
-
-SELECT t1.title, t1.category_id, t1.created_date FROM tbl_adverts AS t1 LEFT JOIN tbl_category AS t2 ON t1.category_id = t2.catid LEFT JOIN tbl_category AS t3 ON t2.parent = t3.catid WHERE t3.name = 'Property' AND t2.name = 'Land';

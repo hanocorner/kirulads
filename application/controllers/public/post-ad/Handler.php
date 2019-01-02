@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class AD_Handler extends Public_Controller 
+class Handler extends Public_Controller 
 {
     /*** */
     private $_html = '';
@@ -119,7 +119,7 @@ class AD_Handler extends Public_Controller
         $this->_data['categoryid'] = $uri_array['category'];
         $this->_data['locationid'] = $uri_array['location'];
 
-        $this->load->model('public/post_ad/AD_model', 'admodel');
+        $this->load->model('public/post_ad/Post_model', 'admodel');
 
         $this->_data['category'] = $this->admodel->fetch_category($this->_data['categoryid']);
         $this->_data['location'] = $this->admodel->fetch_location($this->_data['locationid']);
@@ -137,6 +137,8 @@ class AD_Handler extends Public_Controller
     /** */
     public function submit_ad()
     {
+        $this->lang->load('message_lang', 'english');
+
         $this->_data['title'] = $this->input->post('title');
         $this->_data['condition'] = $this->input->post('condition');
         $this->_data['description'] = $this->input->post('description');
@@ -149,7 +151,7 @@ class AD_Handler extends Public_Controller
 
         if($this->form_validation->run('submit_ad') == FALSE) return $this->json_output(false, validation_errors());
 
-        $this->load->model('public/post_ad/AD_model', 'admodel');
+        $this->load->model('public/post_ad/Post_model', 'admodel');
         $last_id = $this->admodel->get_last_id();
         $next_id = $this->id($last_id);
         $this->_data['id'] = $next_id;
@@ -167,14 +169,14 @@ class AD_Handler extends Public_Controller
         $this->_data['image_1'] = $this->image->img_name($_FILES['adimg']['name'], $next_id);
 
         $db_response = $this->admodel->insert_ad($this->_data);
-
-        if($db_response == 0) return $this->json_output(false, $this->lang->line('error_db_submit'));
+        
+        if($db_response == false) return $this->json_output(false, $this->lang->line('error_submit'));
 
         $upload = $this->image->img_upload('adimg');
         if($upload == false) return $this->json_output(false, $this->image->errors);
 
         //$this->send_ad_mail($address);
-        return $this->json_output(true, $this->lang->line('success_submit_ad'), 'post-ad/complete');
+        return $this->json_output(true, $this->lang->line('success_submit'), 'post-ad/complete');
     }
 
      /**

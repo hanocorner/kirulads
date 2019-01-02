@@ -227,7 +227,7 @@ $(function () {
 	var renderAllCategories = function () {
 
 		$.ajax({
-			url: baseurl + 'public/post-ad/ad_handler/prepare-categories',
+			url: baseurl + 'public/post-ad/handler/prepare-categories',
 			type: 'GET',
 			dataType: 'HTML',
 			beforeSend: function () {
@@ -248,7 +248,7 @@ $(function () {
 		$('#categoryModal').modal('toggle');
 
 		$.ajax({
-			url: baseurl + 'public/post-ad/ad_handler/fetch_modal',
+			url: baseurl + 'public/post-ad/handler/fetch_modal',
 			type: 'GET',
 			dataType: 'HTML',
 			data: { categoryid: id },
@@ -273,7 +273,7 @@ $(function () {
 	var renderAllLocations = function () {
 
 		$.ajax({
-			url: baseurl + 'public/post-ad/ad_handler/prepare-locations',
+			url: baseurl + 'public/post-ad/handler/prepare-locations',
 			type: 'GET',
 			dataType: 'HTML',
 			beforeSend: function () {
@@ -294,7 +294,7 @@ $(function () {
 		$('#locationModal').modal('toggle');
 
 		$.ajax({
-			url: baseurl + 'public/post-ad/ad_handler/fetch_sub_location',
+			url: baseurl + 'public/post-ad/handler/fetch_sub_location',
 			type: 'GET',
 			dataType: 'HTML',
 			data: { 

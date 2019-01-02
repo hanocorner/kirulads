@@ -1,6 +1,6 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class AD_model extends CI_Model 
+class Post_model extends CI_Model 
 {
     /** */
     public function __construct()
@@ -26,12 +26,7 @@ class AD_model extends CI_Model
             @ad_created )'
         );
 
-        $result = $query->result();
-
-        $query->next_result(); 
-        $query->free_result();  
-
-        return $result;
+        return $query;
     }
 
     /*** */

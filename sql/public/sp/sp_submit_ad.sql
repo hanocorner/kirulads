@@ -5,7 +5,7 @@ CREATE PROCEDURE submit_ad(
   IN itemcondition tinyint(1),
   IN description varchar(1000),
   IN price decimal(10, 2),
-  IN negotiable tinyint(1),
+  IN negotiable varchar(5),
   IN created_date datetime,
   IN user_id int(11),
   IN location_id int(11),
@@ -27,12 +27,10 @@ CREATE PROCEDURE submit_ad(
     THEN
         SET ad_created = 1;
         INSERT INTO tbl_adimage(img_1, ad_id, timestamp) 
-        VALUES(image_1, LAST_INSERT_ID(), CURRENT_TIMESTAMP());
+        VALUES(image_1, id, CURRENT_TIMESTAMP());
     ELSE 
         SET ad_created = 0;
     END IF;
-
-    SELECT ad_created;
 
 	END //
 DELIMITER ;

@@ -66,15 +66,15 @@ $route['user/reset'] = 'public/user/handler/reset';
 $route['user/accountSettings'] = 'public/user/handler/account_settings';
 
 // Post Ad Routes
-$route['post-ad/category'] = 'public/post-ad/ad_handler/category';
-$route['post-ad/category/(:num)/location'] = 'public/post-ad/ad_handler/location';
-$route['post-ad/details/category/(:num)/location/(:num)'] = 'public/post-ad/ad_handler/details';
-$route['post-ad/complete'] = 'public/post-ad/ad_handler/ad_complete';
+$route['post-ad/category'] = 'public/post-ad/handler/category';
+$route['post-ad/category/(:num)/location'] = 'public/post-ad/handler/location';
+$route['post-ad/details/category/(:num)/location/(:num)'] = 'public/post-ad/handler/details';
+$route['post-ad/complete'] = 'public/post-ad/handler/ad_complete';
 
 $route['ad/(:any)'] = 'base/ad';
 
 // 404 Page 
-$route['404_override'] = 'error';
+$route['404_override'] = 'Myerror';
 
 // URL dashes
 $route['translate_uri_dashes'] = TRUE;
