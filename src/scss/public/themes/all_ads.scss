@@ -1,0 +1,104 @@
+%all-ad-background {
+    background-color: $white-color;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.sort-ad{
+    @extend %all-ad-background;
+
+    form {
+        padding: 15px;
+        width: 100%;
+        
+        .wild-card-btn {
+            width: 200px;
+            font-weight: 600;
+            color: $white-color;
+        }
+
+        .keywords {
+            flex:2;
+        }
+        .category {
+            flex:1;
+        }
+        .location {
+            flex:1;
+        }
+    }
+}
+.all-ads {
+    @extend %all-ad-background;
+    padding: 0;
+
+    .border-right {
+        border-right: 1px solid $gray-shade-1;
+    }
+
+    .all-ad-data-link:hover {
+        text-decoration: none;
+    }
+    .all-ad-data{
+        border-bottom: 1px solid $gray-shade-1;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        padding: 8px;
+
+        .meta-data {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .meta-data-text{
+                justify-content: flex-start;
+
+                .title {
+                    color: $primary-shade-1;
+                }
+            }
+
+            .meta-data-date{
+                justify-content: flex-end;
+            }
+        }
+
+        &:hover {
+            border-left-color: $gray-shade-1;
+            border-right-color: $gray-shade-1;
+            cursor: pointer;
+            
+        }
+    }
+}
+
+.all-ad-category {
+    ul{
+        list-style: none;
+        padding:0;
+    }
+
+    li{
+        margin: 2px 0;
+
+        a {
+            width: 100%;
+            display: block;
+            text-decoration: none;
+            color: #757575;
+            padding: 5px;
+            border-radius: .15em;
+            transition: background .3s ease;
+            background: transparent;
+
+            span {
+                color: $primary-blue;
+                margin-right: 4px;
+            }
+
+            &:hover {
+                background: rgba(238,238,238,.51);
+            }
+        }
+        
+    }
+}

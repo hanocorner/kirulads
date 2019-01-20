@@ -1,36 +1,25 @@
 DELIMITER //
 CREATE PROCEDURE submit_ad(
-  IN id varchar(12),
   IN title varchar(100),
   IN itemcondition tinyint(1),
   IN description varchar(1000),
   IN price decimal(10, 2),
   IN negotiable varchar(5),
-  IN created_date datetime,
-  IN user_id int(11),
+  IN slug varchar(200),
+  IN usid int(11),
   IN location_id int(11),
   IN category_id int(11),
-  IN image_1 varchar(40),
-  OUT ad_created INT
+  IN mainimg varchar(80),
+  IN subimg varchar(400),
+  IN path varchar(60)
   )
 
   BEGIN
-    DECLARE rowcount INT;
+    INSERT INTO tbl_adverts(title, item_condition, description, price, negotiable, created_date, slug, status, flag, user_id, location_id, category_id) 
+    VALUES(title, itemcondition, description, price, negotiable, CURRENT_TIMESTAMP(), slug, 0, 0, usid, location_id, category_id);
 
-    INSERT INTO tbl_adverts(adid, title, itemcondition, description, price, negotiable, created_date, status, flag, user_id, location_id, category_id) 
-    VALUES(id, title, itemcondition, description, price, negotiable, created_date, 0, 0, user_id, location_id, category_id);
-
-    SET rowcount = ROW_COUNT();
-
-    IF 
-        (rowcount = 1)
-    THEN
-        SET ad_created = 1;
-        INSERT INTO tbl_adimage(img_1, ad_id, timestamp) 
-        VALUES(image_1, id, CURRENT_TIMESTAMP());
-    ELSE 
-        SET ad_created = 0;
-    END IF;
+    INSERT INTO tbl_adimage(ad_id, main_image, sub_images, path_string, timestamp) 
+    VALUES(LAST_INSERT_ID(), mainimg, subimg, path,  CURRENT_TIMESTAMP());
 
 	END //
 DELIMITER ;

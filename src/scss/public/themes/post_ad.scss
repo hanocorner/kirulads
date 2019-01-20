@@ -1,21 +1,21 @@
 // Submit ad
-.my-ads-image {
+.ad-image {
 	display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px 13px 0 0;
+	flex-direction: row;
+	align-items: center;
+	max-width: 100%;
+	border: 1px dashed $gray-shade-1;
+	border-radius: 5px;
+	padding: 15px;
 
 	@include mq(768px) {
-		flex-direction: column;
+		max-width: 50%;
 	}
 
     .image {
-        margin-right: 20px;
-
-        @include mq(768px) {
-            margin-right: 0;
-        }
-    }
+		margin-right: 18px;
+	}
+	
 	.img-controls {
 		display: flex;
         flex-direction:column;
@@ -26,12 +26,13 @@
 				opacity: 0;
 				overflow: hidden;
 				position: absolute;
-
+				height: 38px;
+				cursor: pointer;
 			}
 
 			.inputfile+label {
 				border: 1px solid transparent;
-				padding: .375rem .75rem;
+				padding: 0.375rem 0.75rem;
 				border-radius: .25rem;
 				font-size: 1rem;
 				text-align: center;
@@ -41,6 +42,10 @@
                 background-color: $primary-shade-1;
                 border-color: $primary-shade-3;
 				display: inline-block;
+
+				@include mq(768px) {
+					padding: 0.375rem 6.75rem;
+				}
 			}
 		}
 

@@ -17,7 +17,7 @@
     <title><?php echo $this->layout->title; ?></title>
     
     <link rel="canonical" href="<?php echo $this->layout->canonical; ?>"/>
-    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/public/dist/images/favicon.png">
+    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/images/favicon.png">
 
     <!-- Core Css (Bootstrap, FontAwesome & Custom Css) -->
     <?php $this->layout->css(); ?>

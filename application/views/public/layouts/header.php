@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light navbar-color">
 		<div class="container">
 			<a class="navbar-brand" href="<?php echo base_url(); ?>">
-				<img class="main_logo" src="<?php echo base_url('assets/public/dist/images/kirulads-logo.png')?>" />
+				<img class="main_logo" src="<?php echo base_url('assets/images/kirulads-logo.png')?>" />
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,10 +12,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="nav navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url(); ?>">All Ads</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url(); ?>">Categories</a>
+						<a class="nav-link" href="<?php echo base_url('ads'); ?>">All Ads</a>
 					</li>
 	
 					<?php
@@ -30,8 +27,7 @@
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="<?php echo base_url('user/myAccount'); ?>"><i class="fa fa-bullhorn fa-fw"></i>&nbsp; My Ads</a>
 								<a class="dropdown-item" href="<?php echo base_url('user/account/settings'); ?>"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
-								<a class="dropdown-item" href="<?php echo base_url('public/user/account/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a>
-								
+								<a class="dropdown-item" href="<?php echo base_url('public/user/account/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a>	
 							</div>
 						</div>
 					</li>

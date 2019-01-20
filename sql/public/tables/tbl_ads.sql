@@ -8,13 +8,14 @@
 -- Table structure for `Ads`
 --
 CREATE TABLE IF NOT EXISTS `tbl_adverts` (
-  `adid` varchar(12) NOT NULL,
+  `adid` INT(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) DEFAULT NULL,
-  `itemcondition` tinyint(1) NOT NULL,
-  `description` varchar(1000) NOT NULL, 
-  `price` decimal(10, 2) NOT NULL,
+  `item_condition` varchar(5) NOT NULL,
+  `description` varchar(5000) NOT NULL, 
+  `price` decimal(20) NOT NULL,
   `negotiable` varchar(5) NOT NULL,
   `created_date` datetime NOT NULL,
+  `slug` varchar(200) DEFAULT NULL,
   `status` tinyint(1) NOT NULL,
   `flag` tinyint(1) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -26,10 +27,9 @@ CREATE TABLE IF NOT EXISTS `tbl_adverts` (
 -- --------------------------------------------------------
 
 --
--- Insert default query for advert table
--- 
-
-INSERT INTO `tbl_adverts`(adid, created_date, status, flag) VALUES(CONCAT('KADS', '-', 1000000), 2018-12-29, 2, 1);
+-- Let adid starts with 100
+--
+ALTER TABLE tbl_adverts AUTO_INCREMENT = 100;
 
 -- --------------------------------------------------------
 
@@ -64,8 +64,10 @@ CREATE TABLE IF NOT EXISTS `tbl_location` (
 --
 CREATE TABLE IF NOT EXISTS `tbl_adimage` (
   `imgid` INT(11) NOT NULL AUTO_INCREMENT,
-  `img_1` VARCHAR(40) NOT NULL,
-  `ad_id`  varchar(12) DEFAULT NULL,
+  `ad_id`  INT(11) DEFAULT NULL,
+  `main_image` VARCHAR(80) NOT NULL,
+  `sub_images` VARCHAR(400) NOT NULL,
+  `path_string` VARCHAR(60) NOT NULL,
   `timestamp` datetime NOT NULL,
   PRIMARY KEY (`imgid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

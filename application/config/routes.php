@@ -70,8 +70,16 @@ $route['post-ad/category'] = 'public/post-ad/handler/category';
 $route['post-ad/category/(:num)/location'] = 'public/post-ad/handler/location';
 $route['post-ad/details/category/(:num)/location/(:num)'] = 'public/post-ad/handler/details';
 $route['post-ad/complete'] = 'public/post-ad/handler/ad_complete';
+$route['image'] = 'public/post-ad/image';
+$route['image/delete'] = 'public/post-ad/image/delete';
+$route['image/featured'] = 'public/post-ad/image/featured';
 
-$route['ad/(:any)'] = 'base/ad';
+$route['ad/(:any)'] = 'public/ad/detail/ad';
+$route['ads'] = 'public/ad/detail/ads';
+$route['ads/(:any)'] = 'public/ad/detail/ads';
+$route['ads/(:any)/(:any)'] = 'public/ad/detail/ads';
+$route['ads/(:any)/(:any)/(:any)'] = 'public/ad/detail/ads';
+
 
 // 404 Page 
 $route['404_override'] = 'Myerror';

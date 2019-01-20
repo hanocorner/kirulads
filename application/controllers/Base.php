@@ -17,18 +17,20 @@ class Base extends Public_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-
 	public function  __construct()
 	{
 		parent::__construct();
+		
+
+		$this->load->model('public/home/Base_model', 'base');
 	}
+
+	/*** */
 	public function index()
 	{	
+		$this->layout->title = 'kirulads.lk - Electronics, Cars, Property and Jobs in Sri Lanka';
 		$this->layout->view('public/home/index');
 	}
 
-	public function ad()
-	{
-		$this->layout->view('public/home/detail_ad');
-	}
+	
 }

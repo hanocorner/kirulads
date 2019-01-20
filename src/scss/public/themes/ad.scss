@@ -1,0 +1,14 @@
+.detail-ad-card {
+    .detail-image .flexslider{
+        ul.slides{
+            li {
+                background-color: aliceblue;
+
+                img{
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

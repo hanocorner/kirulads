@@ -11,7 +11,7 @@ class Account_model extends CI_Model
     /*** */
     public function fetch_myads($userid)
     {
-        $this->db->select('t1.adid, t1.title, t1.status, t1.user_id AS userid, t2.img_1, t3.name AS subcategory, t4.name AS category');
+        $this->db->select('t1.adid, t1.title, t1.status, t1.user_id AS userid, t2.main_image, t2.path_string, t3.name AS subcategory, t4.name AS category');
         $this->db->from('tbl_adverts AS t1 ');
         $this->db->join(' tbl_adimage AS t2 ', 't1.adid = t2.ad_id', 'left');
         $this->db->join(' tbl_category AS t3 ', 't1.category_id = t3.catid', 'left');

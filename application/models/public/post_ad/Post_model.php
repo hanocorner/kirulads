@@ -12,18 +12,19 @@ class Post_model extends CI_Model
     public function insert_ad($data)
     {
         $query = $this->db->query('CALL submit_ad(
-            "'.$data['id'].'",
             "'.$data['title'].'",
             "'.$data['condition'].'",
             "'.$data['description'].'",
             "'.$data['price'].'",
             "'.$data['negotiable'].'",
-            "'.$data['created_date'].'",
+            "'.$data['slug'].'",
             "'.$data['user_id'].'",
-            "'.$data['location_id'].'",
-            "'.$data['category_id'].'",
-            "'.$data['image_1'].'",
-            @ad_created )'
+            "'.$data['location'].'",
+            "'.$data['category'].'",
+            "'.$data['main_image'].'",
+            "'.$data['sub_images'].'",
+            "'.$data['path_string'].'"
+            )'
         );
 
         return $query;
@@ -71,6 +72,18 @@ class Post_model extends CI_Model
         $query = $this->db->get();
 
         return $query->row();
+    }
+
+    /** */
+    public function count_slug($slug)
+    {
+         $this->db->select('COUNT(slug) as slug_count');
+         $this->db->from('tbl_adverts');
+         $this->db->like('slug', $slug);
+         $query = $this->db->get();
+         $count = $query->row();
+ 
+         return $count->slug_count;
     }
 }
 ?>

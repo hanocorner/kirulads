@@ -14,14 +14,14 @@ class Public_Controller extends AP_Controller
 
     $this->set_layout('public');
 
-    $this->layout->assets('assets/public/dist/css/app.css');
+    $this->layout->assets('assets/public/css/app.css');
 
     $custom_script = 'var baseurl = "'.base_url().'";';
     $this->layout->script($custom_script, 'header');
 
     $this->layout->assets('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', 'footer');
     $this->layout->assets('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', 'footer');
-    $this->layout->assets(base_url('assets/public/dist/js/app.js'), 'footer');
+    $this->layout->assets(base_url('assets/public/js/app.js'), 'footer');
     
     $this->load->helper('cookie');
   }
@@ -109,17 +109,19 @@ class Public_Controller extends AP_Controller
     if($auth === false)
     {
       $json_response['auth'] = false;
-      $json_response['csrf'] = $this->regenerate_csrf();
-      $json_response['message'] = $message;
     }
 
     if($auth === true)
     {
       $json_response['auth'] = true;
-      $json_response['message'] = $message;
       $json_response['url'] = base_url().$url;
     }
-    echo json_encode($json_response);
+    
+    $json_response['message'] = $message;
+    $json_response['csrf'] = $this->regenerate_csrf();
+
+    $this->output->set_content_type('application/json', 'utf-8');
+    $this->output->set_output(json_encode($json_response));
   }
 }
 ?>

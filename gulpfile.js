@@ -12,22 +12,22 @@ var runSequence = require('run-sequence');
 
 // Gulp Sass
 gulp.task('sass', function () {
-  return gulp.src('assets/public/src/scss/style.scss')
+  return gulp.src('src/scss/style.scss')
     .pipe(sourcemaps.init())
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(concat('app.css'))
     .pipe(sourcemaps.write())
     .pipe(cssnano())
-    .pipe(gulp.dest('assets/public/dist/css'))
+    .pipe(gulp.dest('assets/public/css'))
     .pipe(browserSync.stream());
 });
 
 // Gulp Script
 gulp.task('scripts', function() {
-  return gulp.src('assets/public/src/js/**/*.js')
+  return gulp.src('src/js/**/*.js')
     .pipe(concat('app.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('assets/public/dist/js'));
+    .pipe(gulp.dest('assets/public/js'));
 });
 
 // Start browserSync
@@ -45,8 +45,8 @@ gulp.task('connect-sync', function() {
 
 // Watchers
 gulp.task('watch', function () {
-  gulp.watch('assets/public/src/scss/**/*.scss', ['sass']);
-  gulp.watch('assets/public/src/js/**/*.js', ['scripts']);
+  gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/js/**/*.js', ['scripts']);
 });
 
 // Default task

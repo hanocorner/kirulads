@@ -40,7 +40,7 @@ class Handler extends Public_Controller
         foreach ($results as $result) 
         {
             $this->_html .= '<div class="category-card" data-action="category" data-id="'.$result['id'].'">';
-            $this->_html .= '<img src="'.base_url('assets/public/dist/images/category/'.$result['image'].' ').'" class="img-fluid" alt="'.$result['name'].'">';
+            $this->_html .= '<img src="'.base_url('assets/images/category/'.$result['image'].' ').'" class="img-fluid" alt="'.$result['name'].'">';
             $this->_html .= '<p class="text-center mt-3 mb-0">'.$result['name'].'</p>';
             $this->_html .= '</div>';
         }
@@ -121,10 +121,12 @@ class Handler extends Public_Controller
 
         $this->load->model('public/post_ad/Post_model', 'admodel');
 
+        $this->_data['path_string'] = rand(1000, 10000);
         $this->_data['category'] = $this->admodel->fetch_category($this->_data['categoryid']);
         $this->_data['location'] = $this->admodel->fetch_location($this->_data['locationid']);
         $this->_data['userinfo'] = $this->admodel->fetch_user_by_id($this->session->userid);
 
+        $this->layout->assets(base_url('assets/public/js/submit.js'), 'footer');
         $this->layout->view('public/post-ad/details', $this->_data);
     }
 
@@ -139,43 +141,37 @@ class Handler extends Public_Controller
     {
         $this->lang->load('message_lang', 'english');
 
-        $this->_data['title'] = $this->input->post('title');
-        $this->_data['condition'] = $this->input->post('condition');
-        $this->_data['description'] = $this->input->post('description');
-        $this->_data['price'] = $this->input->post('price');
-        $this->_data['negotiable'] = $this->input->post('negotiable');
-        $this->_data['created_date'] = $this->_datetime;
-        $this->_data['user_id'] = $this->session->userid;
-        $this->_data['category_id'] = $this->input->post('category');
-        $this->_data['location_id'] = $this->input->post('location'); 
-
         if($this->form_validation->run('submit_ad') == FALSE) return $this->json_output(false, validation_errors());
 
-        $this->load->model('public/post_ad/Post_model', 'admodel');
-        $last_id = $this->admodel->get_last_id();
-        $next_id = $this->id($last_id);
-        $this->_data['id'] = $next_id;
+        $title = $this->input->post('title');
+        $temp_path_string = $this->input->post('temp_path_string');
+        $perm_path_string = rand(1000, 10000);
 
-        $this->config->load('settings');
-        $base_path = $this->config->item('img_basepath');
-        $file_path = $base_path.'/'.$next_id;
-        if(!file_exists($file_path))
+        $this->_data = $_POST;
+        $this->_data['user_id'] = $this->session->userid;
+        $this->_data['slug'] = $this->slug($title);
+        $main_img = $this->session->main_image;
+        $sub_img_array = $this->move_to_dest($temp_path_string, $perm_path_string);
+
+        $this->_data['main_image'] = $main_img;
+        if(false !== $key = array_search($main_img, $sub_img_array))
         {
-            mkdir($file_path, 0777, true);
+            unset($sub_img_array[$key]);
+            $this->_data['sub_images'] = implode(',', $sub_img_array);
+        }
+        else
+        {
+            $this->_data['sub_images'] = '';
         }
         
-        $this->load->library('image');
-        $this->image->img_path($file_path);
-        $this->_data['image_1'] = $this->image->img_name($_FILES['adimg']['name'], $next_id);
-
-        $db_response = $this->admodel->insert_ad($this->_data);
+        $this->_data['path_string'] = $perm_path_string;
+        $this->_data['title'] = $title;
         
-        if($db_response == false) return $this->json_output(false, $this->lang->line('error_submit'));
+        $this->load->model('public/post_ad/Post_model');
+        $db_response = $this->Post_model->insert_ad($this->_data);
 
-        $upload = $this->image->img_upload('adimg');
-        if($upload == false) return $this->json_output(false, $this->image->errors);
+        if(!$db_response) return $this->json_output(false, $this->lang->line('error_submit'));
 
-        //$this->send_ad_mail($address);
         return $this->json_output(true, $this->lang->line('success_submit'), 'post-ad/complete');
     }
 
@@ -199,31 +195,88 @@ class Handler extends Public_Controller
         }
     }
 
-    /**** */
-    public function image_exists()
+    /** */
+    public function move_to_dest($temp_path_str, $perm_path_str)
     {
-       if(!isset($_FILES['adimg']['name']) || $_FILES['adimg']['size'] == 0)
-       {
-           return false;
-       }
+        $this->config->load('settings');
 
-       return true;
+        $temp_path = $this->config->item('temp_path').'/'.$temp_path_str;
+
+        $perm_path = $this->config->item('base_path').'/'.$perm_path_str;
+        if(!file_exists($perm_path)) mkdir($perm_path, 0777, true);
+
+        if(is_dir($temp_path. '/'. 'thumb')) 
+        {
+            $thumb_dir = scandir($temp_path. '/'. 'thumb');
+            if(!file_exists($perm_path. '/'. 'thumb')) mkdir($perm_path. '/'. 'thumb', 0777, true);
+
+            foreach ($thumb_dir as $thumb) 
+            {
+                if (in_array($thumb, array(".",".."))) continue;
+                copy($temp_path.'/'.'thumb'.'/'.$thumb, $perm_path.'/'.'thumb'.'/'.$thumb);
+                unlink($temp_path.'/'.'thumb'.'/'.$thumb);
+            }
+            
+            rmdir($temp_path. '/'. 'thumb');
+        }
+
+        $files = scandir($temp_path);
+        foreach ($files as $file) 
+        {
+            if (in_array($file, array(".",".."))) continue;
+
+            if($file != 'thumb') copy($temp_path.'/'.$file, $perm_path.'/'.$file);
+            $string[] = $file;
+            unlink($temp_path.'/'.$file);
+
+        } 
+
+        rmdir($temp_path);
+        return $string;
+    }
+    
+
+    /*** */
+    private function create_slug($title, $ad_type = 'for-sale')
+    {   
+        $slug = $title.'-'.$ad_type;
+
+        // replace non letter or digits by -
+        $slug = preg_replace('~[^\pL\d]+~u', '-', $slug);
+
+        // transliterate
+        $slug = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+
+        // remove unwanted characters
+        $slug = preg_replace('~[^-\w]+~', '', $slug);
+
+        // trim
+        $slug = trim($slug, '-');
+
+        // remove duplicate -
+        $slug = preg_replace('~-+~', '-', $slug);
+
+        // lowercase
+        $slug = strtolower($slug);
+
+        return $slug;
     }
 
-    /**
-    * Setting id according to report type selected by user
-    *
-    * @param null
-    * @return mixed
-    */
-    private function id($lastid)
+    /** */
+    private function slug($title)
     {
-        $this->load->library('id');
-        $format = array('separator'=>'-');
+        $new_slug = $this->create_slug($title);
 
-        $this->id->set_lastid($lastid);
-        $this->id->set_format($format);
-        return $this->id->create_id();
+        $this->load->model('public/post_ad/Post_model');
+        $slug_count = $this->Post_model->count_slug($new_slug);
+        if($slug_count >= 1) 
+        {
+            $number = $slug_count +1;
+            $new_slug = $this->create_slug($title);
+            $new_slug = $new_slug.'-'.$number;
+        }
+
+        return $new_slug;
     }
 }
 ?>

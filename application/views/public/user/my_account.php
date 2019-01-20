@@ -1,7 +1,7 @@
 <?php if(empty($results)): ?>
 <div class="container flex-length mt-5">
 	<div class="no-ads mx-auto mt-5">
-        <img class="mt-3" src="../assets/public/dist/images/new.png" alt="no-ads">
+        <img class="mt-3" src="../assets/images/new.png" alt="no-ads">
         <h2 class="text-center mt-3">You don't have any ads yet.</h2>
         <h5 class="text-center mt-3">Click the post your ad now button to post your ad.</h5>
         <div class="d-flex justify-content-center">
@@ -22,7 +22,7 @@
 			<?php foreach ($results as $result): ?>
 			<div class="my-ad">
 				<div class="my-ad-image">
-                    <img src="<?php echo base_url('assets/public/dist/images/ads/'.$result['adid'].'/'.$result['img_1'].''); ?>" alt="My ad Main image" class="img-fluid" width="200px" height="200px">
+                    <img src="<?php echo base_url('images/uploads/'.$result['path_string'].'/'.'thumb/'.$result['main_image'].''); ?>" alt="My ad Main image" class="img-fluid">
                 </div>
 				<div class="my-ad-info">
 					<h3><?php echo $result['title']; ?></h3>
