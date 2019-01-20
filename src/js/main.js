@@ -138,28 +138,8 @@ $(function () {
 		});
 	}
 
-
-	// Render Main Categories
-	var renderAllCategories = function () {
-
-		$.ajax({
-			url: baseurl + 'public/post-ad/handler/prepare-categories',
-			type: 'GET',
-			dataType: 'HTML',
-			beforeSend: function () {
-				spinnerSelector.html(spinner);
-			},
-			success: function (data) {
-				spinnerSelector.html('');
-				$('#loadCategories').html(data);
-			},
-			fail: function () {
-				console.log('Error');
-			}
-		});
-	};
-
-	var renderSubCategories = function (id) {
+	//
+	var fetchSubCategories = function (id) {
 
 		$('#categoryModal').modal('toggle');
 
@@ -188,26 +168,7 @@ $(function () {
 	};
 
 	//
-	var renderAllLocations = function () {
-
-		$.ajax({
-			url: baseurl + 'public/post-ad/handler/prepare-locations',
-			type: 'GET',
-			dataType: 'HTML',
-			beforeSend: function () {
-				$('#modalSpinner').html(spinner);
-			},
-			success: function (data) {
-				$('#modalSpinner').html('');
-				$('#loadLocations').html(data);
-			},
-			fail: function () {
-				console.log('Error');
-			}
-		});
-	};
-
-	var renderSubLocations = function (id) {
+	var fetchSubLocations = function (id) {
 
 		$('#locationModal').modal('toggle');
 
@@ -230,16 +191,16 @@ $(function () {
 				console.log('Error');
 			}
 		});
+
+		$('#locationModal').on('hidden.bs.modal', function () {
+			$('#loadSubLocations').html('');
+		});
 	};
 
-	//
-
-	
 
 	/* Binding */
 
 	// Create
-
 	maiExist.on('keyup', function () {
 		var mail = maiExist.val();
 		if (mail.length > 12) {
@@ -270,7 +231,15 @@ $(function () {
 		location.href = baseurl+'ads?sortprice='+sortPrice;
 	});
 
-	renderAllCategories();
+	$('div[data-action="category"]').on("click", function () {
+		var id = $(this).data('id');
+		fetchSubCategories(id);
+	});
+
+	$('div[data-action="location"]').on("click",function () {
+		var id = $(this).data('id');
+		fetchSubLocations(id);
+	});
 
 	var btnActions = {
 		category: function (event) {
@@ -291,7 +260,4 @@ $(function () {
 			btnActions[action].call(this, event);
 		}
 	});
-
-	renderAllLocations();
-
 }); // End of document ready

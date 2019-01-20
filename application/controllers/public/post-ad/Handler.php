@@ -31,44 +31,6 @@ class Handler extends Public_Controller
     }
 
     /*** */
-    public function prepare_categories()
-    {
-        $this->load->model('public/post_ad/category_model');
-        $results = $this->category_model->fetch_all_categories();
-
-        $this->_html .= '<div class="d-flex flex-row flex-wrap justify-content-center">';
-        foreach ($results as $result) 
-        {
-            $this->_html .= '<div class="category-card" data-action="category" data-id="'.$result['id'].'">';
-            $this->_html .= '<img src="'.base_url('assets/images/category/'.$result['image'].' ').'" class="img-fluid" alt="'.$result['name'].'">';
-            $this->_html .= '<p class="text-center mt-3 mb-0">'.$result['name'].'</p>';
-            $this->_html .= '</div>';
-        }
-        $this->_html .= '</div>';
-
-        echo $this->_html; 
-    }
-
-    /*** */
-    public function prepare_locations()
-    {
-        $this->load->model('public/post_ad/location_model');
-        $results = $this->location_model->fetch_all_locations();
-
-        $this->_html .= '<div class="d-flex flex-row flex-wrap justify-content-center">';
-        foreach ($results as $result) 
-        {
-            $this->_html .= '<div class="category-card"  data-action="location" data-id="'.$result['id'].'">';
-            //$this->_html .= '<img src="'.base_url('assets/public/dist/images/location/'.$result['image'].' ').'" class="img-fluid" alt="'.$result['name'].'">';
-            $this->_html .= '<p class="text-center mt-3 mb-0">'.$result['name'].'</p>';
-            $this->_html .= '</div>';
-        }
-        $this->_html .= '</div>';
-
-        echo $this->_html; 
-    }
-
-    /*** */
     public function fetch_modal()
     {
         $this->load->model('public/post_ad/category_model');

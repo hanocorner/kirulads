@@ -28,7 +28,7 @@
   </section>
   <section class="footer-bottom d-flex align-items-center">
     <div class="container">
-      <p>All Copyrights Reserved 2018 - Design By Smartsoftware.lk</p>
+      <p>All Copyrights Reserved 2019</p>
     </div>
   </section>
 </footer>

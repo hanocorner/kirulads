@@ -86,32 +86,32 @@
 					<p class="text-muted mb-1"><small>Locations:</small></p>
 					<div class="all-ad-category">
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> All of Sri Lanka</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Colombo</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kandy</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Galle</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ampara</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Anuradhapura</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Badulla</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Batticaloa</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Gampaha</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Hambantota</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Jaffna</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kalutara</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kegalle</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kilinochchi</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kurunegala</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mannar</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matale</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matara</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Moneragala</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mullativu</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Nuwara Eliya</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Polonnaruwa</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Puttalam</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ratnapura</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Trincomalee</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Vavuniya</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> All of Sri Lanka</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Colombo</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kandy</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Galle</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ampara</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Anuradhapura</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Badulla</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Batticaloa</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Gampaha</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Hambantota</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Jaffna</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kalutara</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kegalle</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kilinochchi</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kurunegala</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mannar</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matale</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matara</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Moneragala</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mullativu</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Nuwara Eliya</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Polonnaruwa</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Puttalam</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ratnapura</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Trincomalee</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Vavuniya</a></li>
 					</ul>
 				</div>
 				</div>
@@ -186,20 +186,20 @@
 			<div class="modal-body">
 				<div class="all-ad-category">
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-sliders fa-fw"></i></span> All Categories</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-desktop fa-fw"></i></span> Electronics</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-car fa-fw"></i></span> Vehicles</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-home fa-fw"></i></span> Property</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-heartbeat fa-fw"></i></span> Fashion, Health &
+						<li ><a href="#"><span><i class="fa fa-sliders fa-fw"></i></span> All Categories</a></li>
+						<li ><a href="#"><span><i class="fa fa-desktop fa-fw"></i></span> Electronics</a></li>
+						<li ><a href="#"><span><i class="fa fa-car fa-fw"></i></span> Vehicles</a></li>
+						<li ><a href="#"><span><i class="fa fa-home fa-fw"></i></span> Property</a></li>
+						<li ><a href="#"><span><i class="fa fa-heartbeat fa-fw"></i></span> Fashion, Health &
 								Beauty</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-futbol-o fa-fw"></i></span> Hobby, Sport & Kids</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-briefcase fa-fw"></i></span> Business & Industry</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-sun-o fa-fw"></i></span> Home & Garden</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-snapchat-ghost fa-fw"></i></span> Animals</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-graduation-cap fa-fw"></i></span> Education</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-cutlery fa-fw"></i></span> Food & Agriculture</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa fa-wrench fa-fw"></i></span> Services</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa fa-archive fa-fw"></i></span> Other</a></li>
+						<li ><a href="#"><span><i class="fa fa-futbol-o fa-fw"></i></span> Hobby, Sport & Kids</a></li>
+						<li ><a href="#"><span><i class="fa fa-briefcase fa-fw"></i></span> Business & Industry</a></li>
+						<li ><a href="#"><span><i class="fa fa-sun-o fa-fw"></i></span> Home & Garden</a></li>
+						<li ><a href="#"><span><i class="fa fa-snapchat-ghost fa-fw"></i></span> Animals</a></li>
+						<li ><a href="#"><span><i class="fa fa-graduation-cap fa-fw"></i></span> Education</a></li>
+						<li ><a href="#"><span><i class="fa fa-cutlery fa-fw"></i></span> Food & Agriculture</a></li>
+						<li ><a href="#"><span><i class="fa fa fa-wrench fa-fw"></i></span> Services</a></li>
+						<li ><a href="#"><span><i class="fa fa fa-archive fa-fw"></i></span> Other</a></li>
 					</ul>
 				</div>
 			</div>
@@ -220,33 +220,33 @@
 			</div>
 			<div class="modal-body">
 				<div class="all-ad-category">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> All of Sri Lanka</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Colombo</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kandy</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Galle</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ampara</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Anuradhapura</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Badulla</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Batticaloa</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Gampaha</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Hambantota</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Jaffna</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kalutara</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kegalle</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kilinochchi</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kurunegala</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mannar</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matale</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matara</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Moneragala</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mullativu</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Nuwara Eliya</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Polonnaruwa</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Puttalam</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ratnapura</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Trincomalee</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Vavuniya</a></li>
+					<ul>
+						<li><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> All of Sri Lanka</a></li>
+						<li><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Colombo</a></li>
+						<li><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kandy</a></li>
+						<li><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Galle</a></li>
+						<li><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ampara</a></li>
+						<li><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Anuradhapura</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Badulla</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Batticaloa</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Gampaha</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Hambantota</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Jaffna</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kalutara</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kegalle</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kilinochchi</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kurunegala</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mannar</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matale</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matara</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Moneragala</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mullativu</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Nuwara Eliya</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Polonnaruwa</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Puttalam</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ratnapura</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Trincomalee</a></li>
+						<li ><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Vavuniya</a></li>
 					</ul>
 				</div>
 			</div>

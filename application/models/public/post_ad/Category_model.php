@@ -8,17 +8,6 @@ class Category_model extends CI_Model
         parent::__construct();
     }
 
-    /** */
-    public function fetch_all_categories()
-    {
-        $this->db->select('catid AS id, name, image');
-        $this->db->from('tbl_category');
-        $this->db->where('parent', 0);
-        $query = $this->db->get();
-
-        return $query->result('array');
-    }
-
     public function fetch_sub_categories($category_id)
     {
         $this->db->select('t2.catid AS id, t2.name');

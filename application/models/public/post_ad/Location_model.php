@@ -9,17 +9,6 @@ class Location_model extends CI_Model
     }
 
     /** */
-    public function fetch_all_locations()
-    {
-        $this->db->select('locid AS id, name, image');
-        $this->db->from('tbl_location');
-        $this->db->where('parent', 0);
-        $query = $this->db->get();
-
-        return $query->result('array');
-    }
-
-    /** */
     public function get_sub_location($locationid)
     {
         $this->db->select('t2.locid AS id, t2.name');

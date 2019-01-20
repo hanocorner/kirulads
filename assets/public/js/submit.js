@@ -43,9 +43,10 @@ $(function () {
 		var file = input.files[0];
 		// Message array
 		message['allowedTypes'] = "Not a valid image format, Please upload following file type jpg|jpeg|png|gif ";
-		message['height'] = "Height is too large, Please upload an image less than 1024px";
-		message['width'] = "Width is too large, Please upload an image less than 1024px";
+		message['height'] = "Height is too large, Please upload an image less than 2048px";
+		message['width'] = "Width is too large, Please upload an image less than 2048px";
 		message['fileSize'] = "File size is too large, Please upload an image less than 2MB";
+		message['maxfilecount'] = "Sorry You cannot upload more than 5 photos";
 
 		// Regular Expression to validate image allowed types
 		var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.png|.gif)$");
@@ -72,18 +73,19 @@ $(function () {
 				image.onload = function () {
 					var height = this.height;
 					var width = this.width;
-					if (width > 1024) {
+					if (width > 2048) {
 						alert(message['width']);
 						return false;
-					} else if (height > 1024) {
+					} else if (height > 2048) {
 						alert(message['height']);
 						return false;
 					}
 				
-					if($('.ad-image').length > 3) {
-						alert('Max');
+					if($('.ad-image').length > 5) {
+						alert(message['maxfilecount']);
 						return false;
 					}
+
 					var formAdImg = $('#formSubmitAdImg');
 					var formData = new FormData();
 					formData.append('path_string', $('input[name=path_string]').val());
