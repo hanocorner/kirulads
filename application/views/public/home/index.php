@@ -2,123 +2,153 @@
 	<div class="container">
 		<h1>The Largest Online Market Place in Sri Lanka</h1>
 		<div class="card wild-card">
-		<form method="get" action="<?php echo current_url(); ?>">
-				<div class="form-row align-items-center justify-content-center">
-					<div class="col-auto location">
-						<button type="button" data-action="location" class="btn btn-primary-alt wild-card-btn"><i class="fa fa-map-marker fa-fw"></i>
-							Location</button>
-					</div>
-					<div class="col-auto category">
-						<button type="button" data-action="category" class="btn btn-primary-alt wild-card-btn"><i class="fa fa-sliders fa-fw"></i>
-							Category</button>
-					</div>
-					<div class="col-auto keywords">
-						<input type="text" name="query" class="form-control" id="" placeholder="What are you looking for...">
-					</div>
-
-					<div class="col-auto">
-						<button type="submit" class="btn btn-primary-alt wild-card-btn"><i class="fa fa-search fa-fw"></i> Search</button>
-					</div>
-
+			<div class="row">
+				<div class="col-6 col-lg-3">
+					<button type="button" data-action="location" class="btn btn-primary-alt wild-card-btn"><i class="fa fa-map-marker fa-fw"></i>
+						Location</button>
 				</div>
-			</form>
+
+				<div class="col-6 col-lg-3">
+					<button type="button" data-action="category" class="btn btn-primary-alt wild-card-btn"><i class="fa fa-sliders fa-fw"></i>
+						Category</button>
+				</div>
+
+				<div class="col-12 col-lg-6">
+					<form method="get" action="<?php echo base_url('ads'); ?>">
+						<div class="form-row">
+
+							<div class="col-8">
+								<input type="text" name="query" class="form-control" id="" placeholder="What are you looking for...">
+							</div>
+
+							<div class="col-4">
+								<button type="submit" class="btn btn-primary-alt wild-card-btn"><i class="fa fa-search fa-fw"></i> Search</button>
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
+
 	</div>
 </section>
 
 <section class="top-categories">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 col-md-3 col-lg-3">
+			<div class="col-6 col-lg-3">
+				<a href="<?php echo base_url('ads/srilanka/electronics'); ?>">
+					<div class="card top-category-card">
+						<div class="category-image">
+							<i class="sprite sprite-electronics"></i>
+						</div>
+						<div class="category-text">
+							<h5>Electronics</h5>
+							<p>(500) ads</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-6 col-lg-3">
+				<a href="<?php echo base_url('ads/srilanka/vehicles'); ?>">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/images/category/electronics.png') ?>" alt="">
-					</div>
-					<div class="category-text">
-						<h5>Electronics</h5>
-						<p>5 Ads</p>
-					</div>
-				</div>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-3">
-				<div class="card top-category-card">
-					<div class="category-image">
-						<img src="<?php echo base_url('assets/images/category/vehicles.png') ?>" alt="">
+						<i class="sprite sprite-vehicles"></i>
 					</div>
 					<div class="category-text">
 						<h5>Vehicles</h5>
 						<p>5 Ads</p>
 					</div>
 				</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
+				</a>
+			</div>
+			<div class="col-6 col-lg-3">
+				<a href="<?php echo base_url('ads/srilanka/property'); ?>">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/images/category/property.png') ?>" alt="">
+						<i class="sprite sprite-property"></i>
 					</div>
 					<div class="category-text">
 						<h5>Property</h5>
 						<p>5 Ads</p>
 					</div>
 				</div>
-            </div>
-            <div class="col-sm-6 col-md-3">
+				</a>
+				
+			</div>
+			<div class="col-6 col-lg-3">
+				<a href="<?php echo base_url('ads/srilanka/fashion-health-beauty'); ?>">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/images/category/fashion-health-beauty.png') ?>" alt="">
+						<i class="sprite sprite-fashion-health-beauty"></i>
 					</div>
 					<div class="category-text">
 						<h5>Fashion, Health & Beauty</h5>
 						<p>5 Ads</p>
 					</div>
 				</div>
+				</a>
+				
 			</div>
-        </div>
-        
-        <div class="row mt-4">
-			<div class="col-md-3">
+		</div>
+
+		<div class="row mt-3">
+			<div class="col-6 col-lg-3">
+				<a href="<?php echo base_url('ads/srilanka/home-garden'); ?>">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/images/category/home-garden.png') ?>" alt="">
+						<i class="sprite sprite-home-garden"></i>
 					</div>
 					<div class="category-text">
 						<h5>Home & Garden</h5>
 						<p>5 Ads</p>
 					</div>
 				</div>
-            </div>
-            <div class="col-md-3">
+				</a>
+				
+			</div>
+			<div class="col-6 col-lg-3">
+				<a href="<?php echo base_url('ads/srilanka/business-industry'); ?>">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/images/category/business-industry.png') ?>" alt="">
+						<i class="sprite sprite-business-industry"></i>
 					</div>
 					<div class="category-text">
 						<h5>Business & Industry</h5>
 						<p>5 Ads</p>
 					</div>
 				</div>
-            </div>
-            <div class="col-md-3">
+				</a>
+				
+			</div>
+			<div class="col-6 col-lg-3">
+				<a href="<?php echo base_url('ads/srilanka/animals'); ?>">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/images/category/animals.png') ?>" alt="">
+						<i class="sprite sprite-animals"></i>
 					</div>
 					<div class="category-text">
 						<h5>Animals</h5>
 						<p>5 Ads</p>
 					</div>
 				</div>
-            </div>
-            <div class="col-md-3">
+				</a>
+				
+			</div>
+			<div class="col-6 col-lg-3">
+				<a href="<?php echo base_url('ads/srilanka/top-deals'); ?>">
 				<div class="card top-category-card">
 					<div class="category-image">
-						<img src="<?php echo base_url('assets/images/category/services.png') ?>" alt="">
+						<i class="sprite sprite-top-deal"></i>
 					</div>
 					<div class="category-text">
 						<h5>Top Deals</h5>
 						<p>5 Ads</p>
 					</div>
 				</div>
+				</a>
+				
 			</div>
 		</div>
 
