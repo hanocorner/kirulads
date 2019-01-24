@@ -9,6 +9,13 @@ class Detail extends Public_Controller
 		$this->load->model('public/home/Base_model', 'base');
 	}
 
+	/** */
+	public function urlt()
+	{
+		$uri_seg = $this->uri->uri_to_assoc(1);
+		$uri_str = $this->input->get();
+
+	}
     /** */
 	public function ad()
 	{
@@ -52,6 +59,12 @@ class Detail extends Public_Controller
 	
 		if ($page == 0) $page = 1;
 		$start = ($page - 1) * $rows_per_page;
+
+		$uri_seg = $this->uri->uri_to_assoc(1);
+		$uri_str = $this->input->get();
+		
+		var_dump($uri_seg);
+		print_r($uri_str);
 
 		if($this->input->get('query') == true)
 		{

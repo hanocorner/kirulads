@@ -74,5 +74,22 @@ class Base_model extends CI_Model
         $query = $this->db->get();
         return $query->result('array');
     }
+
+    public function fetch_data($keyword)
+    {
+        $sql = '';
+
+        $sql .= "SELECT * FROM all_ads";
+
+        if($keyword['location'] != '')
+        {
+            $sql .= " AND customer LIKE '%$keyword['location']%' ";
+        }
+
+        if($keyword['subcategory'] != '')
+        {
+            $sql .= " AND subcategory LIKE '%$keyword['subcategory']%' ";
+        }
+    }
 }
 ?>
