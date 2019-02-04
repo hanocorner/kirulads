@@ -53,6 +53,18 @@ $config = array(
                 'label' => 'Price',
                 'rules' => 'trim|required'
             )
+        ),
+        'admin_auth'=>array(
+            array(
+                'field'=> 'username',
+                'label' => 'Username',
+                'rules' => 'trim|required'
+            ),
+            array(
+                'field'=> 'password',
+                'label' => 'Password',
+                'rules' => 'trim|required'
+            )
         )
 );
 ?>

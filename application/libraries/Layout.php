@@ -53,15 +53,23 @@ class Layout
    * @param $params layout name of the layout | string
    * @return none
    */
-  public function view($view_name, $data = array())
+  public function view($view_name, $data = array(), $layout = "default")
   { 
     $content = $this->CI->load->view($view_name, $data, TRUE);
 
     if ($this->layout_manager == 'admin')
     {
-      $header = $this->CI->load->view('admin/layouts/header', '', TRUE);
-      $footer = $this->CI->load->view('admin/layouts/footer', '', TRUE);
-      $this->seo_tags = FALSE;
+      if($layout == 'without')
+      {
+        $header = '';
+        $footer = '';
+        $this->seo_tags = FALSE;
+      }
+      else {
+        $header = $this->CI->load->view('admin/layouts/header', '', TRUE);
+        $footer = '';
+        $this->seo_tags = FALSE;
+      }
     }
     elseif ($this->layout_manager == 'public')
     {

@@ -3,29 +3,26 @@
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     transition: box-shadow 0.3s ease-in-out;
 }
-.sort-ad{
-    @extend %all-ad-background;
+.sort{
+    
+    .wild-card {
+        padding: 11px;
+        border:none;
 
-    form {
-        padding: 15px;
-        width: 100%;
-        
+        @include mq(768px) {
+            padding: 25px;
+        }
+
         .wild-card-btn {
-            width: 200px;
-            font-weight: 600;
-            color: $white-color;
-        }
+            width: 100%;
+            margin-bottom: 15px;
 
-        .keywords {
-            flex:2;
-        }
-        .category {
-            flex:1;
-        }
-        .location {
-            flex:1;
+            @include mq(768px) {
+                margin-bottom: 0;
+            }
         }
     }
+   
 }
 .all-ads {
     @extend %all-ad-background;
@@ -44,6 +41,11 @@
         border-right: 1px solid transparent;
         padding: 8px;
 
+        .meta-media {
+            width: 136px;
+            height: 102px;
+            background-color: $gray-shade-1;
+        }
         .meta-data {
             display: flex;
             flex-direction: column;

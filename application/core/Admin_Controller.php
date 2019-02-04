@@ -11,9 +11,16 @@ class Admin_Controller extends AP_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->library(array('session'));
+    $this->set_layout('admin');
 
-    $this->form_validation->set_error_delimiters('<li>', '</li>');
+    $this->layout->assets('assets/admin/css/app.css');
+
+    $custom_script = 'var baseurl = "'.base_url().'";';
+    $this->layout->script($custom_script, 'header');
+
+    $this->layout->assets('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', 'footer');
+    $this->layout->assets('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', 'footer');
+    $this->layout->assets(base_url('assets/admin/js/app.js'), 'footer');
   }
 
   /**
@@ -34,25 +41,8 @@ class Admin_Controller extends AP_Controller
         redirect('admin/home');
       }
     }
-    else {
-      $this->set_layout('admin');
-    }
   }
 
-  /**
-   * User logged in status check via ajax
-   *
-   * @param null
-   * @return bool
-   */
-  protected function ajax_login_status()
-  {
-    if (!$this->session->has_userdata('logged_in') && $this->session->logged_in != true)
-    {
-      return false;
-    }
-    return true;
-  }
 
   /**
    * Regenerate CSRF token
@@ -83,17 +73,18 @@ class Admin_Controller extends AP_Controller
     if($auth === false)
     {
       $json_response['auth'] = false;
-      $json_response['csrf'] = $this->regenerate_csrf();
-      $json_response['message'] = $message;
     }
 
     if($auth === true)
     {
       $json_response['auth'] = true;
-      $json_response['message'] = $message;
-      $json_response['url'] = base_url().$url;
+      $json_response['url'] = base_url($url);
     }
-    echo json_encode($json_response);
+    
+    $json_response['message'] = $message;
+
+    $this->output->set_content_type('application/json', 'utf-8');
+    $this->output->set_output(json_encode($json_response));
   }
 }
 ?>

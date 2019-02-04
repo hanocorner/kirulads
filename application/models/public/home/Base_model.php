@@ -5,6 +5,9 @@ class Base_model extends CI_Model
     /*** */
     public $_result_count = null;
 
+    /*** */
+    public $_num_rows = null;
+
     /** */
     public function __construct()
     {
@@ -37,59 +40,62 @@ class Base_model extends CI_Model
         return $query->result('array');
     }
 
-    /** */
-    public function sort_date($date)
-    {
-        if($date == 'asc')
-        {
-            $date = 'ASC';
-        } 
-        else {
-            $date = 'DESC';
-        }
-
-        $this->db->select('*');
-        $this->db->from('all_ads');
-        $this->db->order_by('date', $date);
-        $this->db->limit(10);
-        $query = $this->db->get();
-        return $query->result('array');
-    }
-
-    /** */
-    public function sort_price($price)
-    {
-        if($price == 'asc')
-        {
-            $price = 'ASC';
-        } 
-        else {
-            $price = 'DESC';
-        }
-        
-        $this->db->select('*');
-        $this->db->from('all_ads');
-        $this->db->order_by('price', $price);
-        $this->db->limit(10);
-        $query = $this->db->get();
-        return $query->result('array');
-    }
-
-    public function fetch_data($keyword)
+    public function fetch_data($param)
     {
         $sql = '';
 
         $sql .= "SELECT * FROM all_ads";
-
-        if($keyword['location'] != '')
+        
+        if(isset($param['location']))
         {
-            $sql .= " AND customer LIKE '%$keyword['location']%' ";
+            if($param['location'] == 'srilanka')
+            {
+                $sql .= " WHERE NOT location ='".$param['location']."'";
+            }
+            else
+            {
+                $sql .= " WHERE location ='".$param['location']."'";   
+            }
+            
         }
 
-        if($keyword['subcategory'] != '')
+        if(isset($param['category'])) 
         {
-            $sql .= " AND subcategory LIKE '%$keyword['subcategory']%' ";
+            $sql .= " AND cat_slug = '".$param['category']."'";
+        }   
+
+        if(isset($param['sortdate']) || isset($param['sortprice']))
+        {
+            $sql .= " ORDER BY";
+
+            if(isset($param['sortdate']))
+            {
+                $sql .= " date ".$param['sortdate']."";
+            }
+
+            if(isset($param['sortdate']) && isset($param['sortprice']))
+            {
+                $sql .= ",";
+            }
+
+            if(isset($param['sortprice']))
+            {
+                $sql .= " price ".$param['sortprice']."";
+            }
+            
         }
+
+        if(isset($param['query']))
+        {
+            $sql .= " WHERE subcategory LIKE '".$param['query']."%' OR category LIKE '".$param['query']."%' OR title LIKE '".$param['query']."%'";
+        }
+
+        $sql .= " LIMIT ".$param['start'].", ".$param['rows']." ";
+
+        $query = $this->db->query($sql);
+        $this->_num_rows = $query->num_rows();
+
+        return $query->result('array');
     }
 }
 ?>

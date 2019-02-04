@@ -7,5 +7,5 @@ LEFT JOIN tbl_category AS t4 ON t3.parent = t4.catid
 LEFT JOIN tbl_location AS t5 ON t1.location_id = t5.locid
 LEFT JOIN tbl_location AS t6 ON t5.parent = t6.locid
 LEFT JOIN tbl_users AS t7 ON t1.user_id = t7.userid
-WHERE t1.status = 2 
+WHERE t1.status = 1 
 AND t1.flag = 0;

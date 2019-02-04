@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS `tbl_adverts` (
   `user_id` int(11) NOT NULL,
   `location_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
+  `comment` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`adid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -40,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
   `catid` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(80) NOT NULL,
   `parent` INT DEFAULT NULL,
-  `image` VARCHAR(60) NOT NULL,
+  `slug` VARCHAR(60) NOT NULL,
   PRIMARY KEY (`catid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -53,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `tbl_location` (
   `locid` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(80) NOT NULL,
   `parent` INT DEFAULT NULL,
-  `image` VARCHAR(60),
+  `slug` VARCHAR(60),
   PRIMARY KEY (`locid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

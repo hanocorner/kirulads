@@ -22,4 +22,16 @@ $lang['success_register'] = "Registeration successful, Redirecting...";
 // Submit Ad
 $lang['error_submit'] = "Problem when inserting data to DB" ;
 $lang['success_submit'] = "Posting successful, Redirecting..." ;
+
+// Admin Login
+$lang['error_adm_invalid_un'] = "Username is incorrect, Please try again." ;
+$lang['success_adm_auth'] = "Posting successful, Redirecting..." ;
+$lang['error_adm_invalidpw'] = "Password is incorrect, Please try again." ;
+
+// Admin Ad Comment
+$lang['error_adm_rcomment'] = "System could not accept your comment, Please try again." ;
+$lang['success_adm_rcomment'] = "Comment Successful." ;
+
+// Admin Ad Approve
+$lang['error_adm_adapprove'] = "System could not approve this ad, Please try again." ;
 ?>

@@ -11,7 +11,10 @@ $(function () {
 	var spinner = '<i class="fa fa-spinner fa-spin fa-lg fa-fw d-block mx-auto text-primary mt-3"></i><span class="sr-only">Loading...</span>';
 
 	/* Functions */
-
+	$('.navbar-toggler').click(function () {
+		$('.navbar-collapse').toggleClass('right');
+		$('.navbar-toggler').toggleClass('indexcity');
+	});
 	// JS Message
 	var message = function (msg, type) {
 		var box;
@@ -155,6 +158,7 @@ $(function () {
 			},
 			success: function (data) {
 				$('#modalSpinner').html('');
+				$('#mainCategories').html('');
 				$('#loadSubCategories').html(data);
 			},
 			fail: function () {
@@ -218,17 +222,17 @@ $(function () {
 		event.preventDefault();
 		login(this);
 	});
-	
+
 	// Sort Date
-	$('#sortDate').on('change', function (){
+	$('#sortDate').on('change', function () {
 		var sortDate = $(this).val();
-		location.href = baseurl+'ads?sortdate='+sortDate;
+		location.href = baseurl + 'ads?sortdate=' + sortDate;
 	});
 
 	// Sort Price 
-	$('#sortPrice').on('change', function (){
+	$('#sortPrice').on('change', function () {
 		var sortPrice = $(this).val();
-		location.href = baseurl+'ads?sortprice='+sortPrice;
+		location.href = baseurl + 'ads?sortprice=' + sortPrice;
 	});
 
 	$('div[data-action="category"]').on("click", function () {
@@ -236,10 +240,11 @@ $(function () {
 		fetchSubCategories(id);
 	});
 
-	$('div[data-action="location"]').on("click",function () {
+	$('div[data-action="location"]').on("click", function () {
 		var id = $(this).data('id');
 		fetchSubLocations(id);
 	});
+
 
 	var btnActions = {
 		category: function (event) {

@@ -47,55 +47,45 @@ class Detail extends Public_Controller
 
 	/** */
 	public function ads()
-	{
+	{	
+		$this->benchmark->mark('my_mark_start');
 		$this->layout->title = 'Electronics, Cars, Property and Services in Sri Lanka | kirulads.lk';
 
 		$page = $this->input->get('page');
+		if ($page == 0) $page = 1;
 		$rows_per_page = 20;
 
-		$total_rows = $this->base->get_total_rows();
-		
-		$this->_data['links'] = $this->pagination($page, $rows_per_page, $total_rows);
-	
-		if ($page == 0) $page = 1;
 		$start = ($page - 1) * $rows_per_page;
 
-		$uri_seg = $this->uri->uri_to_assoc(1);
-		$uri_str = $this->input->get();
-		
-		var_dump($uri_seg);
-		print_r($uri_str);
+		$param['start'] = $start;
+		$param['rows'] = $rows_per_page;
+		$param['location'] = $this->uri->segment(2);
+		$param['category'] = $this->uri->segment(3);
+		$param['sortdate'] = $this->input->get('sortdate');
+		$param['sortprice'] = $this->input->get('sortprice');
+		$param['query'] = $this->input->get('query');
 
-		if($this->input->get('query') == true)
-		{
-			$this->_data['results'] = $this->base->search($this->input->get('query'));
-		}
-		elseif($this->input->get('sortdate') == true)
-		{
-			$this->_data['results'] = $this->base->sort_date($this->input->get('sortdate'));
-		}
-		elseif($this->input->get('sortprice') == true)
-		{
-			$this->_data['results'] = $this->base->sort_price($this->input->get('sortprice'));
-		}
-		else
-		{
-			$this->_data['results'] = $this->base->fetch_all_ads($rows_per_page, $start);	
-		}
-		
+		$this->_data['results'] = $this->base->fetch_data($param);	
 		$this->_data['result_count'] = $this->base->_result_count;
+		
+		$total_rows = $this->base->get_total_rows();
+		
+		$this->_data['links'] = $this->pagination($rows_per_page, $total_rows);
+	
 		$this->layout->view('public/home/all_ads', $this->_data);
+
+		$this->benchmark->mark('my_mark_end');
+		$this->output->enable_profiler(TRUE);
 	}
 	
 	/*** */
-	public function pagination($page, $rows_per_page, $total_rows)
+	public function pagination($rows_per_page, $total_rows)
 	{
 		$this->load->library('pagination');
 
-		$config['base_url'] = current_url('ads');
+		$config['base_url'] = '/'.uri_string(); 
 		$config["total_rows"] = $total_rows;
 		$config["per_page"] = $rows_per_page;
-		$config["uri_segment"] = 3;
 		$config["use_page_numbers"] = TRUE;
 		$config['page_query_string'] = TRUE;
 		$config['query_string_segment']= 'page';

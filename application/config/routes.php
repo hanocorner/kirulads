@@ -49,8 +49,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+/*
+switch ( $_SERVER['HTTP_HOST'] ) {
+    case 'kirulads/admin':
+        $route['default_controller'] = 'Base';
+    default:
+        $route['default_controller'] = 'Base';
+    break;
+}
+*/
 $route['default_controller'] = 'Base';
-
+$route['admin'] = 'admin/dashboard/login/index';
+$route['admin/logout'] = 'admin/dashboard/account/logout';
+$route['admin/dashboard'] = 'admin/dashboard/account/index';
+$route['admin/ads/all'] = 'admin/dashboard/ads/index';
+$route['admin/ads/view/(:num)'] = 'admin/dashboard/ads/view/$1';
 /**
  * Public Routes 
  * 
@@ -86,3 +99,4 @@ $route['404_override'] = 'Myerror';
 
 // URL dashes
 $route['translate_uri_dashes'] = TRUE;
+

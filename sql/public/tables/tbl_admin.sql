@@ -10,8 +10,8 @@
 CREATE TABLE IF NOT EXISTS `tbl_admin` (
   `adminid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) DEFAULT NULL,
-  `a_username` int(20) NOT NULL,
-  `a_password` varchar(300) NOT NULL, 
+  `username` int(20) NOT NULL,
+  `password` varchar(300) NOT NULL, 
   `created_date` date NOT NULL,
   PRIMARY KEY (`adminid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
