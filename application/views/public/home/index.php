@@ -1,41 +1,19 @@
 <section class="hero-banner" style="background-image:url(<?php echo base_url('assets/images/hero-banner.png');?>);">
 	<div class="container">
-		<h1>The Largest Online Market Place in Sri Lanka</h1>
-		<div class="card wild-card">
-			<div class="row">
-				<div class="col-6 col-lg-3">
-					<button type="button" data-action="location" class="btn btn-primary-alt wild-card-btn"><i class="fa fa-map-marker fa-fw"></i>
-						Location</button>
-				</div>
-
-				<div class="col-6 col-lg-3">
-					<button type="button" data-action="category" class="btn btn-primary-alt wild-card-btn"><i class="fa fa-sliders fa-fw"></i>
-						Category</button>
-				</div>
-
-				<div class="col-12 col-lg-6">
-					<form method="get" action="<?php echo base_url('ads'); ?>">
-						<div class="form-row">
-
-							<div class="col-8">
-								<input type="text" name="query" class="form-control" id="" placeholder="What are you looking for...">
-							</div>
-
-							<div class="col-4">
-								<button type="submit" class="btn btn-primary-alt wild-card-btn"><i class="fa fa-search fa-fw"></i> Search</button>
-							</div>
-
-						</div>
-					</form>
+		<div class="row">
+			<div class="col-12">
+				<div class="hero-text">
+					<h1>The Largest Online Market Place in Sri Lanka</h1>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </section>
 
-<section class="top-categories">
-	<div class="container">
+<?php echo $wildcard; ?>
+
+<section class="top-categories mt-3">
+	<div class="container px-2 px-md-0">
 		<div class="row">
 			<div class="col-6 col-lg-3">
 				<a href="<?php echo base_url('ads/srilanka/electronics'); ?>">
@@ -52,187 +30,110 @@
 			</div>
 			<div class="col-6 col-lg-3">
 				<a href="<?php echo base_url('ads/srilanka/vehicles'); ?>">
-				<div class="card top-category-card">
-					<div class="category-image">
-						<i class="sprite sprite-vehicles"></i>
+					<div class="card top-category-card">
+						<div class="category-image">
+							<i class="sprite sprite-vehicles"></i>
+						</div>
+						<div class="category-text">
+							<h5>Vehicles</h5>
+							<p>5 Ads</p>
+						</div>
 					</div>
-					<div class="category-text">
-						<h5>Vehicles</h5>
-						<p>5 Ads</p>
-					</div>
-				</div>
 				</a>
 			</div>
 			<div class="col-6 col-lg-3">
 				<a href="<?php echo base_url('ads/srilanka/property'); ?>">
-				<div class="card top-category-card">
-					<div class="category-image">
-						<i class="sprite sprite-property"></i>
+					<div class="card top-category-card">
+						<div class="category-image">
+							<i class="sprite sprite-property"></i>
+						</div>
+						<div class="category-text">
+							<h5>Property</h5>
+							<p>5 Ads</p>
+						</div>
 					</div>
-					<div class="category-text">
-						<h5>Property</h5>
-						<p>5 Ads</p>
-					</div>
-				</div>
 				</a>
-				
+
 			</div>
 			<div class="col-6 col-lg-3">
 				<a href="<?php echo base_url('ads/srilanka/fashion-health-beauty'); ?>">
-				<div class="card top-category-card">
-					<div class="category-image">
-						<i class="sprite sprite-fashion-health-beauty"></i>
+					<div class="card top-category-card">
+						<div class="category-image">
+							<i class="sprite sprite-fashion-health-beauty"></i>
+						</div>
+						<div class="category-text">
+							<h5>Fashion, Health & Beauty</h5>
+							<p>5 Ads</p>
+						</div>
 					</div>
-					<div class="category-text">
-						<h5>Fashion, Health & Beauty</h5>
-						<p>5 Ads</p>
-					</div>
-				</div>
 				</a>
-				
+
 			</div>
 		</div>
 
 		<div class="row mt-3">
 			<div class="col-6 col-lg-3">
 				<a href="<?php echo base_url('ads/srilanka/home-garden'); ?>">
-				<div class="card top-category-card">
-					<div class="category-image">
-						<i class="sprite sprite-home-garden"></i>
+					<div class="card top-category-card">
+						<div class="category-image">
+							<i class="sprite sprite-home-garden"></i>
+						</div>
+						<div class="category-text">
+							<h5>Home & Garden</h5>
+							<p>5 Ads</p>
+						</div>
 					</div>
-					<div class="category-text">
-						<h5>Home & Garden</h5>
-						<p>5 Ads</p>
-					</div>
-				</div>
 				</a>
-				
+
 			</div>
 			<div class="col-6 col-lg-3">
 				<a href="<?php echo base_url('ads/srilanka/business-industry'); ?>">
-				<div class="card top-category-card">
-					<div class="category-image">
-						<i class="sprite sprite-business-industry"></i>
+					<div class="card top-category-card">
+						<div class="category-image">
+							<i class="sprite sprite-business-industry"></i>
+						</div>
+						<div class="category-text">
+							<h5>Business & Industry</h5>
+							<p>5 Ads</p>
+						</div>
 					</div>
-					<div class="category-text">
-						<h5>Business & Industry</h5>
-						<p>5 Ads</p>
-					</div>
-				</div>
 				</a>
-				
+
 			</div>
 			<div class="col-6 col-lg-3">
 				<a href="<?php echo base_url('ads/srilanka/animals'); ?>">
-				<div class="card top-category-card">
-					<div class="category-image">
-						<i class="sprite sprite-animals"></i>
+					<div class="card top-category-card">
+						<div class="category-image">
+							<i class="sprite sprite-animals"></i>
+						</div>
+						<div class="category-text">
+							<h5>Animals</h5>
+							<p>5 Ads</p>
+						</div>
 					</div>
-					<div class="category-text">
-						<h5>Animals</h5>
-						<p>5 Ads</p>
-					</div>
-				</div>
 				</a>
-				
+
 			</div>
 			<div class="col-6 col-lg-3">
 				<a href="<?php echo base_url('ads/srilanka/top-deals'); ?>">
-				<div class="card top-category-card">
-					<div class="category-image">
-						<i class="sprite sprite-top-deal"></i>
+					<div class="card top-category-card">
+						<div class="category-image">
+							<i class="sprite sprite-top-deal"></i>
+						</div>
+						<div class="category-text">
+							<h5>Top Deals</h5>
+							<p>5 Ads</p>
+						</div>
 					</div>
-					<div class="category-text">
-						<h5>Top Deals</h5>
-						<p>5 Ads</p>
-					</div>
-				</div>
 				</a>
-				
+
 			</div>
 		</div>
 
 
 	</div>
 </section>
+<?php echo $category_modal; ?>
 
-<!-- Category Modal -->
-<div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title"><i class="fa fa-sliders fa-fw"></i> Select Category</h5>
-
-			</div>
-			<div class="modal-body">
-				<div class="all-ad-category">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-sliders fa-fw"></i></span> All Categories</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-desktop fa-fw"></i></span> Electronics</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-car fa-fw"></i></span> Vehicles</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-home fa-fw"></i></span> Property</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-heartbeat fa-fw"></i></span> Fashion, Health &
-								Beauty</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-futbol-o fa-fw"></i></span> Hobby, Sport & Kids</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-briefcase fa-fw"></i></span> Business & Industry</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-sun-o fa-fw"></i></span> Home & Garden</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-snapchat-ghost fa-fw"></i></span> Animals</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-graduation-cap fa-fw"></i></span> Education</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-cutlery fa-fw"></i></span> Food & Agriculture</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa fa-wrench fa-fw"></i></span> Services</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa fa-archive fa-fw"></i></span> Other</a></li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-<!-- /. of Category Modal -->
-
-<!-- Location Modal -->
-<div class="modal fade bd-example-modal-lg" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
- aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title"><i class="fa fa-map-marker fa-fw"></i> Select your city</h5>
-
-			</div>
-			<div class="modal-body">
-				<div class="all-ad-category">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> All of Sri Lanka</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Colombo</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kandy</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Galle</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ampara</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Anuradhapura</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Badulla</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Batticaloa</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Gampaha</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Hambantota</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Jaffna</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kalutara</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kegalle</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kilinochchi</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Kurunegala</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mannar</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matale</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Matara</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Moneragala</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Mullativu</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Nuwara Eliya</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Polonnaruwa</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Puttalam</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Ratnapura</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Trincomalee</a></li>
-						<li class="list-group-item"><a href="#"><span><i class="fa fa-map-marker fa-fw"></i></span> Vavuniya</a></li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
+<?php echo $location_modal; ?>
 <!-- /. of Category Modal -->

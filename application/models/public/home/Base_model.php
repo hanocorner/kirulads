@@ -5,8 +5,8 @@ class Base_model extends CI_Model
     /*** */
     public $_result_count = null;
 
-    /*** */
-    public $_num_rows = null;
+    /** */
+    private $_keywords = false;
 
     /** */
     public function __construct()
@@ -15,53 +15,31 @@ class Base_model extends CI_Model
     }
 
     /*** */
-    public function fetch_all_ads($rows_per_page, $start)
-    {
-        $query = $this->db->query("SELECT * FROM all_ads ORDER BY date DESC LIMIT $start, $rows_per_page");
-        $this->_result_count = $query->num_rows();
-        return $query->result('array');
-    }
-
-    /** */
-    public function get_total_rows()
-    {
-       return $this->db->count_all('all_ads'); 
-    }
-    
-    /** */
-    public function search($string)
-    {
-        $this->db->select('*');
-        $this->db->from('all_ads');
-        $this->db->like('subcategory', $string);
-        $this->db->limit(10);
-        $query = $this->db->get();
-        $this->_result_count = $query->num_rows();
-        return $query->result('array');
-    }
-
-    public function fetch_data($param)
+    public function populate($param)
     {
         $sql = '';
 
-        $sql .= "SELECT * FROM all_ads";
+        $sql .= "SELECT SQL_CALC_FOUND_ROWS * FROM all_ads";
         
+        $sql .= " WHERE";
+
+        $sql .= " status = 1";
+
         if(isset($param['location']))
         {
             if($param['location'] == 'srilanka')
             {
-                $sql .= " WHERE NOT location ='".$param['location']."'";
+                $sql .= " AND NOT location ='".$param['location']."'";
             }
             else
             {
-                $sql .= " WHERE location ='".$param['location']."'";   
+                $sql .= " AND '".$param['location']."' IN(loc_parent_slug, loc_child_slug)";   
             }
-            
         }
 
         if(isset($param['category'])) 
         {
-            $sql .= " AND cat_slug = '".$param['category']."'";
+            $sql .= " AND '".$param['category']."' IN(cat_parent_slug, cat_child_slug)";
         }   
 
         if(isset($param['sortdate']) || isset($param['sortprice']))
@@ -82,18 +60,19 @@ class Base_model extends CI_Model
             {
                 $sql .= " price ".$param['sortprice']."";
             }
-            
         }
 
         if(isset($param['query']))
         {
-            $sql .= " WHERE subcategory LIKE '".$param['query']."%' OR category LIKE '".$param['query']."%' OR title LIKE '".$param['query']."%'";
+            $sql .= " AND (subcategory LIKE '".$param['query']."%' OR category LIKE '".$param['query']."%' OR sublocation LIKE '".$param['query']."%' OR location LIKE '".$param['query']."%' OR title LIKE '".$param['query']."%') ";
         }
 
         $sql .= " LIMIT ".$param['start'].", ".$param['rows']." ";
 
         $query = $this->db->query($sql);
-        $this->_num_rows = $query->num_rows();
+        $result_count = $this->db->query('SELECT FOUND_ROWS() AS total_rows');
+        $result_count = $result_count->result('object');
+        $this->_result_count = (int) $result_count[0]->total_rows;
 
         return $query->result('array');
     }

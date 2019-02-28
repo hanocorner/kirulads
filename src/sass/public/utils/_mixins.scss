@@ -1,0 +1,19 @@
+@mixin mq($min-width) {
+    @media (min-width: $min-width) {
+      @content;
+    }
+}
+
+@mixin mq-height($max-height) {
+  @media (max-height: $max-height) {
+    @content;
+  }
+}
+
+@mixin transition($property) {
+    -webkit-transition: $property;
+    -moz-transition:$property;
+    -ms-transition:$property;
+    -o-transition:$property;
+    transition:$property;
+}

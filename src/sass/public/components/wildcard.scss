@@ -1,0 +1,21 @@
+.wildcard {
+    background: $white;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: 20px;
+
+    .wildcard-btn {
+		width: 100%;
+	}
+}
+.wild-card {
+	top: 12px;
+    padding: 11px;
+
+	@include mq(768px) {
+		top: -40px;
+        padding: 25px;
+	}
+
+	
+}

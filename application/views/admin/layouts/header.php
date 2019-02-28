@@ -22,6 +22,18 @@
               <span class="nav-link-text">All Ads</span>
             </a>
           </li>
+          <li class="nav-item <?php if($this->uri->segment(2) == 'category') echo 'active'; ?>" data-toggle="tooltip" data-placement="right" title="Category">
+            <a class="nav-link" href="<?php echo base_url('admin/category');?>">
+              <i class="fa fa-th-list fa-fw" aria-hidden="true"></i>
+              <span class="nav-link-text">Category</span>
+            </a>
+          </li>
+          <li class="nav-item <?php if($this->uri->segment(2) == 'location') echo 'active'; ?>" data-toggle="tooltip" data-placement="right" title="Location">
+            <a class="nav-link" href="<?php echo base_url('admin/location');?>">
+              <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>
+              <span class="nav-link-text">Location</span>
+            </a>
+          </li>
 
         </ul>
         <ul class="navbar-nav sidenav-toggler">

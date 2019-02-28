@@ -13,7 +13,7 @@ class Admin_Controller extends AP_Controller
     parent::__construct();
     $this->set_layout('admin');
 
-    $this->layout->assets('assets/admin/css/app.css');
+    $this->layout->assets('assets/admin/css/main.css');
 
     $custom_script = 'var baseurl = "'.base_url().'";';
     $this->layout->script($custom_script, 'header');

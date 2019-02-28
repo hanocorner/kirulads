@@ -1,0 +1,43 @@
+.category-card {
+    background-color: $white;
+    padding: 5px 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    
+    @include mq(768px) {
+        padding: 10px 30px;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+    }
+
+    p {
+        font-size: 0.8rem;
+        font-weight: 400;
+        @include mq(768px) {
+            font-size: 1.0rem;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    &:hover p {
+        color: $primary-shade-2;
+    }
+}
+
+.category-modal {
+    .modal-header a {
+        cursor: pointer;
+    }
+
+    .modal-body a {
+        padding: 5px 10px;
+        margin: 10px;
+    }
+}

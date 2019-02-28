@@ -19,7 +19,6 @@ class Detail extends Public_Controller
     /** */
 	public function ad()
 	{
-		
 		$this->layout->assets('assets/vendors/flexslider/flexslider.css');
 		$this->layout->assets(base_url('assets/vendors/flexslider/jquery.flexslider.js'), 'footer');
 		$custom_script = "$('.flexslider').flexslider({
@@ -48,10 +47,10 @@ class Detail extends Public_Controller
 	/** */
 	public function ads()
 	{	
-		$this->benchmark->mark('my_mark_start');
 		$this->layout->title = 'Electronics, Cars, Property and Services in Sri Lanka | kirulads.lk';
 
 		$page = $this->input->get('page');
+		$this->_data['cat'] = $this->uri->segment(3);
 		if ($page == 0) $page = 1;
 		$rows_per_page = 20;
 
@@ -64,18 +63,19 @@ class Detail extends Public_Controller
 		$param['sortdate'] = $this->input->get('sortdate');
 		$param['sortprice'] = $this->input->get('sortprice');
 		$param['query'] = $this->input->get('query');
-
-		$this->_data['results'] = $this->base->fetch_data($param);	
-		$this->_data['result_count'] = $this->base->_result_count;
 		
-		$total_rows = $this->base->get_total_rows();
+		$this->_data['results'] = $this->base->populate($param);	
+		
+		$this->_data['result_count'] = $this->base->_result_count;
+		$this->_data['category_modal'] = $this->load->view('public/layouts/category_modal', '', TRUE);
+		$this->_data['location_modal'] = $this->load->view('public/layouts/location_modal', '', TRUE);
+		$this->_data['wildcard'] = $this->load->view('public/layouts/wildcard', '', TRUE);
+		
+		$total_rows = $this->base->_result_count;
 		
 		$this->_data['links'] = $this->pagination($rows_per_page, $total_rows);
 	
 		$this->layout->view('public/home/all_ads', $this->_data);
-
-		$this->benchmark->mark('my_mark_end');
-		$this->output->enable_profiler(TRUE);
 	}
 	
 	/*** */

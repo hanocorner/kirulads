@@ -14,7 +14,7 @@ class Public_Controller extends AP_Controller
 
     $this->set_layout('public');
 
-    $this->layout->assets('assets/public/css/app.css');
+    $this->layout->assets('assets/public/css/main.css');
 
     $custom_script = 'var baseurl = "'.base_url().'";';
     $this->layout->script($custom_script, 'header');
@@ -22,6 +22,7 @@ class Public_Controller extends AP_Controller
     $this->layout->assets('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', 'footer');
     $this->layout->assets('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', 'footer');
     $this->layout->assets(base_url('assets/public/js/app.js'), 'footer');
+    $this->layout->assets(base_url('assets/public/js/main.js'), 'footer');
     
     $this->load->helper('cookie');
   }

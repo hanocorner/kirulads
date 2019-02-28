@@ -4,17 +4,17 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fa fa-sliders fa-fw"></i> Select Category</h5>
-				<a href="javascript:void(0)" data-dismiss="modal" aria-label="Close">
-					<img src="<?php echo base_url('assets/images/error.png'); ?>" alt="Error-Image" class="img-fluid">
+				<a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
+					&times;
 				</a>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body" id="modalBodyCategory">
                 <div id="modalSpinner" class="mx-auto mt-3"></div>
 				<div class="all-ad-category" id="mainCategories">
-					<ul class="list-group list-group-flush">
-						<li><a href="#"><span><i class="fa fa-sliders fa-fw"></i></span> All Categories</a></li>
-						<li><a href="#" data-action="category" data-id="100"><span><i class="fa fa-desktop fa-fw"></i></span> Electronics</a></li>
-						<li><a href="#"><span><i class="fa fa-car fa-fw"></i></span> Vehicles</a></li>
+					<ul>
+						<li><a href="#" data-action="category" data-id=""><span><i class="fa fa-sliders fa-fw"></i></span> All Categories</a></li>
+						<li><a href="<?php echo $this->uri->segment(2); ?>" data-action="category" data-id="100"><span><i class="fa fa-desktop fa-fw"></i></span> Electronics</a></li>
+						<li><a href="#" data-action="category" data-id="101"><span><i class="fa fa-car fa-fw"></i></span> Vehicles</a></li>
 						<li><a href="#"><span><i class="fa fa-home fa-fw"></i></span> Property</a></li>
 						<li><a href="#"><span><i class="fa fa-heartbeat fa-fw"></i></span> Fashion, Health &
 								Beauty</a></li>

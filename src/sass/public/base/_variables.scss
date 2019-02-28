@@ -1,0 +1,35 @@
+// Universal colors
+$white:#FFF;
+$black:#000;
+
+// Theme colors
+$blue-100:#88B8FF;
+$blue-200:#7E93FF;
+$blue-300:#546FF8;
+$blue-400:#4152AB;
+$blue-500:#0F27A2;
+
+$primary-blue: #0F27A2;
+$primary-shade:#88B8FF;
+$primary-shade-1:#7E93FF;
+$primary-shade-2:#546FF8;
+$primary-shade-3:#4152AB;
+
+// Gray/Neutral Colors
+$color_1: #fff;
+$color_2: #3270af;
+$color_3: rgba(0, 0, 0, .5);
+$color_4: #242526;
+$color_5: rgba(0,0,0,1);
+$color_6: rgba(#000,.7);
+
+// Fonts
+$font_family_1: FontAwesome;
+$fa-font-path: '../../fonts/';
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,900');
+$font-stack:'Raleway', sans-serif;
+
+// alert
+$alert-bg-level:0;
+$alert-border-level:1;
+$alert-color-level:-10;

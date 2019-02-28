@@ -59,11 +59,13 @@ switch ( $_SERVER['HTTP_HOST'] ) {
 }
 */
 $route['default_controller'] = 'Base';
+
 $route['admin'] = 'admin/dashboard/login/index';
 $route['admin/logout'] = 'admin/dashboard/account/logout';
 $route['admin/dashboard'] = 'admin/dashboard/account/index';
 $route['admin/ads/all'] = 'admin/dashboard/ads/index';
 $route['admin/ads/view/(:num)'] = 'admin/dashboard/ads/view/$1';
+$route['admin/category'] = 'admin/category/index';
 /**
  * Public Routes 
  * 
