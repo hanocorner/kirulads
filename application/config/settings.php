@@ -13,7 +13,7 @@ $config['default_separator'] = '-';
 $config['base_path'] = './images/uploads';
 $config['temp_path'] = './images/temp';
 $config['allowed_types'] = 'gif|jpg|png|jpeg';
-$config['max_size'] = 200000;
+$config['max_size'] = 5242880;
 $config['max_width'] = '1024';
 $config['max_height'] = '1024';
 ?>

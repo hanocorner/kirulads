@@ -32,12 +32,16 @@
 @import "node_modules/bootstrap/scss/_close.scss";
 @import "node_modules/bootstrap/scss/_tables.scss";
 @import "node_modules/bootstrap/scss/_dropdown.scss";
+@import "node_modules/bootstrap/scss/_tooltip.scss";
 @import "node_modules/bootstrap/scss/_spinners.scss";
 @import "node_modules/bootstrap/scss/_pagination.scss";
 @import "node_modules/bootstrap/scss/_utilities.scss";
 
 // Font awesome (icons)
 @import "node_modules/font-awesome/scss/font-awesome.scss";
+
+// Default elements (html, body & etc)
+@import "base/_default.scss";
 
 // Utility sass
 @import "utils/_mixins.scss";
@@ -48,7 +52,6 @@
 @import "components/wildcard.scss";
 
 // Layouts (themes sass)
-@import "layout/body.scss";
 @import "layout/header.scss";
 @import "layout/footer.scss";
 
@@ -62,3 +65,4 @@
 @import "views/login.scss";
 @import "views/post_ad.scss";
 @import "views/profile.scss";
+@import "views/my_ads.scss";

@@ -3,17 +3,24 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	max-width: 100%;
 	border: 1px dashed $gray-200;
 	border-radius: 5px;
 	padding: 15px;
 
 	@include mq(768px) {
-		max-width: 50%;
+		position: relative;
 	}
 
     .image {
 		margin-right: 18px;
+		width: 150px;
+		height: 100px;
+		background: $gray-200;
+
+		img {
+			display: block;
+			margin: auto;
+		}
 	}
 	
 	.img-controls {
@@ -55,29 +62,25 @@
 	}
 
 }
-.post-ad-card .card-body {
-	.section-select {
-		border: 1px solid $gray-200;
-		border-radius: 5px;
-		padding: 10px;
-		max-width: 100%;
 
-		@include mq(768px) {
-			max-width: 50%;
-		}
-
-		p {
-			color:#858585;
-			margin-bottom: 1px;
-		}
-	}
-	.contact-data {
-		h6 {
-			color: $primary-shade-1;
-			font-weight: 500;
-		}
+.contact-data {
+	h6 {
+		color: $primary-shade-1;
+		font-weight: 500;
 	}
 }
+
+.section-select {
+	border: 1px solid $gray-200;
+	border-radius: 5px;
+	padding: 10px;
+
+	p {
+		color:#858585;
+		margin-bottom: 1px;
+	}
+}
+
 
 // When user have successfully completed ad posting
 .ad-complete {
@@ -87,63 +90,4 @@
 	}
 }
 
-// My Ads Page
-.my-ad {
-	display: flex;
-	flex-direction: column;
-	border-bottom: 1px solid $gray-200;
-	padding: 20px 0;
 
-	@include mq(768px) {
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.my-ad-info {
-		margin-left: 0;
-		flex: 1;
-
-		h3 {
-			font-size: 1.4rem;
-
-			@include mq(768px) {
-				font-size: 1.75rem;
-			}
-		}
-
-		.my-ad-category {
-			display: flex;
-			align-items: center;
-
-			h5 {
-				margin-right: 5px;
-				margin-bottom: 0;
-			}
-
-			p {
-				margin-bottom: 0;
-				margin-left: 5px;
-			}
-		}
-
-
-		@include mq(768px) {
-			margin-left: 15px;
-		}
-	}
-
-	.my-ad-btn {
-		margin: 15px 0;
-
-		a {
-			margin-right: 5px;
-		}
-
-
-		@include mq(768px) {
-			margin: 0;
-		}
-	}
-
-}

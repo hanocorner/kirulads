@@ -89,7 +89,7 @@ class Handler extends Public_Controller
         $this->_data['userinfo'] = $this->admodel->fetch_user_by_id($this->session->userid);
 
         $this->layout->assets(base_url('assets/public/js/submit.js'), 'footer');
-        $this->layout->view('public/post-ad/details', $this->_data);
+        $this->layout->view('public/post-ad/submit_form', $this->_data);
     }
 
     public function ad_complete()
@@ -112,6 +112,7 @@ class Handler extends Public_Controller
         $this->_data = $_POST;
         $this->_data['user_id'] = $this->session->userid;
         $this->_data['slug'] = $this->slug($title);
+        $this->_data['negotiable'] = $this->input->post('negotiable') ? $this->input->post('negotiable') : 0;
         $main_img = $this->session->main_image;
         $sub_img_array = $this->move_to_dest($temp_path_string, $perm_path_string);
 
@@ -207,7 +208,7 @@ class Handler extends Public_Controller
         $slug = preg_replace('~[^\pL\d]+~u', '-', $slug);
 
         // transliterate
-        $slug = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
+        //$slug = iconv('utf-8', 'us-ascii//TRANSLIT', $slug);
 
         // remove unwanted characters
         $slug = preg_replace('~[^-\w]+~', '', $slug);

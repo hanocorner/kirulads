@@ -21,9 +21,17 @@
         padding: 8px;
 
         .meta-media {
-            width: 136px;
-            height: 102px;
+            width: 200px;
+            height: 110px;
             background-color: $gray-200;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                position: relative;
+                top: 50%;
+                transform: translate(0,-50%);
+            }
         }
         .meta-data {
             display: flex;

@@ -1,0 +1,15 @@
+html,
+body{
+    //font-family: $font-stack;
+    background-color: $gray-100;
+    height: 100%;
+}
+
+.bg-ad-post {
+	position: relative;
+    word-wrap: break-word;
+    background-color:$white;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+	border-radius: .25rem;	
+}

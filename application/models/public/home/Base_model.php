@@ -40,7 +40,12 @@ class Base_model extends CI_Model
         if(isset($param['category'])) 
         {
             $sql .= " AND '".$param['category']."' IN(cat_parent_slug, cat_child_slug)";
-        }   
+        } 
+        
+        if(isset($param['query']))
+        {
+            $sql .= " AND (subcategory LIKE '".$param['query']."%' OR category LIKE '".$param['query']."%' OR sublocation LIKE '".$param['query']."%' OR location LIKE '".$param['query']."%' OR title LIKE '".$param['query']."%') ";
+        }
 
         if(isset($param['sortdate']) || isset($param['sortprice']))
         {
@@ -60,11 +65,6 @@ class Base_model extends CI_Model
             {
                 $sql .= " price ".$param['sortprice']."";
             }
-        }
-
-        if(isset($param['query']))
-        {
-            $sql .= " AND (subcategory LIKE '".$param['query']."%' OR category LIKE '".$param['query']."%' OR sublocation LIKE '".$param['query']."%' OR location LIKE '".$param['query']."%' OR title LIKE '".$param['query']."%') ";
         }
 
         $sql .= " LIMIT ".$param['start'].", ".$param['rows']." ";

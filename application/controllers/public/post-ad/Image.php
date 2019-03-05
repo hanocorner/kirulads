@@ -17,15 +17,22 @@ class Image extends Public_Controller
      */
     private $_extension = null;
 
-    /** */
+    /**
+     * 
+     */
+    private $_validation = null;
+
+    /** 
+     * 
+     * 
+    */
     public $_message = '';
+    
 
     /** */
 	public function  __construct()
 	{
         parent::__construct();
-
-        $this->check_login_status();
 
         $this->load->library('image_lib');
         $this->config->load('settings');
@@ -34,6 +41,11 @@ class Image extends Public_Controller
     /** */
     public function index()
     {
+        if (!$this->session->has_userdata('logged_in') && $this->session->logged_in != true) 
+        { 
+            return $this->jason_output(true, 'Session expired', 'user/login');
+        }
+
         $path_string = $this->input->post('path_string');
         $this->_dir_path = $this->config->item('temp_path').'/'.$path_string;
         $image = $_FILES;
@@ -46,7 +58,14 @@ class Image extends Public_Controller
         $upload = $this->upload_image('adimg');
 
         $this->output->set_content_type('application/json', 'utf-8');
-        $this->output->set_output(json_encode(array('base_uri'=>$this->_dir_path, 'data_id'=>$path_string, 'image_name'=>$this->_image_name, 'status'=>TRUE)));
+        if($this->_validation == false) 
+        {
+            return $this->output->set_output(json_encode(array('message'=>$this->_message, 'status'=>FALSE)));
+        }
+        else {
+            return $this->output->set_output(json_encode(array('message'=>$this->_message, 'base_uri'=>$this->_dir_path, 'data_id'=>$path_string, 'image_name'=>$this->_image_name, 'status'=>TRUE)));
+        }
+        
     }
 
     /** */
@@ -68,17 +87,18 @@ class Image extends Public_Controller
         $config['upload_path'] = $this->_dir_path;
         $config['allowed_types'] = $this->config->item('allowed_types');
         $config['max_size'] = $this->config->item('max_size');
-        $config['max_width'] = $this->config->item('max_width');
-        $config['max_height'] = $this->config->item('max_height');
+        $config['max_width'] = 0;
+        $config['max_height'] = 0;
 
         $this->load->library('upload', $config);
         if($this->upload->do_upload($field))
         {
+            $this->resize_image();
             $this->create_thumbnail();
-            return TRUE;
+            return $this->_validation = true;
         }
-
-        //$this->_message = $this->upload->display_errors();
+        $this->_validation = false;
+        $this->_message = $this->upload->display_errors();
         return FALSE;
     }
     
@@ -89,13 +109,29 @@ class Image extends Public_Controller
         $config['source_image'] = $this->_dir_path.'/'.$this->_image_name;
         $config['create_thumb'] = FALSE;
         $config['maintain_ratio'] = TRUE;
+        $config['master_dim'] = 'auto';
         $config['new_image'] = $this->_dir_path.'/'.'thumb'.'/'.$this->_image_name;
-        $config['width']         = 136;
-        $config['height']       = 102;
-        //$config['quality'] = '65%';
-
+        $config['width'] = 200;
+        $config['height'] = 160;
+        $config['quality'] = '55%';
+        
         $this->image_lib->initialize($config);
 
+        $this->image_lib->resize();
+        
+    }
+
+    /** */
+    public function resize_image()
+    {
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = $this->_dir_path.'/'.$this->_image_name;
+        $config['create_thumb'] = FALSE;
+        $config['maintain_ratio'] = TRUE;
+        $config['width'] = 640;
+        $config['height'] = 480;
+        
+        $this->image_lib->initialize($config);
         $this->image_lib->resize();
     }
 

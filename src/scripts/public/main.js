@@ -155,7 +155,7 @@ $(function () {
 			},
 			success: function (data) {
 				$('#modalSpinner').html('');
-				$('#mainCategories').html('');
+				$('#loadSubCategories').html(data);
 			},
 			fail: function () {
 				console.log('Error');
@@ -305,4 +305,6 @@ $(function () {
 			btnActions[action].call(this, event);
 		}
 	});
+
+	$("[data-toggle=tooltip]").tooltip();
 }); // End of document ready

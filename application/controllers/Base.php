@@ -51,10 +51,10 @@ class Base extends Public_Controller {
         {
 			if($cateory != '' || $cateory != null )
 			{
-				$this->_html .= '<li><a href="/ads/'.$result['name'].'/'.$cateory.'">'.$result['name'].'</a></li>';
+				$this->_html .= '<li><a href="/ads/'.$result['slug'].'/'.$cateory.'">'.$result['name'].'</a></li>';
 			}
             else {
-				$this->_html .= '<li><a href="/ads/'.$result['name'].'">'.$result['name'].'</a></li>';
+				$this->_html .= '<li><a href="/ads/'.$result['slug'].'">'.$result['name'].'</a></li>';
 			}
 		}
 
@@ -78,10 +78,10 @@ class Base extends Public_Controller {
 		{
 			if($location != '' || $location != null )
 			{
-				$this->_html .= '<li><a href="/ads/'.$location.'/'.$result['name'].$query.'">'.$result['name'].'</a></li>';
+				$this->_html .= '<li><a href="/ads/'.$location.'/'.$result['slug'].$query.'">'.$result['name'].'</a></li>';
 			}
             else {
-				$this->_html .= '<li><a href="/ads/srilanka/'.$result['name'].$query.'">'.$result['name'].'</a></li>';
+				$this->_html .= '<li><a href="/ads/srilanka/'.$result['slug'].$query.'">'.$result['name'].'</a></li>';
 			}
 		}
 		$this->_html .= '</ul>';

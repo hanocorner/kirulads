@@ -20,9 +20,14 @@ class Public_Controller extends AP_Controller
     $this->layout->script($custom_script, 'header');
 
     $this->layout->assets('https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', 'footer');
+    $this->layout->assets(base_url('assets/vendors/popper/popper.min.js'), 'footer');
     $this->layout->assets('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', 'footer');
+    
     $this->layout->assets(base_url('assets/public/js/app.js'), 'footer');
     $this->layout->assets(base_url('assets/public/js/main.js'), 'footer');
+    $this->layout->assets(base_url('assets/vendors/counter/textcounter.min.js'), 'footer');
+    $this->layout->assets(base_url('assets/vendors/validator/bootstrap-validate.js'), 'footer');
+    
     
     $this->load->helper('cookie');
   }

@@ -46,7 +46,16 @@
 				<div class="all-ad-category pl-3 mt-4">
 					<p class="text-muted mb-1"><small>Categories:</small></p>
 					<ul>
-						<li><a href="#"><span><i class="fa fa-chevron-left fa-fw"></i></span> All Categories</a></li>
+						<li>
+							<a data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+								<span><i class="fa fa-chevron-left fa-fw"></i></span> All Categories
+							</a>
+							<ul class="collapse multi-collapse" id="multiCollapseExample1">
+								<li><a href="#">&mdash; Sub test 1</a></li>
+								<li><a href="#">&mdash; Sub test 1</a></li>
+								<li><a href="#">&mdash; Sub test 1</a></li>
+							</ul>
+						</li>
 						<li><a href="#"><span><i class="fa fa-desktop fa-fw"></i></span> Electronics</a></li>
 						<li><a href="#"><span><i class="fa fa-car fa-fw"></i></span> Vehicles</a></li>
 						<li><a href="#"><span><i class="fa fa-home fa-fw"></i></span> Property</a></li>

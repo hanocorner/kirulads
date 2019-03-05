@@ -13,7 +13,7 @@ $(function () {
 				return box = '<div class="notify-box">' +
 					'<noscript>Sorry, your browser does not support JavaScript!</noscript>' +
 					'<div class="error d-flex align-items-center">' +
-					'<img src="' + baseurl + 'assets/public/dist/images/error.png" alt="Error-Image" class="img-fluid">' +
+					'<i class="fa fa-times-circle fa-fw fa-lg" aria-hidden="true"></i>' +
 					'<div>' + msg + '<div>' +
 					'</div>' +
 					'</div>';
@@ -38,7 +38,7 @@ $(function () {
 		}
 	}
 
-    // Submit Ad Image 
+	// Submit Ad Image 
 	var imageReader = function (input) {
 		var file = input.files[0];
 		// Message array
@@ -54,8 +54,8 @@ $(function () {
 			alert(message['allowedTypes']);
 			return false;
 		}
-		// File size MAX 2MB
-		if (file.size > 2000000) {
+		// File size MAX 5MB
+		if (file.size > 5242880) {
 			alert(message['fileSize']);
 			return false;
 		}
@@ -69,19 +69,8 @@ $(function () {
 				//Set the Base64 string return from FileReader as source.
 				image.src = e.target.result;
 
-				//Validate the File Height and Width.
 				image.onload = function () {
-					var height = this.height;
-					var width = this.width;
-					if (width > 2048) {
-						alert(message['width']);
-						return false;
-					} else if (height > 2048) {
-						alert(message['height']);
-						return false;
-					}
-				
-					if($('.ad-image').length > 5) {
+					if ($('.ad-image').length > 5) {
 						alert(message['maxfilecount']);
 						return false;
 					}
@@ -104,33 +93,35 @@ $(function () {
 							$('#btnLabelImg').html('<i class="fa fa-refresh fa-spin fa-lg fa-fw"></i><span class="sr-only">Loading...</span>');
 						},
 						success: function (response) {
-							var image = baseurl+response.base_uri+'/thumb/'+response.image_name;
-							var adDiv = 
-							'<div class="ad-image mb-3" id="adImage" data-image="'+response.image_name+'" data-id="'+response.data_id+'">'+
-							'<div class="image">'+
-							'<img src="'+image+'" class="img-fluid" alt="" id="imageAd">'+
-							'</div>'+
-							'<div class="img-controls">'+
-							'<div class="add-image">'+
-							'<div class="form-check mb-2">'+
-							'<input class="form-check-input" type="radio" name="mainImage" id="mainImage" data-image="'+response.image_name+'">'+	
-							'<label class="form-check-label text-muted" for="exampleRadios1">Main Image</label>'+
-							'</div>'+
-							'<button type="button" data-image="'+response.image_name+'" class="btn btn-sm btn-del-img btn-outline-danger" id="removeImg"><i class="fa fa-minus-circle fa-fw"></i> Remove</button>'+
-							'</div>'+
-							'</div>'+
-							'</div>';
+							var image = baseurl + response.base_uri + '/thumb/' + response.image_name;
+							var adDiv =
+								'<div class="ad-image mb-3" id="adImage" data-image="' + response.image_name + '" data-id="' + response.data_id + '">' +
+								'<div class="image">' +
+								'<img src="' + image + '" class="img-fluid" alt="" id="imageAd">' +
+								'</div>' +
+								'<div class="img-controls">' +
+								'<div class="add-image">' +
+								'<div class="form-check mb-2">' +
+								'<input class="form-check-input" type="radio" name="mainImage" id="mainImage" data-image="' + response.image_name + '">' +
+								'<label class="form-check-label text-muted" for="exampleRadios1">Main Image</label>' +
+								'</div>' +
+								'<button type="button" data-image="' + response.image_name + '" class="btn btn-sm btn-del-img btn-outline-danger" id="removeImg"><i class="fa fa-minus-circle fa-fw"></i> Remove</button>' +
+								'</div>' +
+								'</div>' +
+								'</div>';
 							$('#btnLabelImg').html('Add a photo');
-							if(response.status) {
+							if (response.status) {
 								$('#adDivImg').append(adDiv);
+							} else {
+								messageBox.html(message(response.message, 'error'));
 							}
 							$('input[name=adimg]').val('');
 							formData.delete('adimg');
-							
-							var imgArray = $('.ad-image').map(function() { 
+
+							var imgArray = $('.ad-image').map(function () {
 								return $(this).data('image');
 							}).get().join(',');
-					
+
 							$('#setSubImg').val(imgArray);
 						},
 						fail: function () {
@@ -142,11 +133,47 @@ $(function () {
 			}
 			reader.readAsDataURL(input.files[0]);
 		}
-		
-    };
-    
-    // Function to submit Ad
+
+	};
+
+	//
+	var validate = function () {
+
+		bootstrapValidate('#titleName', 'regex:^([-A-Za-z0-9 ]){1,100}$:You can only use alphabhatical, numerical, dash & hypen only|max:100:Maximum characters reached');
+
+		bootstrapValidate('#countableArea', 'regex:^([-A-Za-z0-9 ]){1,5000}$:You can only use alphabhatical, numerical, dash & hypen only');
+		bootstrapValidate('#priceField', 'numeric:Price field has to be a numeric value');
+	};
+
+	// Function to submit Ad
 	var submitAd = function (formid) {
+		if ($('#adImage').length == 0) {
+			messageBox.html(message('Please upload one or more photo(s) for your ad', 'error'));
+			return false;
+		}
+
+		if($('#titleName').val() == '' || $('#titleName').val() == null) {
+			$('#titleName').addClass('is-invalid');
+			messageBox.html(message('Title field is required', 'error'));
+			return false;
+		}
+
+		if($('input[type="radio"]:checked').length == 0) {
+			messageBox.html(message('Please select your item condition', 'error'));
+			return false;
+		}
+
+		if($('#countableArea').val() == '' || $('#countableArea').val() == null) {
+			$('#countableArea').addClass('is-invalid');
+			messageBox.html(message('Description field is required', 'error'));
+			return false;
+		}
+
+		if($('#priceField').val() == '' || $('#priceField').val() == null) {
+			$('#priceField').addClass('is-invalid');
+			messageBox.html(message('Price field is required', 'error'));
+			return false;
+		}
 
 		formData = new FormData(formid);
 		formData.append('temp_path_string', $('input[name=path_string]').val());
@@ -159,9 +186,10 @@ $(function () {
 			processData: false,
 			contentType: false,
 			beforeSend: function () {
-				messageBox.html(message('Processing...', 'info'));
+				$('#publishAd').html('<i class="fa fa-refresh fa-spin fa-fw"></i>');
 			},
 			success: function (response) {
+				$('#publishAd').html('Post Ad');
 				if (response.auth) {
 					messageBox.html(message(response.message, 'success'));
 					location.href = response.url;
@@ -174,10 +202,10 @@ $(function () {
 				console.log('Error');
 			}
 		});
-    };
-    
-    // Function
-    var removeImage = function (imageName){
+	};
+
+	// Function
+	var removeImage = function (imageName) {
 		$.ajax({
 			url: baseurl + 'image/delete',
 			type: 'POST',
@@ -194,16 +222,18 @@ $(function () {
 			}
 		});
 
-		
+
 	};
 
 	//
-	var setFeatured = function(imageName) {
+	var setFeatured = function (imageName) {
 		$.ajax({
 			url: baseurl + 'image/featured',
 			type: 'POST',
 			dataType: 'JSON',
-			data: {image: imageName},
+			data: {
+				image: imageName
+			},
 			success: function (data) {
 				console.log(data);
 			},
@@ -213,8 +243,23 @@ $(function () {
 		});
 	};
 
-    /** Binding  */
-    // Form On Submit
+	//
+	$('#countableArea').textcounter({
+		type: "character",
+		min: 0,
+		max: 5000,
+		stopInputAtMaximum: true,
+		maximumErrorText: "Maximum exceeded",
+		displayErrorText: true,
+		counterText: "%d/5000"
+	});
+
+	/** Binding  */
+
+	// 
+	validate();
+
+	// Form On Submit
 	formSubmitAd.on("submit", function (event) {
 		event.preventDefault();
 		submitAd(this);
@@ -223,16 +268,17 @@ $(function () {
 	// 
 	$("#myAdImg").change(function () {
 		imageReader(this);
-    });
-	
+	});
+
 	// 
-    $('#adDivImg').on('change', '#mainImage', function() {
+	$('#adDivImg').on('change', '#mainImage', function () {
 		setFeatured($(this).data('image'));
-    });
-	
+	});
+
 	// Remove one particular image from temp location as well as div
-	$('#adDivImg').on('click', '#removeImg', function (){
+	$('#adDivImg').on('click', '#removeImg', function () {
 		removeImage($(this).data('image'));
 		$(this).parentsUntil('#adDivImg').remove();
 	});
+
 });

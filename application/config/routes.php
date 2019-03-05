@@ -72,7 +72,8 @@ $route['admin/category'] = 'admin/category/index';
  */
 $route['user/login'] = 'public/user/login/index';
 $route['user/register'] = 'public/user/register/index';
-$route['user/myAccount'] = 'public/user/account/index';
+$route['user/account'] = 'public/user/account/index';
+$route['user/account/myads'] = 'public/user/account/index';
 
 $route['user/account/settings'] = 'public/user/account/settings';
 $route['user/forgotPassword'] = 'public/user/handler/forgot_password';

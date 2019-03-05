@@ -51,7 +51,7 @@ class Login extends Public_Controller
 
             $this->session->set_userdata($session_data);
 
-            return $this->json_output(true, $this->lang->line('success_auth'), 'user/myAccount');
+            return $this->json_output(true, $this->lang->line('success_auth'), 'user/account');
             
         }
         else 
