@@ -1,16 +1,16 @@
-<div class="container flex-length mt-5">
-	<div class="notify-box ad-complete">
-		<div class="success d-flex align-items-center">
-            <img src="<?php echo base_url("assets/public/dist/images/success.png"); ?>" alt="Success-Image" class="img-fluid">
-            <div class="success-text">
-                <h5>Publish Successful</h5>
-                <p>You have successfully posted your ad. We have sent you an email about this ad. Your ad will be reviewed and posted in one hour time. Thank you</p>
-                <p><a href="<?php echo base_url('user/myAccount'); ?>">Click here to see your ad</a></p>
-            </div>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12">
+			<img src="<?php echo base_url('images/post-success.png'); ?>" alt="Success image" class="img-fluid d-block mx-auto my-3">
 		</div>
-    </div>
-    
-    <div class="d-flex flex-row justify-content-center">
-        <a href="<?php echo base_url('#'); ?>" class="btn btn-primary-alt mt-5">Browse All Ads</a>
-    </div>
+		<div class="col-12 my-3">
+			<h2 class="text-center">Publish Successful</h2>
+			<p class="text-center">You have successfully posted your ad. We have sent you an email about this ad. Your ad will
+				be reviewed and posted in one hour time. Thank you</p>
+		</div>
+		<div class="col-auto my-2">
+			<a href="<?php echo base_url('ads'); ?>" class="btn btn-primary-alt mx-2 my-3">Browse all ads</a>
+			<a href="<?php echo base_url('user/account/myads'); ?>" class="btn btn-outline-primary mx-2 my-3">Go to my ads</a>
+		</div>
+	</div>
 </div>

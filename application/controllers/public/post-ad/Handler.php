@@ -94,14 +94,28 @@ class Handler extends Public_Controller
 
     public function ad_complete()
     {
-        $this->layout->title = 'Posting an ad';
-        $this->layout->view('public/post-ad/ad_complete');
+        $this->layout->title = 'Publish Successful';
+        
+        $this->load->model('public/post_ad/Post_model');
+        $result = $this->Post_model->get_token($this->uri->segment(4));
+        if($this->uri->segment(4) == $result->token) 
+        {
+            $this->layout->assets(base_url('assets/public/js/email.js'), 'footer');
+            $custom_script = "mail('".$this->session->user_email."', '".$this->uri->segment(4)."'); ";
+            $this->layout->script($custom_script, 'footer');
+            
+            return $this->layout->view('public/post-ad/ad_complete');
+        }
+
+        redirect('user/account/myads');
+        
     }
 
     /** */
     public function submit_ad()
     {
         $this->lang->load('message_lang', 'english');
+        
 
         if($this->form_validation->run('submit_ad') == FALSE) return $this->json_output(false, validation_errors());
 
@@ -126,36 +140,94 @@ class Handler extends Public_Controller
         {
             $this->_data['sub_images'] = '';
         }
-        
+
+        $this->load->helper('string');
+        $string = random_string('alnum', 16);
+
         $this->_data['path_string'] = $perm_path_string;
         $this->_data['title'] = $title;
-        
+        $this->_data['token'] = $string;
+
         $this->load->model('public/post_ad/Post_model');
         $db_response = $this->Post_model->insert_ad($this->_data);
 
         if(!$db_response) return $this->json_output(false, $this->lang->line('error_submit'));
 
-        return $this->json_output(true, $this->lang->line('success_submit'), 'post-ad/complete');
+        
+        return $this->json_output(true, $this->lang->line('success_submit'), 'post-ad/complete/token/'.$string);
     }
 
      /**
      *  Ad posted mail
      * 
      */
-    public function send_ad_mail($address)
+    public function send_ad_mail()
     {   
+        //$address = ;
         $this->load->library('email');
 
         $this->email->from('no-reply@kirulads.lk', 'no-reply@kirulads.lk');
-        $this->email->to($address);
+        $this->email->to($this->input->get('email'));
 
-        $this->email->subject('Test Mail');
-        $this->email->message('Testing the email class.');
+        $this->email->subject('Welcome to kirulads.lk');
+        $this->email->message('Hello, ');
 
         if ( ! $this->email->send())    
         {
             log_message('error', 'Unable to send the registeration mail');
         }
+    }
+
+    /** */
+    public function edit()
+    {
+        $this->layout->title = 'Edit Ad';
+        $this->layout->assets(base_url('assets/public/js/submit.js'), 'footer');
+        $slug = $this->uri->segment(8);
+        $this->load->model('public/post_ad/Post_model');
+        $this->_data['results'] = $this->Post_model->populate_edit($slug);
+        $this->layout->view('public/post-ad/edit_ad', $this->_data);
+    }
+
+    public function update_ad()
+    {
+        $this->lang->load('message_lang', 'english');
+
+        if($this->form_validation->run('submit_ad') == FALSE) return $this->json_output(false, validation_errors());
+
+        $title = $this->input->post('title');
+        $temp_path_string = $this->input->post('path_string');
+        $perm_path_string = $this->input->post('path_string');
+
+        $this->_data = $_POST;
+        $this->_data['id'] = $this->input->post('adid');
+        $this->_data['slug'] = $this->slug($title);
+        $this->_data['negotiable'] = $this->input->post('negotiable') ? $this->input->post('negotiable') : 0;
+        // $main_img = $this->session->main_image;
+        // $sub_img_array = $this->move_to_dest($temp_path_string, $perm_path_string);
+
+        // $this->_data['main_image'] = $main_img;
+        // if(false !== $key = array_search($main_img, $sub_img_array))
+        // {
+        //     unset($sub_img_array[$key]);
+        //     $this->_data['sub_images'] = implode(',', $sub_img_array);
+        // }
+        // else
+        // {
+        //     $this->_data['sub_images'] = '';
+        // }
+        $this->load->helper('string');
+        $string = random_string('alnum', 16);
+
+        $this->_data['title'] = $title;
+        $this->_data['token'] = $string;
+        
+        $this->load->model('public/post_ad/Post_model');
+        $db_response = $this->Post_model->update_ad($this->_data);
+
+        if(!$db_response) return $this->json_output(false, $this->lang->line('error_submit'));
+
+        return $this->json_output(true, $this->lang->line('success_submit'), 'post-ad/complete/token/'.$string);
     }
 
     /** */
@@ -198,6 +270,27 @@ class Handler extends Public_Controller
         return $string;
     }
     
+    /** */
+    public function delete()
+    {
+        $this->layout->title = 'Delete Ad';
+        $this->layout->assets(base_url('assets/public/js/delete_ad.js'), 'footer');
+        $this->layout->view('public/post-ad/delete_ad');
+    }
+
+    /** */
+    public function delete_ad()
+    {
+        $this->load->model('public/post_ad/Post_model', 'admodel');
+        $status = $this->admodel->update_status($this->input->get('slug'));
+
+        if($status) 
+        {
+            return $this->json_output(true, 'Deleted Successfully', 'user/account/myads');
+        }
+       
+        return $this->json_output(false, 'Unable to delete your ad');
+    }
 
     /*** */
     private function create_slug($title, $ad_type = 'for-sale')

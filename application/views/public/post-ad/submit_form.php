@@ -162,3 +162,4 @@
 		</div>
 	</div>
 </section>
+<?php $this->session->set_tempdata('user_email', $userinfo->email, '800'); ?>

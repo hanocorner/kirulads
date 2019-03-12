@@ -35,6 +35,14 @@ ALTER TABLE tbl_adverts AUTO_INCREMENT = 100;
 -- --------------------------------------------------------
 
 --
+-- Let adid starts with 100
+--
+ALTER TABLE `kirulads_db`.`tbl_adverts` 
+ADD UNIQUE INDEX `slug_UNIQUE` (`slug` ASC);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for `Category`
 --
 CREATE TABLE IF NOT EXISTS `tbl_category` (

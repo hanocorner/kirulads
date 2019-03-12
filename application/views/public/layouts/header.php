@@ -17,7 +17,7 @@
 
 					<?php if ($this->session->has_userdata('logged_in') || $this->session->logged_in == TRUE): ?>
 					<li class="nav-item mx-2">
-						<a class="nav-link mobile-only blue" href="<?php echo base_url('user/myAccount'); ?>">
+						<a class="nav-link mobile-only blue" href="<?php echo base_url('user/account'); ?>">
 							<i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
 						</a>
 					</li>

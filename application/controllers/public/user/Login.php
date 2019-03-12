@@ -9,7 +9,7 @@ class Login extends Public_Controller
 
         if ($this->session->has_userdata('logged_in') && $this->session->logged_in == TRUE) 
         {
-            redirect('user/myAccount');
+            redirect('user/account');
         }
         
         $this->lang->load('message_lang', 'english');

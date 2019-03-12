@@ -23,6 +23,7 @@ class Post_model extends CI_Model
             "'.$data['category'].'",
             "'.$data['main_image'].'",
             "'.$data['sub_images'].'",
+            "'.$data['token'].'",
             "'.$data['path_string'].'"
             )'
         );
@@ -84,6 +85,58 @@ class Post_model extends CI_Model
          $count = $query->row();
  
          return $count->slug_count;
+    }
+
+    /**
+     * 
+     */
+    public function populate_edit($slug)
+    {
+        $this->db->select('*');
+        $this->db->from('fetch_ad');
+        $this->db->where('slug', $slug);
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+
+    /** */
+    public function update_ad($data)
+    {
+        $query = $this->db->query('CALL update_ad(
+            "'.$data['id'].'",
+            "'.$data['title'].'",
+            "'.$data['condition'].'",
+            "'.$data['description'].'",
+            "'.$data['price'].'",
+            "'.$data['negotiable'].'",
+            "'.$data['slug'].'",
+            "'.$data['location'].'",
+            "'.$data['category'].'",
+            "'.$data['token'].'"
+            )'
+        );
+
+        return $query;
+    }
+
+    /*** */
+    public function get_token($token)
+    {
+        $this->db->select('token');
+        $this->db->from('tbl_adverts');
+        $this->db->where('token', $token);
+        $query = $this->db->get();
+
+        return $query->row();
+    }
+
+    /*** */
+    public function update_status($slug)
+    {
+        $this->db->set('status', 3);
+        $this->db->where('slug', $slug);
+        return $this->db->update('tbl_adverts'); 
     }
 }
 ?>

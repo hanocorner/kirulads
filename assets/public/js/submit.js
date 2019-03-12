@@ -4,6 +4,7 @@ $(function () {
 	var message = new Array();
 	var messageBox = $('#messageBox');
 	var formSubmitAd = $('#formSubmitAdDetail');
+	var formUpdateAd = $('#formUpdateAdDetail');
 
 	// 
 	var message = function (msg, type) {
@@ -158,7 +159,7 @@ $(function () {
 			return false;
 		}
 
-		if($('input[type="radio"]:checked').length == 0) {
+		if($('input:radio[name=condition]').length == 0) {
 			messageBox.html(message('Please select your item condition', 'error'));
 			return false;
 		}
@@ -204,6 +205,71 @@ $(function () {
 		});
 	};
 
+	// Function to Update ad
+	var update_ad = function () {
+		if ($('#adImage').length == 0) {
+			messageBox.html(message('Please upload one or more photo(s) for your ad', 'error'));
+			return false;
+		}
+
+		if($('#titleName').val() == '' || $('#titleName').val() == null) {
+			$('#titleName').addClass('is-invalid');
+			messageBox.html(message('Title field is required', 'error'));
+			return false;
+		}
+
+		if($('input:radio[name=condition]').length == 0) {
+			messageBox.html(message('Please select your item condition', 'error'));
+			return false;
+		}
+
+		if($('#countableArea').val() == '' || $('#countableArea').val() == null) {
+			$('#countableArea').addClass('is-invalid');
+			messageBox.html(message('Description field is required', 'error'));
+			return false;
+		}
+
+		if($('#priceField').val() == '' || $('#priceField').val() == null) {
+			$('#priceField').addClass('is-invalid');
+			messageBox.html(message('Price field is required', 'error'));
+			return false;
+		}
+
+		formData = new FormData();
+
+		var x = formUpdateAd.serializeArray();
+        $.each(x, function(i, field){
+            formData.append(field.name, field.value);
+		});
+		
+		formData.append('path_string', $('input[name=path_string]').val());
+		//formData.append('path_string', $('input[name=path_string]').val());
+
+		$.ajax({
+			url: formUpdateAd.attr("action"),
+			type: formUpdateAd.attr("method"),
+			dataType: 'JSON',
+			data: formData,
+			processData: false,
+			contentType: false,
+			beforeSend: function () {
+				$('#publishAd').html('<i class="fa fa-refresh fa-spin fa-fw"></i>');
+			},
+			success: function (response) {
+				$('#publishAd').html('Post Ad');
+				if (response.auth) {
+					messageBox.html(message(response.message, 'success'));
+					location.href = response.url;
+				} else {
+					$('input[name=csrf_test_name]').val(response.csrf);
+					messageBox.html(message(response.message, 'error'));
+				}
+			},
+			fail: function () {
+				console.log('Error');
+			}
+		});
+	};
 	// Function
 	var removeImage = function (imageName) {
 		$.ajax({
@@ -263,6 +329,11 @@ $(function () {
 	formSubmitAd.on("submit", function (event) {
 		event.preventDefault();
 		submitAd(this);
+	});
+
+	$('#updateAdBtn').on('click', function () {
+		event.preventDefault();
+		update_ad();
 	});
 
 	// 

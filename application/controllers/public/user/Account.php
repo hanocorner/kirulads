@@ -17,7 +17,10 @@ class Account extends Public_Controller
      */
     public function index()
     {
+        $this->layout->title = 'My Account - My Ads';
         $this->_data['results'] = $this->acc->fetch_myads($this->session->userid);
+        $this->_data['user_data'] = $this->acc->acc_data($this->session->userid);
+        //$this->_data['ad_count'] = $this->acc->total_ad_count($this->session->userid);
         $this->layout->view('public/user/my_account', $this->_data);
     }
 
@@ -46,16 +49,6 @@ class Account extends Public_Controller
     {
         $this->layout->view('public/user/account_settings');
     }
-
-    /**
-     * 
-     */
-    public function my_ads()
-    {
-        $this->_data['results'] = $this->acc->fetch_myads($this->session->userid);
-        $this->layout->view('public/user/my_ads', $this->_data);
-    }
-
 
 }
 ?>
