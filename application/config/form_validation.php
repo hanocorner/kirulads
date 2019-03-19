@@ -44,7 +44,7 @@ $config = array(
                 'rules' => 'trim|required'
             ),
             array(
-                'field'=> 'description',
+                'field'=> 'editor1',
                 'label' => 'Description',
                 'rules' => 'trim|required'
             ),

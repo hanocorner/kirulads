@@ -1,12 +1,12 @@
 <div class="container my-5">
 	<div class="row justify-content-center">
-		<div class="col-4 bg-ad-post py-3">
+		<div class="col-12 col-md-4 bg-ad-post py-3">
 			<h4>Delete Ad</h4>
 
 			<p>Are you sure you want to delete this ad?</p>
 
-			<div class="input-group mb-3">
-				<select class="custom-select" id="">
+			<div class="form-group mb-3">
+				<select class="form-control" id="">
 					<option selected>Select reason</option>
 					<option value="101">Sold on site</option>
 					<option value="102">Other</option>

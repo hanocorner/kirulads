@@ -46,25 +46,25 @@
 											Kurunegala</a></li>
 									<li><a data-action="location" data-id="114" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Mannar</a></li>
-									<li><a data-action="location" data-id="115" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="300" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Matale</a></li>
-									<li><a data-action="location" data-id="116" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="115" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Matara</a></li>
-									<li><a data-action="location" data-id="117" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="116" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Moneragala</a></li>
-									<li><a data-action="location" data-id="118" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="117" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Mullativu</a></li>
-									<li><a data-action="location" data-id="119" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="118" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Nuwara Eliya</a></li>
-									<li><a data-action="location" data-id="120" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="119" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Polonnaruwa</a></li>
-									<li><a data-action="location" data-id="121" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="120" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Puttalam</a></li>
-									<li><a data-action="location" data-id="122" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="121" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Ratnapura</a></li>
-									<li><a data-action="location" data-id="123" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="122" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Trincomalee</a></li>
-									<li><a data-action="location" data-id="124" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
+									<li><a data-action="location" data-id="123" href="<?php echo uri_string(); ?>"><span><i class="fa fa-map-marker fa-fw"></i></span>
 											Vavuniya</a></li>
 								</ul>
 							</div>

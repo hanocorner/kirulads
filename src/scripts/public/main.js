@@ -115,7 +115,7 @@ $(function () {
 		var submitBtn = $('#emailExist');
 		$.ajax({
 			url: baseurl + 'public/user/register/check-email',
-			type: formReg.attr("method"),
+			type: 'GET',
 			dataType: 'JSON',
 			data: {
 				mail: input

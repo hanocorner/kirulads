@@ -113,7 +113,11 @@
 				<div class="form-row">
 					<div class="form-group col">
 						<label for="exampleFormControlTextarea1">Description</label>
-						<textarea class="form-control" id="countableArea" rows="5" name="description" required></textarea>
+						<!-- <textarea class="form-control" id="countableArea" rows="5" name="description" required></textarea> -->
+						<textarea class="form-control" name="editor1" id="editor1" rows="4"></textarea>
+						<script>
+							CKEDITOR.replace('editor1');
+          				</script>
 					</div>
 				</div>
 

@@ -44,13 +44,13 @@ class Register extends Public_Controller
 
         $user = $this->register->user($this->_data);
 
-        $this->send_registration_mail($this->_data['email']);
+        //$this->send_registration_mail($this->_data['email']);
 
         $session_data = array('userid' => $user[0]->users_id, 'logged_in' => TRUE);
 
         $this->session->set_userdata($session_data);
 
-        if($user[0]->user_created == 1) return $this->json_output(true, $this->lang->line('success_register'), 'user/myAccount');
+        if($user[0]->user_created == 1) return $this->json_output(true, $this->lang->line('success_register'), 'user/account/myads');
 
     }
     
@@ -77,13 +77,13 @@ class Register extends Public_Controller
     /*** */
     public function check_email()
     {
-        $mail = $this->input->post('mail');
+        $mail = $this->input->get('mail');
 
         $result = $this->register->mail_availability($mail);
 
         if($result > 0 )
         {
-            return $this->json_output(false, $this->lang->line('error_email_exists'));
+            return $this->json_output(false, 'Email already exists, Please try a new one');
         }
 
         return $this->json_output(true);

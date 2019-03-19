@@ -124,6 +124,13 @@ $(function () {
 							}).get().join(',');
 
 							$('#setSubImg').val(imgArray);
+
+							//var checkedNum = $('input[name="mainImage[]"]:checked').length;
+							if ($('input[name="mainImage"]:checked').length === 0) {
+								$('input[name="mainImage"]').prop('checked', true);
+								setFeatured(response.image_name);
+								console.log('checked');
+							}
 						},
 						fail: function () {
 							console.log('Error');
@@ -142,7 +149,7 @@ $(function () {
 
 		bootstrapValidate('#titleName', 'regex:^([-A-Za-z0-9 ]){1,100}$:You can only use alphabhatical, numerical, dash & hypen only|max:100:Maximum characters reached');
 
-		bootstrapValidate('#countableArea', 'regex:^([-A-Za-z0-9 ]){1,5000}$:You can only use alphabhatical, numerical, dash & hypen only');
+		//bootstrapValidate('#editor1', 'regex:^([-A-Za-z0-9 ]){1,5000}$:You can only use alphabhatical, numerical, dash & hypen only');
 		bootstrapValidate('#priceField', 'numeric:Price field has to be a numeric value');
 	};
 
@@ -153,31 +160,34 @@ $(function () {
 			return false;
 		}
 
-		if($('#titleName').val() == '' || $('#titleName').val() == null) {
+		if ($('#titleName').val() == '' || $('#titleName').val() == null) {
 			$('#titleName').addClass('is-invalid');
 			messageBox.html(message('Title field is required', 'error'));
 			return false;
 		}
 
-		if($('input:radio[name=condition]').length == 0) {
+		if ($('input:radio[name=condition]').length == 0) {
 			messageBox.html(message('Please select your item condition', 'error'));
 			return false;
 		}
 
-		if($('#countableArea').val() == '' || $('#countableArea').val() == null) {
-			$('#countableArea').addClass('is-invalid');
+		if ($('#editor1').val() == '' || $('#editor1').val() == null) {
+			$('#editor1').addClass('is-invalid');
 			messageBox.html(message('Description field is required', 'error'));
 			return false;
 		}
 
-		if($('#priceField').val() == '' || $('#priceField').val() == null) {
+		if ($('#priceField').val() == '' || $('#priceField').val() == null) {
 			$('#priceField').addClass('is-invalid');
 			messageBox.html(message('Price field is required', 'error'));
 			return false;
 		}
 
+		var commentData = CKEDITOR.instances.editor1.getData();
+
 		formData = new FormData(formid);
 		formData.append('temp_path_string', $('input[name=path_string]').val());
+		formData.append("editor1", commentData);
 
 		$.ajax({
 			url: formSubmitAd.attr("action"),
@@ -212,24 +222,24 @@ $(function () {
 			return false;
 		}
 
-		if($('#titleName').val() == '' || $('#titleName').val() == null) {
+		if ($('#titleName').val() == '' || $('#titleName').val() == null) {
 			$('#titleName').addClass('is-invalid');
 			messageBox.html(message('Title field is required', 'error'));
 			return false;
 		}
 
-		if($('input:radio[name=condition]').length == 0) {
+		if ($('input:radio[name=condition]').length == 0) {
 			messageBox.html(message('Please select your item condition', 'error'));
 			return false;
 		}
 
-		if($('#countableArea').val() == '' || $('#countableArea').val() == null) {
-			$('#countableArea').addClass('is-invalid');
-			messageBox.html(message('Description field is required', 'error'));
+		if ($('#editor1').val() == '' || $('#editor1').val() == null) {
+			//$('#editor1').addClass('is-invalid');
+			messageBox.html(message('Descriptions field is required', 'error'));
 			return false;
 		}
 
-		if($('#priceField').val() == '' || $('#priceField').val() == null) {
+		if ($('#priceField').val() == '' || $('#priceField').val() == null) {
 			$('#priceField').addClass('is-invalid');
 			messageBox.html(message('Price field is required', 'error'));
 			return false;
@@ -238,10 +248,10 @@ $(function () {
 		formData = new FormData();
 
 		var x = formUpdateAd.serializeArray();
-        $.each(x, function(i, field){
-            formData.append(field.name, field.value);
+		$.each(x, function (i, field) {
+			formData.append(field.name, field.value);
 		});
-		
+
 		formData.append('path_string', $('input[name=path_string]').val());
 		//formData.append('path_string', $('input[name=path_string]').val());
 
@@ -309,17 +319,6 @@ $(function () {
 		});
 	};
 
-	//
-	$('#countableArea').textcounter({
-		type: "character",
-		min: 0,
-		max: 5000,
-		stopInputAtMaximum: true,
-		maximumErrorText: "Maximum exceeded",
-		displayErrorText: true,
-		counterText: "%d/5000"
-	});
-
 	/** Binding  */
 
 	// 
@@ -351,5 +350,6 @@ $(function () {
 		removeImage($(this).data('image'));
 		$(this).parentsUntil('#adDivImg').remove();
 	});
+
 
 });
