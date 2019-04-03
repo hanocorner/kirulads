@@ -1,0 +1,13 @@
+.help-page {
+    .list-group-item {
+        text-decoration: none;
+        color: $blue-300;
+        font-weight: 500;
+    }
+    .list-group-item.active {
+        background-color: transparent!important;
+        border-color: transparent!important;
+        color: $black;
+        font-weight: 500;
+    }
+}

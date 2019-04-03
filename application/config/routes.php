@@ -98,6 +98,7 @@ $route['ads/(:any)'] = 'public/ad/detail/ads';
 $route['ads/(:any)/(:any)'] = 'public/ad/detail/ads';
 $route['ads/(:any)/(:any)/(:any)'] = 'public/ad/detail/ads';
 
+$route['help'] = 'public/help/handler/index';
 
 // 404 Page 
 $route['404_override'] = 'Myerror';

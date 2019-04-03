@@ -83,8 +83,8 @@
 
 			<div class="row">
 				<div class="col-6">
-					<button type="button" class="btn btn-primary-alt" data-number="<?php echo $results->phone_number; ?>">
-						<i class="fa fa-mobile fa-fw"></i>
+					<button type="button" class="btn btn-primary-alt" data-toggle="modal" data-target="#numberModal">
+						<i class="fa fa-phone fa-fw"></i>
 						<span>Click to show number</span>
 					</button>
 				</div>
@@ -137,4 +137,21 @@
 		</div>
 
 	</div>
+</div>
+
+<!-- Small modal -->
+<div class="modal fade" id="numberModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+	<div class="modal-header">
+		<h5 class="modal-title">Phone Number</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+	</div>
+	<div class="modal-body">
+		<a href="#"><p class="text-primary my-2"><i class="fa fa-phone fa-fw"></i>&nbsp;<?php echo $results->phone_number; ?></p></a>
+	</div>
+    </div>
+  </div>
 </div>

@@ -121,7 +121,7 @@
 							<i class="sprite sprite-top-deal"></i>
 						</div>
 						<div class="category-text">
-							<h5>Top Deals</h5>
+							<h5>Services</h5>
 							<p>5 Ads</p>
 						</div>
 					</div>

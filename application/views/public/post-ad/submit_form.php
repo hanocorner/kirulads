@@ -1,3 +1,7 @@
+<style>
+html {height:100%;}
+body {height:100%;}
+</style>
 <section class="mt-3">
 	<div class="container bg-ad-post">
 		<div class="row my-2">
@@ -113,15 +117,11 @@
 				<div class="form-row">
 					<div class="form-group col">
 						<label for="exampleFormControlTextarea1">Description</label>
-						<!-- <textarea class="form-control" id="countableArea" rows="5" name="description" required></textarea> -->
-						<textarea class="form-control" name="editor1" id="editor1" rows="4"></textarea>
-						<script>
-							CKEDITOR.replace('editor1');
-          				</script>
+						<div id="editor1"></div>
 					</div>
 				</div>
 
-				<div class="form-row align-items-center mt-3">
+				<div class="form-row align-items-center mt-5 pt-5 pt-md-3">
 					<div class="form-group col-6 col-md-3">
 						<input type="text" placeholder="Price (Rs)" class="form-control form-control-sm mt-3" name="price" id="priceField"
 						 required>

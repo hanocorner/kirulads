@@ -1,5 +1,6 @@
 <footer class="mt-5 pt-4 d-footer">
-  <section class="footer-top py-4">
+  <section class="footer-top">
+    <div class="blue-line mb-3"></div>
     <div class="container">
       <div class="row">
         <div class="col-md-4 about-brief">
@@ -11,7 +12,7 @@
 
         <div class="col-md-4 contact-info">
             <h3 class="pt-4">Pages</h3>
-            <p><a href="#">All Ads</a></p>
+            <p><a href="/ads">All Ads</a></p>
             <p><a href="#">Our Top Categories</a></p>
             <p><a href="#">Post Your Ad Now</a></p>
         </div>
@@ -20,8 +21,8 @@
             <h3 class="pt-4">Stay safe with kirulads.lk</h3>
             <p><a href="#">Privacy Policy</a></p>
             <p><a href="#">Terms and Conditions</a></p>
-            <p><a href="#">About Us</a></p>
-            <p><a href="#">Contact Us</a></p>
+            <p><a href="/help">About Us</a></p>
+            <p><a href="/help">Contact Us</a></p>
         </div>
       </div>
     </div>

@@ -5,7 +5,6 @@
 				<h3>Sell an item or service</h3>
 			</div>
 		</div>
-
 		<div class="row mt-2 mb-4">
 			<div class="col-12 col-md-8 my-2 my-md-0">
 				<div class="d-flex flex-row align-items-center justify-content-between section-select" data-toggle="tooltip"
@@ -167,9 +166,7 @@
 				<div class="form-row">
 					<div class="form-group col">
 						<label for="exampleFormControlTextarea1">Description</label>
-						<textarea class="form-control" id="countableArea" rows="5" name="description" required>
-                            <?php echo $results->description;?>
-                        </textarea>
+						<div id="editor1"></div>
 					</div>
 				</div>
 

@@ -88,8 +88,9 @@ class Handler extends Public_Controller
         $this->_data['location'] = $this->admodel->fetch_location($this->_data['locationid']);
         $this->_data['userinfo'] = $this->admodel->fetch_user_by_id($this->session->userid);
 
+        $this->layout->assets('assets/vendors/quill/quill.snow.css');
+        $this->layout->assets(base_url('assets/vendors/quill/quill.min.js'), 'footer');
         $this->layout->assets(base_url('assets/public/js/submit.js'), 'footer');
-        $this->layout->assets(base_url('assets/vendors/ckeditor/ckeditor.js'), 'header');
         $this->layout->view('public/post-ad/submit_form', $this->_data);
     }
 
@@ -184,6 +185,8 @@ class Handler extends Public_Controller
     public function edit()
     {
         $this->layout->title = 'Edit Ad';
+        $this->layout->assets('assets/vendors/quill/quill.snow.css');
+        $this->layout->assets(base_url('assets/vendors/quill/quill.min.js'), 'footer');
         $this->layout->assets(base_url('assets/public/js/submit.js'), 'footer');
         $slug = $this->uri->segment(8);
         $this->load->model('public/post_ad/Post_model');
@@ -203,6 +206,7 @@ class Handler extends Public_Controller
 
         $this->_data = $_POST;
         $this->_data['id'] = $this->input->post('adid');
+        $this->_data['description'] = $this->input->post('editor1');
         $this->_data['slug'] = $this->slug($title);
         $this->_data['negotiable'] = $this->input->post('negotiable') ? $this->input->post('negotiable') : 0;
         // $main_img = $this->session->main_image;

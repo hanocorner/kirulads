@@ -6,6 +6,10 @@ $(function () {
 	var formSubmitAd = $('#formSubmitAdDetail');
 	var formUpdateAd = $('#formUpdateAdDetail');
 
+	var quill = new Quill('#editor1', {
+		theme: 'snow'
+	});
+
 	// 
 	var message = function (msg, type) {
 		var box;
@@ -155,6 +159,8 @@ $(function () {
 
 	// Function to submit Ad
 	var submitAd = function (formid) {
+		
+
 		if ($('#adImage').length == 0) {
 			messageBox.html(message('Please upload one or more photo(s) for your ad', 'error'));
 			return false;
@@ -171,23 +177,15 @@ $(function () {
 			return false;
 		}
 
-		if ($('#editor1').val() == '' || $('#editor1').val() == null) {
-			$('#editor1').addClass('is-invalid');
-			messageBox.html(message('Description field is required', 'error'));
-			return false;
-		}
-
 		if ($('#priceField').val() == '' || $('#priceField').val() == null) {
 			$('#priceField').addClass('is-invalid');
 			messageBox.html(message('Price field is required', 'error'));
 			return false;
 		}
 
-		var commentData = CKEDITOR.instances.editor1.getData();
-
 		formData = new FormData(formid);
 		formData.append('temp_path_string', $('input[name=path_string]').val());
-		formData.append("editor1", commentData);
+		formData.append("editor1", quill.getText());
 
 		$.ajax({
 			url: formSubmitAd.attr("action"),
@@ -233,11 +231,11 @@ $(function () {
 			return false;
 		}
 
-		if ($('#editor1').val() == '' || $('#editor1').val() == null) {
-			//$('#editor1').addClass('is-invalid');
-			messageBox.html(message('Descriptions field is required', 'error'));
-			return false;
-		}
+		// if ($('#editor1').val() == '' || $('#editor1').val() == null) {
+		// 	//$('#editor1').addClass('is-invalid');
+		// 	messageBox.html(message('Description field is required', 'error'));
+		// 	return false;
+		// }
 
 		if ($('#priceField').val() == '' || $('#priceField').val() == null) {
 			$('#priceField').addClass('is-invalid');
@@ -254,6 +252,7 @@ $(function () {
 
 		formData.append('path_string', $('input[name=path_string]').val());
 		//formData.append('path_string', $('input[name=path_string]').val());
+		formData.append("editor1", quill.getText());
 
 		$.ajax({
 			url: formUpdateAd.attr("action"),
@@ -320,6 +319,8 @@ $(function () {
 	};
 
 	/** Binding  */
+
+	
 
 	// 
 	validate();

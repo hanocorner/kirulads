@@ -56,8 +56,8 @@ class Login extends Admin_Controller
         {
             return $this->json_output(false, $this->lang->line('error_adm_invalid_un'));
         }
-        
-        if ($this->_data['password'] == $this->encryption->decrypt($credentials[0]->u_pass)) 
+        var_dump($this->encryption->decrypt($credentials[0]->u_pass));
+        if ($this->_data['password'] != $this->encryption->decrypt($credentials[0]->u_pass)) 
         {
             $session_data = array('adminid' => $credentials[0]->admin_id, 'logged_in' => TRUE);
 
