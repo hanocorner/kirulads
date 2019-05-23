@@ -4,27 +4,113 @@ class Layout
 {
   /**
    * CodeIgniter Instance
+   * 
+   * @var object
    */
   private $CI;
 
+  /**
+   * Default layout 
+   * 
+   * @var string 
+   */
   public $name = 'layouts/index';
-    public $title = 'My page title';
-    public $description = 'My page desctription';
-    public $keywords = 'my, keywords';
-    public $robots = 'all';
-    public $author = 'Smart Software';
-    public $canonical = '';
-    public $css = array();
-    public $js_header = array();
-    public $js_footer = array();
-    public $scr_header = array();
-    public $scr_footer = array();
-    public $scr_ready = array();
 
-    public $seo_tags = null;
+  /**
+   * Page Title
+   * 
+   * @var string 
+   */
+  public $title = 'My page title';
+  
+  /**
+   * Meta Description
+   *
+   * @var string 
+   */
+  public $description = 'My page description';
+  
+  /**
+   * Meta Keywords
+   * 
+   * @var string 
+   */
+  public $keywords = 'my, keywords';
+
+  /**
+   * Meta Robot Txt
+   * 
+   * @var string 
+   */
+  public $robots = 'all';
+
+  /**
+   * Meta web artisan
+   * 
+   * @var string 
+   */
+  public $author = 'Bitbash Software';
+
+  /**
+   * A specific URL represents the master copy of a page | Meta tag
+   * 
+   * @var string 
+   */
+  public $canonical = '';
+
+  /**
+   * Css holder
+   * 
+   * @var array
+   */
+  public $css = array();
+
+  /**
+   * Javascript Header part
+   * 
+   * @var array
+   */
+  public $js_header = array();
+
+  /**
+   * Javascript footer part
+   * 
+   * @var array
+   */
+  public $js_footer = array();
+
+  /**
+   * Random Script header part
+   * 
+   * @var array
+   */
+  public $scr_header = array();
+
+  /**
+   * Random Script footer part
+   * 
+   * @var array
+   */
+  public $scr_footer = array();
+
+  /**
+   * Random Script header part
+   * 
+   * @var array
+   */
+  public $scr_ready = array();
+
+  /**
+   * SEO tags 
+   * 
+   * @var bool
+   */
+  public $seo_tags = null;
 
   /**
    * Setting layout manager to admin or public
+   *
+   * @var bool
    */
   private $layout_manager = null;
 
@@ -43,6 +129,9 @@ class Layout
     $this->layout_manager = $config['layoutManager'];
 
     $this->canonical = base_url();
+    $this->keywords = 'land for sale, used cars sri lanka, mobile phones sri lanka, used phones for sale, cars for sale, laptop for sale, bikes for sale, kirulads, buy and sell, online advertising sri lanka';
+    $this->description = 'Kirulads.lk is newly built advertising website for all your buy and selling needs. We will connect suitable buyer and sellers for your best deal.';
+
   }
 
   /**

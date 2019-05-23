@@ -2,29 +2,36 @@
     position: relative;
 }
 .footer-top {
+    background-color: $white;
+
     .blue-line {
-        background-color: #2f2d49;
-        height: 4px;
+        background-color: $blue-300;
+        height: 3px;
     }
-    background-color:#626171;
-    color: $white;
+    
+    .news {
+        font-size: 0.9rem;
+    }
+
     h3 {
-        
-        text-transform: uppercase;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 2px;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: .5px;
+        margin-bottom: 0.8rem;
+        color: $black;
     }
 
     p {
-        font-weight: 400;
+        margin-bottom: .4rem;
 
         a {
-            color: $white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: $blue-300;
             text-decoration: none;
 
             &:hover {
-                color:$gray-400;
+                color:$blue-400;
             }
         }
     }
@@ -32,12 +39,12 @@
 
 .footer-bottom {
     height: 60px;
-    background-color: #4d4c5a;
+    background-color: #F3F3F3;
     
     .container {
         p {
             font-weight: 400;
-            color: $white;
+            color: $black;
             font-size: 0.8rem;    
             margin-bottom: 0;       
         }
@@ -46,7 +53,7 @@
 @media(min-width:768px) {
     .footer-bottom .container {
         p {
-            font-size: 1rem;      
+            font-size: 0.8rem;      
         }
     }
 }

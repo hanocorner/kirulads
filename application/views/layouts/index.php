@@ -1,55 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <?php if($this->layout->seo_tags): ?> 
-    <meta name="description" content="<?php echo $this->layout->description; ?>">
-    <meta name="keywords" content="<?php echo $this->layout->keywords; ?>">
-    <meta name="robots" content="<?php echo $this->layout->robots; ?>"/>
-    <meta name="author" content="<?php echo $this->layout->author; ?>">
-    <?php endif; ?> 
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140000361-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
 
-    <!-- Layout Title -->
-    <title><?php echo $this->layout->title; ?></title>
-    
-    <link rel="canonical" href="<?php echo $this->layout->canonical; ?>"/>
-    <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/images/favicon.png">
+		gtag('config', 'UA-140000361-1');
 
-    <!-- Core Css (Bootstrap, FontAwesome & Custom Css) -->
-    <?php $this->layout->css(); ?>
+	</script>
+  
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Core Js files -->
-    <?php $this->layout->js('header'); ?>
+	<?php if($this->layout->seo_tags): ?>
+	<meta name="description" content="<?php echo $this->layout->description; ?>">
+	<meta name="keywords" content="<?php echo $this->layout->keywords; ?>">
+	<meta name="robots" content="<?php echo $this->layout->robots; ?>" />
+	<meta name="author" content="<?php echo $this->layout->author; ?>">
+	<?php endif; ?>
 
-    <!-- Custom Js script  -->
-    <?php $this->layout->custom_script('header'); ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+	<!-- Layout Title -->
+	<title><?php echo $this->layout->title; ?> | kirulads.lk</title>
+
+	<link rel="canonical" href="<?php echo $this->layout->canonical; ?>" />
+	<link rel="icon" type="image/png" href="<?php echo base_url();?>assets/images/favicon.png">
+
+	<!-- Core Css (Bootstrap, FontAwesome & Custom Css) -->
+	<?php $this->layout->css(); ?>
+
+	<!-- Core Js files -->
+	<?php $this->layout->js('header'); ?>
+
+	<!-- Custom Js script  -->
+	<?php $this->layout->custom_script('header'); ?>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body id="page-top">
+</head>
 
-    <!-- Header -->
-    <?php echo $header; ?>
+<body id="page-top">
 
-    <!-- Body Content -->
-    <?php echo $content; ?>
+	<!-- Header -->
+	<?php echo $header; ?>
 
-    <!-- Footer -->
-    <?php echo $footer; ?>
+	<!-- Body Content -->
+	<?php echo $content; ?>
 
-    <!-- Core Js Files -->
-    <?php $this->layout->js(); ?>
+	<!-- Footer -->
+	<?php echo $footer; ?>
 
-    <!-- Custom Js script  -->
-    <?php $this->layout->custom_script('footer'); ?>
-  </body>
+	<!-- Core Js Files -->
+	<?php $this->layout->js(); ?>
+
+	<!-- Custom Js script  -->
+	<?php $this->layout->custom_script('footer'); ?>
+</body>
+
 </html>

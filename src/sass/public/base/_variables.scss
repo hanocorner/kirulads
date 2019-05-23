@@ -3,6 +3,7 @@ $white:#FFF;
 $black:#000;
 
 // Theme colors
+$blue-body: #F5F8FF;
 $blue-100:#88B8FF;
 $blue-200:#7E93FF;
 $blue-300:#546FF8;
@@ -26,8 +27,8 @@ $color_6: rgba(#000,.7);
 // Fonts
 $font_family_1: FontAwesome;
 $fa-font-path: '../../fonts/';
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,900');
-$font-stack:'Raleway', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
+$font-stack:'Montserrat', sans-serif;
 
 // alert
 $alert-bg-level:0;

@@ -1,19 +1,19 @@
-<section class="hero-banner" style="background-image:url(<?php echo base_url('assets/images/hero-banner.png');?>);">
-	<div class="container">
+<section class="hero-banner" style="background-image:url(<?php echo base_url('images/hero-banner.png');?>);">
+	<div class="container py-5">
 		<div class="row">
 			<div class="col-12">
-				<div class="hero-text">
+				<div class="hero-text mb-5">
 					<h1>The Largest Online Market Place in Sri Lanka</h1>
+					<p class="my-3">Buy and sell everything from used cars to mobile phones and computers, or search for property, jobs and more in Sri Lanka!</p>
 				</div>
+				<?php echo $wildcard; ?>
 			</div>
 		</div>
 	</div>
 </section>
 
-<?php echo $wildcard; ?>
-
-<section class="top-categories mt-3">
-	<div class="container px-2 px-md-0">
+<section class="top-categories mt-5">
+	<div class="container">
 		<div class="row">
 			<div class="col-6 col-lg-3">
 				<a href="<?php echo base_url('ads/srilanka/electronics'); ?>">
@@ -23,7 +23,7 @@
 						</div>
 						<div class="category-text">
 							<h5>Electronics</h5>
-							<p>(500) ads</p>
+							<p>(500)</p>
 						</div>
 					</div>
 				</a>
@@ -133,6 +133,22 @@
 
 	</div>
 </section>
+
+<!--  -->
+<section class="mt-5">
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
+				<div class="d-flex flex-column flex-md-row align-items-center justify-content-center">
+					<img src="<?php echo base_url('images/megaphone.png'); ?>" class="img-fluid mb-3 mb-md-0 mx-0 mx-md-4" alt="Promote your ad">
+					<p class="text-center mb-3 mb-md-0 mx-0 mx-md-4">Do you want to sell your ad fast? Then click the Promote now button to get started</p>
+					<a href="#" class="btn btn-primary mx-0 mx-md-4 px-4">Promote Now</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <?php echo $category_modal; ?>
 
 <?php echo $location_modal; ?>

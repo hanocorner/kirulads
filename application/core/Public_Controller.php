@@ -26,8 +26,7 @@ class Public_Controller extends AP_Controller
     $this->layout->assets(base_url('assets/public/js/app.js'), 'footer');
     $this->layout->assets(base_url('assets/public/js/main.js'), 'footer');
     $this->layout->assets(base_url('assets/vendors/validator/bootstrap-validate.js'), 'footer');
-    
-    
+
     $this->load->helper('cookie');
   }
 

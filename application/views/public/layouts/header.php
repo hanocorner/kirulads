@@ -38,7 +38,7 @@
 					<?php else: ?>
 					<li class="nav-item mx-2 mx-md-3 desktop-only">
 						<a class="nav-link blue" href="<?php echo base_url('user/login'); ?>">
-							<i class="fa fa-lock fa-fw"></i> Login
+							<i class="fa fa-lock fa-fw"></i> Login / Register
 						</a>
 					</li>
 					<li class="nav-item mx-2 mx-md-3 mobile-only">

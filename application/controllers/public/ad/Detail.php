@@ -38,7 +38,9 @@ class Detail extends Public_Controller
 		else
 		{
 			$this->_data['results'] = $results;
-			$this->layout->title = 'Electronics, Cars, Property and Services in Sri Lanka | kirulads.lk';
+			$this->layout->title = $results->title.'|'.$results->sublocation;
+			$this->layout->canonical = base_url($slug);
+			$this->layout->description = $results->description;
 			$this->layout->view('public/home/detail_ad', $this->_data);
 		}
 		
@@ -47,7 +49,7 @@ class Detail extends Public_Controller
 	/** */
 	public function ads()
 	{	
-		$this->layout->title = 'Electronics, Cars, Property and Services in Sri Lanka | kirulads.lk';
+		$this->layout->title = 'Electronics, Cars, Property and Services in Sri Lanka';
 
 		$page = $this->input->get('page');
 		$this->_data['cat'] = $this->uri->segment(3);
