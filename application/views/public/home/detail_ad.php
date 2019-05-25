@@ -7,7 +7,7 @@
 				</h3>
 				<div class="d-flex align-items-center extras">
 					<p class="text-muted mr-3 mb-1">For sale by <span class="text-primary">
-							<?php echo $results->fullname; ?></span>
+						<?php echo $results->fullname; ?></span>
 						<?php echo $results->date; ?>
 						<?php echo $results->sublocation; ?>,
 						<?php echo $results->location; ?>

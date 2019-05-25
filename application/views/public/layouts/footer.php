@@ -34,10 +34,10 @@
 
         <div class="col-6 col-md-2 my-3 my-md-0">
             <h3>About us</h3>
-            <p><a href="#">About us</a></p>
-            <p><a href="#">Privacy policy</a></p>
-            <p><a href="/help">Terms and Conditions</a></p>
-            <p><a href="/help">Sitemap</a></p>
+            <p><a href="/about-us">About us</a></p>
+            <p><a href="/privacy-policy">Privacy policy</a></p>
+            <p><a href="/terms-and-conditions">Terms and Conditions</a></p>
+            <p><a href="/sitemap">Sitemap</a></p>
         </div>
 
       </div>

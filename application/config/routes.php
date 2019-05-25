@@ -99,6 +99,10 @@ $route['ads/(:any)/(:any)'] = 'public/ad/detail/ads';
 $route['ads/(:any)/(:any)/(:any)'] = 'public/ad/detail/ads';
 
 $route['help'] = 'public/help/handler/index';
+$route['about-us'] = 'public/about/handler/index';
+$route['privacy-policy'] = 'public/about/handler/privacy';
+$route['terms-and-conditions'] = 'public/about/handler/terms';
+$route['sitemap'] = 'public/about/handler/sitemap';
 
 // 404 Page 
 $route['404_override'] = 'Myerror';
