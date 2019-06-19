@@ -11,22 +11,50 @@ class Post_model extends CI_Model
     /** */
     public function insert_ad($data)
     {
-        $query = $this->db->query('CALL submit_ad(
-            "'.$data['title'].'",
-            "'.$data['condition'].'",
-            "'.$data['description'].'",
-            "'.$data['price'].'",
-            "'.$data['negotiable'].'",
-            "'.$data['slug'].'",
-            "'.$data['user_id'].'",
-            "'.$data['location'].'",
-            "'.$data['category'].'",
-            "'.$data['main_image'].'",
-            "'.$data['sub_images'].'",
-            "'.$data['token'].'",
-            "'.$data['path_string'].'"
-            )'
+        $ad_data = array(
+            'title' => $data['title'],
+            'item_condition' => $data['condition'],
+            'description' => $data['description'],
+            'price'=>$data['price'],
+            'negotiable'=>$data['negotiable'],
+            'slug'=>$data['slug'],
+            'status' => 0,
+            'flag' => 0,
+            'user_id'=>$data['user_id'],
+            'location_id'=>$data['location'],
+            'category_id'=>$data['category'],
+            'token'=>$data['token']
         );
+        
+        if($this->db->insert('tbl_adverts', $ad_data))
+        {
+            $last_id = $this->db->insert_id();
+            $img_data = array(
+                'main_image' => $data['main_image'],
+                'sub_images' => $data['sub_images'],
+                'path_string' => $data['path_string'],
+                'ad_id'=> $last_id
+            );
+            return $this->db->insert('tbl_adimage', $img_data);
+        }
+        return false;
+        
+        // $query = $this->db->query('CALL submit_ad(
+        //     "'.$data['title'].'",
+        //     "'.$data['condition'].'",
+        //     "'.utf8_encode($data['description']).'",
+        //     "'.$data['price'].'",
+        //     "'.$data['negotiable'].'",
+        //     "'.$data['slug'].'",
+        //     "'.$data['user_id'].'",
+        //     "'.$data['location'].'",
+        //     "'.$data['category'].'",
+        //     "'.$data['main_image'].'",
+        //     "'.$data['sub_images'].'",
+        //     "'.$data['token'].'",
+        //     "'.$data['path_string'].'"
+        //     )'
+        // );
 
         return $query;
     }

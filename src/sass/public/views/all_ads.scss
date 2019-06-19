@@ -15,10 +15,9 @@
         text-decoration: none;
     }
     .all-ad-data{
-        border-bottom: 1px solid $gray-200;
-        border-left: 1px solid transparent;
-        border-right: 1px solid transparent;
-        padding: 8px;
+        border: 1px solid $gray-200;
+        padding: 10px;
+        margin: 20px 0;
 
         .meta-media {
             width: 200px;

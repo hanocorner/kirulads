@@ -153,7 +153,7 @@ class Handler extends Public_Controller
 
         $this->load->model('public/post_ad/Post_model');
         $db_response = $this->Post_model->insert_ad($this->_data);
-
+        //var_dump($db_response);
         if(!$db_response) return $this->json_output(false, $this->lang->line('error_submit'));
 
         

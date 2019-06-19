@@ -185,7 +185,7 @@ $(function () {
 
 		formData = new FormData(formid);
 		formData.append('temp_path_string', $('input[name=path_string]').val());
-		formData.append("editor1", quill.getText());
+		formData.append("editor1", quill.root.innerHTML);
 
 		$.ajax({
 			url: formSubmitAd.attr("action"),
