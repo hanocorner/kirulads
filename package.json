@@ -19,7 +19,7 @@
     "eslint": "^5.14.0",
     "flexslider": "^2.7.1",
     "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-connect-php": "^1.0.3",
     "gulp-cssnano": "^2.1.3",
